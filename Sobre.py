@@ -2,6 +2,7 @@ import streamlit as st
 import base64
 
 st.set_page_config(page_title="Portfólio", layout='wide')
+
 st.title("Olá, me chamo Giovani 👋🏻")
 col1, col2 = st.columns([0.1, 1])
 with col1:

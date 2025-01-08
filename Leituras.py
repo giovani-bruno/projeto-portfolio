@@ -1,6 +1,9 @@
 import streamlit as st
+from main import barra_navegacao
 
-st.set_page_config(layout='centered')
+st.set_page_config(page_title='Leituras', layout='wide', page_icon='📚')
+barra_navegacao()
+
 st.title("Leituras")
 st.write("#### 📚 Livros que já li e que estou lendo")
 st.write("""Aqui compartilho os livros que me ajudaram a expandir meu conhecimento na área de dados. 
@@ -8,20 +11,21 @@ A leitura constante é uma das minhas formas favoritas de aprender e crescer pro
 st.divider()
 
 def adicionar_livro(imagem_livro, titulo, autor, resumo):
-    col1, col2 = st.columns(2)
-    col1.image(f"imagens/{imagem_livro}")
+    col1, col2 = st.columns([0.5, 1])
+    col1.image(f"imagens/{imagem_livro}", width=350)
     col2.subheader(titulo)
     col2.write(f"Por: {autor}")
     col2.write(resumo)
     st.divider()
 
-adicionar_livro("livro_storytelling.jpg", "Storytelling com Dados", "Cole Nussbaumer Knaflic", """
+adicionar_livro("livro_storytelling.jpg", "Storytelling com Dados", "Cole Nussbaumer Knaflic", '''
                 Aprendi que a verdadeira essência de uma boa visualização de dados
                 vai além de simplesmente apresentar números. 
                É sobre contar uma história com os dados de forma que o público
                 consiga entender a mensagem de maneira clara e envolvente. 
                A autora reforça que a escolha de gráficos, o design visual
-                e o contexto são fundamentais para transmitir a informação de forma eficaz.""")
+                e o contexto são fundamentais para transmitir a informação de forma eficaz.
+                Minha frase favorita desse livro é: "Há uma história em seus dados, mas suas ferramentes não sabem qual é essa história."''')
 
 adicionar_livro("livro_python_dados.jpg", "Python para Análise de Dados", "Wes McKinney", """Escrito pelo criador da biblioteca pandas, aprendi a importância 
                 de dominar as ferramentas do Python para lidar com dados de forma eficiente. 

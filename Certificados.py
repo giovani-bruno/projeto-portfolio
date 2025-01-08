@@ -1,7 +1,10 @@
 import streamlit as st
 from streamlit_pdf_viewer import pdf_viewer
+from main import barra_navegacao
 
-st.set_page_config(page_title="Certificados", layout='centered')
+st.set_page_config(page_title="Certificados", layout='centered', page_icon='📃')
+barra_navegacao()
+
 st.title("Certificados")
 st.write("#### Nesta página você encontra todos os meus certificados conquistados até o momento.")
 st.divider()

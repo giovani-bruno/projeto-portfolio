@@ -1,7 +1,9 @@
 import streamlit as st
 import base64
+from main import barra_navegacao
 
-st.set_page_config(page_title="Portfólio", layout='wide')
+st.set_page_config(page_title="Sobre", layout='wide')
+barra_navegacao()
 
 st.title("Olá, me chamo Giovani 👋🏻")
 col1, col2 = st.columns([0.1, 1])

@@ -19,8 +19,8 @@ def adicionar_projeto(nome, tecnologias_utilizadas, imagem, link_pagina, coluna)
         st.image(f"imagens/{imagem}")
         st.write(f"#{' #'.join(tecnologias_utilizadas)}")
         st.write("")
-        _, centro, = st.columns([0.4, 1])
-        if centro.button("Ver Projeto", key=nome):
+        _, c2, = st.columns([0.4, 1])
+        if c2.button("Ver Projeto", key=nome):
             st.switch_page(link_pagina)
 
 adicionar_projeto("Analisando Empréstimos dos Livros de uma Biblioteca",

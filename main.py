@@ -1,13 +1,19 @@
 import streamlit as st
+from os import listdir
 
 def main():
-    pg = st.navigation([
+    paginas = [
         st.Page("Sobre.py", title="👨‍💻 Sobre mim"),
         st.Page("Certificados.py", title="📃 Certificados"), 
         st.Page("Leituras.py", title="📚 Leituras"),
-        st.Page("Projetos.py", title="💻 Projetos"),
-        st.Page("teste.py")
-        ], position='hidden')
+        st.Page("Projetos.py", title="💻 Projetos")
+        ]
+
+    paginas_projetos = listdir("projetos")
+    for pagina in paginas_projetos:
+        paginas.append(st.Page(f"projetos/{pagina}"))
+    
+    pg = st.navigation(paginas, position='hidden')
     
     pg.run()
 

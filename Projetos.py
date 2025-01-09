@@ -21,16 +21,16 @@ def adicionar_projeto(nome, tecnologias_utilizadas, imagem, link_pagina, coluna)
         st.write("")
         _, c2, = st.columns([0.4, 1])
         if c2.button("Ver Projeto", key=nome):
-            st.switch_page(link_pagina)
+            st.switch_page(f"projetos/{link_pagina}")
 
 adicionar_projeto("Analisando Empréstimos dos Livros de uma Biblioteca",
-                ["Python", "pandas", "matplotlib", "seaborn"], "projeto_emprestimos.png", "teste.py", col1)
+                ["Python", "pandas", "matplotlib", "seaborn"], "projeto_emprestimos.png", "analisando_emprestimos.py", col1)
 
 adicionar_projeto("Prevendo Preços de Imóveis no Airbnb",
-                ["Python", "pandas", "numpy", "matplotlib", "seaborn", "plotly", "scikit-learn"], "projeto_emprestimos.png", "teste2.py", col2)
+                ["Python", "pandas", "numpy", "matplotlib", "seaborn", "plotly", "scikit-learn"], "projeto_emprestimos.png", "prevendo_precos_airbnb.py", col2)
 
 adicionar_projeto("Pesquisa de Preços",
-                ["Python", "pandas", "Selenium", "Tkinter", "smtplib"], "projeto_emprestimos.png", "teste.py", col3)
+                ["Python", "pandas", "Selenium", "Tkinter", "smtplib"], "projeto_emprestimos.png", "pesquisa_de_precos.py", col3)
              
 adicionar_projeto("Prevendo a Qualidade de Carros",
                 ["Python", "pandas", "streamlit", "scikit-learn"], "projeto_emprestimos.png", "teste.py", col1)

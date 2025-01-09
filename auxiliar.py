@@ -1,0 +1,114 @@
+import streamlit as st
+from streamlit_pdf_viewer import pdf_viewer
+import base64
+
+tecnologias = {
+    "Python": {
+        "link_doc": "https://www.python.org",
+        "logo": "imagens/logo_python.png"
+    },
+    "Power BI": {
+        "link_doc": "https://learn.microsoft.com/pt-br/power-bi/fundamentals/",
+        "logo": "imagens/logo_powerbi.png"
+    },
+    "Excel": {
+        "link_doc": "https://www.microsoft.com/pt-br/microsoft-365/excel",
+        "logo": "imagens/logo_excel.png"
+    },
+    "SQL": {
+        "link_doc": "https://learn.microsoft.com/pt-br/sql/sql-server/",
+        "logo": "imagens/logo_sql.png"
+    },
+    "Git": {
+        "link_doc": "https://git-scm.com/",
+        "logo": "imagens/logo_git.png"
+    },
+    "Pandas": {
+        "link_doc": "https://pandas.pydata.org/",
+        "logo": "imagens/logo_pandas.png"
+    },
+    "NumPy": {
+        "link_doc": "https://numpy.org/",
+        "logo": "imagens/logo_numpy.png"
+    },
+    "Matplotlib": {
+        "link_doc": "https://matplotlib.org/",
+        "logo": "imagens/logo_matplotlib.png"
+    },
+    "Seaborn": {
+        "link_doc": "https://seaborn.pydata.org/",
+        "logo": "imagens/logo_seaborn.png"
+    },
+    "Plotly": {
+        "link_doc": "https://plotly.com/",
+        "logo": "imagens/logo_plotly.png"
+    },
+    "Streamlit": {
+        "link_doc": "https://streamlit.io/",
+        "logo": "imagens/logo_streamlit.png"
+    },
+    "Scikit-learn": {
+        "link_doc": "https://scikit-learn.org/",
+        "logo": "imagens/logo_sklearn.png"
+    },
+    "Selenium": {
+        "link_doc": "https://www.selenium.dev/documentation/",
+        "logo": "imagens/logo_selenium.png"
+    },
+    "Tkinter": {
+        "link_doc": "https://docs.python.org/3/library/tkinter.html",
+        "logo": "imagens/logo_tkinter.png"
+    }
+}
+
+livros = {
+    "Storytelling com Dados": {
+        "autor (a)": "Cole Nussbaumer Knaflic",
+        "imagem": "imagens/livro_storytelling.jpg"
+    },
+    "Python para Análise de Dados": {
+        "autor (a)": "Wes McKinney",
+        "imagem": "imagens/livro_python_dados.jpg"
+    },
+    "Data Science do Zero": {
+        "autor (a)": "Joel Grus",
+        "imagem": "imagens/livro_data_science.jpg"
+    }
+}
+
+
+def adicionar_habilidade(habilidade, coluna, largura):
+    coluna.markdown(
+        f"""<a href="{habilidade['link_doc']}">
+        <img src="data:image/png;base64,{base64.b64encode(open(habilidade['logo'], "rb").read()).decode()}" width="{largura}" style="margin-bottom: 50px;">
+        </a>""",
+        unsafe_allow_html=True)
+
+def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
+    with coluna:
+        st.markdown(
+            f"""<a href="{tecnologia['link_doc']}">
+            <img src="data:image/png;base64,{base64.b64encode(open(tecnologia['logo'], "rb").read()).decode()}" width="{largura_img}">
+            </a>""",
+            unsafe_allow_html=True)
+        st.write(descricao)
+        st.write("")
+
+def adicionar_certificado(certificado, duracao, data_inicio, data_conclusao, resumo=None):
+    nome_certificado = certificado[certificado.find("/")+1:certificado.find(".")]
+    st.subheader(nome_certificado)
+    col1, col2, col3 = st.columns([0.5, 1, 1])
+    col1.write(f" ⏱ {duracao}")
+    col2.write(f"Iniciado em: {data_inicio}")
+    col3.write(f"Concluído em: {data_conclusao}")
+    st.write(resumo)
+    pdf_viewer(rf"certificados/{certificado}", width=725, height=500, resolution_boost=1.4)
+    st.divider()
+
+def adicionar_livro(imagem_livro, titulo, autor, resumo):
+    col1, col2 = st.columns([0.5, 1])
+    col1.image(imagem_livro, width=350)
+    col2.subheader(titulo)
+    col2.write(f"Por: {autor}")
+    col2.write(resumo)
+    st.divider()

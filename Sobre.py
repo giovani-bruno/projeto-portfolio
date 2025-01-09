@@ -1,6 +1,7 @@
 import streamlit as st
 import base64
 from main import barra_navegacao
+from auxiliar import tecnologias, adicionar_habilidade
 
 st.set_page_config(page_title="Sobre", layout='wide')
 barra_navegacao()
@@ -40,25 +41,21 @@ st.divider()
 st.subheader("⚒️ Habilidades")
 st.write("")
 col1, col2, col3, col4 = st.columns(4)
-def adicionar_habilidade(logo, link, coluna, largura):
-    coluna.markdown(
-        f"""<a href="{link}">
-        <img src="data:image/png;base64,{base64.b64encode(open(f"imagens/{logo}", "rb").read()).decode()}" width="{largura}" style="margin-bottom: 50px;">
-        </a>""",
-        unsafe_allow_html=True)
     
-adicionar_habilidade("logo_python.png", "https://www.python.org/", col1, 150)
-adicionar_habilidade("logo_powerbi.png", "https://learn.microsoft.com/pt-br/power-bi/fundamentals/", col2, 50)
-adicionar_habilidade("logo_excel.png", "https://www.microsoft.com/pt-br/microsoft-365/excel", col3, 50)
-adicionar_habilidade("logo_sql.png", "https://learn.microsoft.com/pt-br/sql/sql-server/", col4, 50)
-adicionar_habilidade("logo_git.png", "https://git-scm.com/", col1, 50)
-adicionar_habilidade("logo_pandas.png", "https://pandas.pydata.org/", col2, 150)
-adicionar_habilidade("logo_numpy.png", "https://numpy.org/", col3, 150)
-adicionar_habilidade("logo_matplotlib.png", "https://matplotlib.org/", col4, 150)
-adicionar_habilidade("logo_seaborn.png", "https://seaborn.pydata.org/", col1, 150)
-adicionar_habilidade("logo_plotly.png", "https://plotly.com/", col2, 100)
-adicionar_habilidade("logo_streamlit.png", "https://streamlit.io/", col3, 150)
-adicionar_habilidade("logo_sklearn.png", "https://scikit-learn.org/", col4, 100)
+adicionar_habilidade(tecnologias["Python"], col1, 150)
+adicionar_habilidade(tecnologias["Power BI"], col2, 50)
+adicionar_habilidade(tecnologias["Excel"], col3, 50)
+adicionar_habilidade(tecnologias["SQL"], col4, 50)
+adicionar_habilidade(tecnologias["Git"], col1, 50)
+adicionar_habilidade(tecnologias["Pandas"], col2, 150)
+adicionar_habilidade(tecnologias["NumPy"], col3, 150)
+adicionar_habilidade(tecnologias["Matplotlib"], col4, 150)
+adicionar_habilidade(tecnologias["Seaborn"], col1, 150)
+adicionar_habilidade(tecnologias["Plotly"], col2, 100)
+adicionar_habilidade(tecnologias["Streamlit"], col3, 150)
+adicionar_habilidade(tecnologias["Scikit-learn"], col4, 100)
+adicionar_habilidade(tecnologias["Selenium"], col1, 150)
+
 
 st.subheader("📬 Entre em contato")
 st.write("[giovainic@gmail.com](mailto:giovainic@gmail.com)")

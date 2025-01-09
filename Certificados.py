@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_pdf_viewer import pdf_viewer
+from auxiliar import adicionar_certificado
 from main import barra_navegacao
 
 st.set_page_config(page_title="Certificados", layout='centered', page_icon='📃')
@@ -8,17 +8,6 @@ barra_navegacao()
 st.title("Certificados")
 st.write("#### Nesta página você encontra todos os meus certificados conquistados até o momento.")
 st.divider()
-
-def adicionar_certificado(certificado, duracao, data_inicio, data_conclusao, resumo=None):
-    nome_certificado = certificado[certificado.find("/")+1:certificado.find(".")]
-    st.subheader(nome_certificado)
-    col1, col2, col3 = st.columns([0.5, 1, 1])
-    col1.write(f" ⏱ {duracao}")
-    col2.write(f"Iniciado em: {data_inicio}")
-    col3.write(f"Concluído em: {data_conclusao}")
-    st.write(resumo)
-    pdf_viewer(rf"certificados/{certificado}", width=725, height=500, resolution_boost=1.4)
-    st.divider()
 
 adicionar_certificado(r"Power BI Impressionador.pdf", "118h", "20/11/2024", "02/01/2025", 
                       """Desenvolvi habilidades para criar dashboards dinâmicos e 

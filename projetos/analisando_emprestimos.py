@@ -1,11 +1,12 @@
 import streamlit as st
 from main import barra_navegacao
-from auxiliar import tecnologias, adicionar_tecnologia
+from auxiliar import tecnologias, adicionar_tecnologia, voltar_para_projetos
 
 st.set_page_config(layout='wide')
 barra_navegacao()
+voltar_para_projetos()
 
-st.title("Analisando os dados de empréstimos dos acervos do sistema de bibliotecas da UFRN")
+st.title("Analisando os Dados de Empréstimos dos Acervos do Sistema de Bibliotecas da UFRN")
 st.write("""Este projeto analisa os dados de empréstimos do sistema de bibliotecas da UFRN 
          para entender padrões e tendências no uso dos materiais informacionais.
          A partir dos registros de empréstimos, busquei responder perguntas como: 
@@ -31,4 +32,10 @@ st.write("""A análise dos dados de empréstimos do sistema de bibliotecas da UF
          revelou insights valiosos sobre o uso dos acervos e o comportamento dos usuários. 
          Foi possível identificar padrões na evolução dos empréstimos ao longo dos anos, 
          destacar as bibliotecas mais movimentadas e compreender quais temas são mais ou menos 
-         populares entre os leitores. Essas informações oferecem uma base sólida para decisões estratégicas, permitindo à diretoria das bibliotecas planejar melhorias na infraestrutura, direcionar recursos de forma mais eficaz e aprimorar os processos operacionais. Com isso, as bibliotecas podem se tornar ainda mais alinhadas às necessidades dos usuários, promovendo maior acesso e engajamento com os materiais informacionais.""")
+         populares entre os leitores.""")
+
+st.write(""" Essas informações oferecem uma base sólida para decisões estratégicas, 
+         permitindo à diretoria das bibliotecas planejar melhorias na infraestrutura, 
+         direcionar recursos de forma mais eficaz e aprimorar os processos operacionais. 
+         Com isso, as bibliotecas podem se tornar ainda mais alinhadas às necessidades dos 
+         usuários, promovendo maior acesso e engajamento com os materiais informacionais.""")

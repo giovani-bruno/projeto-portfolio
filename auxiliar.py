@@ -58,6 +58,14 @@ tecnologias = {
     "Tkinter": {
         "link_doc": "https://docs.python.org/3/library/tkinter.html",
         "logo": "imagens/logo_tkinter.png"
+    },
+    "Geneticalgorithm": {
+        "link_doc": "https://pypi.org/project/geneticalgorithm/",
+        "logo": "imagens/logo_geneticalgorithm.png"
+    },
+    "Kivy": {
+        "link_doc": "https://kivy.org/doc/stable/",
+        "logo": "imagens/logo_kivy.png"
     }
 }
 
@@ -75,6 +83,8 @@ livros = {
         "imagem": "imagens/livro_data_science.jpg"
     }
 }
+
+imagem_temp_projetos = "imagens/imagem_projetos_temp.png"
 
 
 def adicionar_habilidade(habilidade, coluna, largura):
@@ -94,7 +104,7 @@ def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
         st.write(descricao)
         st.write("")
 
-def adicionar_certificado(certificado, duracao, data_inicio, data_conclusao, resumo=None):
+def adicionar_certificado(certificado, duracao, data_inicio, data_conclusao, resumo):
     nome_certificado = certificado[certificado.find("/")+1:certificado.find(".")]
     st.subheader(nome_certificado)
     col1, col2, col3 = st.columns([0.5, 1, 1])
@@ -112,3 +122,7 @@ def adicionar_livro(imagem_livro, titulo, autor, resumo):
     col2.write(f"Por: {autor}")
     col2.write(resumo)
     st.divider()
+
+def voltar_para_projetos():
+    if st.button("Voltar", type='tertiary', icon="↩"):
+        st.switch_page("Projetos.py")

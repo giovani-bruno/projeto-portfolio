@@ -1,16 +1,22 @@
 import streamlit as st
 from main import barra_navegacao
-from auxiliar import tecnologias, adicionar_tecnologia
+from auxiliar import tecnologias, adicionar_tecnologia, voltar_para_projetos
 
 st.set_page_config(layout='wide')
 barra_navegacao()
+voltar_para_projetos()
 
 st.title("Prevendo Preços de Imóveis no Airbnb com Machine Learning")
 st.write("""Este projeto aplicou técnicas de Machine Learning para 
          desenvolver um modelo preditivo capaz de estimar o preço de 
          imóveis anunciados no Airbnb. O modelo utiliza características 
          como quantidade de quartos, banheiros, localização e 
-         outros fatores para realizar as previsões. O objetivo é fornecer uma ferramenta prática que beneficie tanto proprietários, ajudando-os a definir preços competitivos para seus imóveis, quanto consumidores, permitindo avaliar a justiça dos preços anunciados. A iniciativa demonstra o potencial da inteligência artificial em apoiar decisões no mercado imobiliário""")
+         outros fatores para realizar as previsões. O objetivo é fornecer 
+         uma ferramenta prática que beneficie tanto proprietários, 
+         ajudando-os a definir preços competitivos para seus imóveis, 
+         quanto consumidores, permitindo avaliar a justiça dos preços anunciados. 
+         A iniciativa demonstra o potencial da inteligência artificial em apoiar 
+         decisões no mercado imobiliário.""")
 st.write("Este projeto foi realizado por meio do curso Python Impressionador da Hashtag Treinamentos.")
 st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/ml_prever_precos_airbnb)")
 st.divider()

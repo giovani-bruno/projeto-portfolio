@@ -1,3 +1,7 @@
+#TODO inserir o video do projeto em cada pagina individual dos projetos
+#TODO colocar o nome das seguintes tecnologias do lado da logo: power bi, excel, git e tkinter
+#TODO criar uma imagem pra cada projeto
+
 import streamlit as st
 from os import listdir
 

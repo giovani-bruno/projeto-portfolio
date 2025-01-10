@@ -1,9 +1,10 @@
 import streamlit as st
 from main import barra_navegacao
-from auxiliar import tecnologias, adicionar_tecnologia
+from auxiliar import tecnologias, adicionar_tecnologia, voltar_para_projetos
 
 st.set_page_config(layout='wide')
 barra_navegacao()
+voltar_para_projetos()
 
 st.title("Pesquisa de Preços")
 st.write("""Este projeto em Python automatiza a pesquisa de preços 
@@ -16,10 +17,7 @@ st.write("""Este projeto em Python automatiza a pesquisa de preços
          endereço de e-mail para receber os resultados. Utilizando Selenium 
          para automação do navegador, o script realiza a pesquisa, filtra os 
          resultados, armazena os dados em um DataFrame e gera uma tabela HTML. 
-         Essa tabela, que destaca o produto com o menor preço, é enviada por e-mail ao usuário. 
-         Esse projeto demonstra a aplicação de técnicas de web scraping, 
-         manipulação de dados e automação, criando uma solução útil 
-         para comparação de preços e tomada de decisões de compra.""")
+         Essa tabela, que destaca o produto com o menor preço, é enviada por e-mail ao usuário.""")
 
 st.write("""Você pode executar este projeto simplesmente baixando 
          o arquivo 'pesquisaPrecos.exe' no [repositório do projeto](https://github.com/giovani-bruno/pesquisa_de_precos)!
@@ -49,5 +47,25 @@ adicionar_tecnologia(tecnologias['Pandas'],
                      150, coluna3)
 
 adicionar_tecnologia(tecnologias['Tkinter'],
-                     "Biblioteca do Python usada para criar a janela onde o usuário insere as informações do produto e e-mail.",
+                     "Biblioteca do Python usada para criar a janela onde o usuário insere as informações do produto e o e-mail.",
                      75, coluna1)
+st.divider()
+
+st.image("imagens/imagem_projetos_temp.png")
+st.write("""Este projeto demonstra como a combinação de técnicas de automação, 
+         web scraping e manipulação de dados pode ser utilizada para resolver 
+         problemas reais de forma eficiente. Através de uma interface gráfica 
+         amigável e funcionalidades robustas, o projeto simplifica a pesquisa 
+         de preços, permitindo que os usuários encontrem as melhores ofertas 
+         de forma rápida e prática.""")
+
+st.write("""Com a integração do Selenium para coletar dados, Tkinter para a interface gráfica, 
+         e o envio automatizado de e-mails, o projeto proporciona uma experiência completa e 
+         intuitiva. Oferecendo uma solução valiosa para consumidores que buscam economia na hora
+         de comprar produtos pela internet.""")
+
+st.write("""Futuras melhorias podem incluir suporte a mais fontes de pesquisa, 
+         otimização do tempo de execução e maior personalização dos filtros de 
+         busca, tornando a aplicação ainda mais versátil e eficiente. 
+         Este projeto reflete o potencial do Python para criar soluções 
+         práticas e de alto impacto em tarefas do cotidiano.""")

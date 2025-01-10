@@ -38,6 +38,14 @@ Minha meta é me tornar um cientista de dados e contribuir para soluções que f
              """)
 st.divider()
 
+st.subheader("🎓 Formação")
+col1, col2 = st.columns([0.2, 1])
+col1.image("imagens/logo_unama.png", width=150)
+col2.subheader("UNAMA - Universidade da Amazônia")
+col2.write("Bacharelado, Ciência da Computação (2023 - 2026)")
+col2.write("Atualmente no 5° semestre, previsão de conlusão para 2026")
+st.divider()
+
 st.subheader("⚒️ Habilidades")
 st.write("")
 col1, col2, col3, col4 = st.columns(4)

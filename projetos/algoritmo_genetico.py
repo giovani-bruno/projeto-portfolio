@@ -1,12 +1,13 @@
 import streamlit as st
 from main import barra_navegacao
-from auxiliar import tecnologias, adicionar_tecnologia, imagem_temp_projetos, voltar_para_projetos
+from auxiliar import tecnologias, adicionar_tecnologia, adicionar_video, voltar_para_projetos
 
-st.set_page_config(layout='wide')
+st.set_page_config(layout='wide', page_title="Algoritmo Genético")
 barra_navegacao()
 voltar_para_projetos()
 
 st.title("Otimizando o Transporte de Carga com Algoritmo Genético")
+
 st.write("""Este projeto utiliza Algoritmos Genéticos para otimizar o 
          transporte de carga em uma empresa aérea fictícia. A solução 
          calcula a melhor combinação de itens a serem transportados, 
@@ -25,14 +26,22 @@ st.divider()
 
 st.subheader("Tecnologias Utilizadas")
 coluna1, coluna2, coluna3 = st.columns(3)
-adicionar_tecnologia(tecnologias['Python'], "Linguagem de programação usada para desenvolver todas as funcionalidades do projeto.", 150, coluna1)
-adicionar_tecnologia(tecnologias['Streamlit'], "Biblioteca do Python usada pra criar a interface do projeto.", 150, coluna2)
-adicionar_tecnologia(tecnologias['Pandas'], "Biblioteca do Python usada para carregar os dados.", 150, coluna3)
-adicionar_tecnologia(tecnologias['Geneticalgorithm'], "Biblioteca do Python usada para treinar o algoritmo genético.", 150, coluna1)
+adicionar_tecnologia(tecnologias['Python'], "Linguagem de programação usada para desenvolver todas as funcionalidades do projeto.", 
+                     150, coluna1)
+
+adicionar_tecnologia(tecnologias['Streamlit'], "Biblioteca do Python usada pra criar a interface do projeto.", 
+                     150, coluna2)
+
+adicionar_tecnologia(tecnologias['Pandas'], "Biblioteca do Python usada para carregar os dados.", 
+                     150, coluna3)
+
+adicionar_tecnologia(tecnologias['Geneticalgorithm'], "Biblioteca do Python usada para treinar o algoritmo genético.", 
+                     150, coluna1)
 
 st.divider()
 
-st.image(imagem_temp_projetos)
+adicionar_video("algoritmo_genetico.mp4")
+
 st.write("""Este projeto mostrou como os Algoritmos Genéticos podem ser aplicados de forma 
          eficaz para resolver problemas complexos de otimização no setor
          logístico. Ao permitir a maximização do lucro respeitando as restrições

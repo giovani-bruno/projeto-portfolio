@@ -33,9 +33,10 @@ with col1:
 with col2:
     st.write("""
     Sou um estudante de Ciência da Computação, atualmente no 5° semestre, com grande interesse em ciência de dados. Concluí cursos de destaque na área de dados, maioria deles pela Hashtag Treinamentos.
-Estou constantemente buscando fortalecer minhas habilidades em manipulação de dados, visualização e machine learning, utilizando datasets públicos e projetos próprios. Também procuro aplicar esse conhecimento em automação e otimização de tarefas no ambiente corporativo.
-Minha meta é me tornar um cientista de dados e contribuir para soluções que façam a diferença.
-             """)
+    Estou constantemente buscando fortalecer minhas habilidades em manipulação de dados, visualização e machine learning, utilizando datasets públicos e projetos próprios. Também procuro aplicar esse conhecimento em automação e otimização de tarefas no ambiente corporativo.
+    Atualmente, faço postagens semanais no meu LinkedIn onde compartilho dicas práticas sobre ciência de dados, análise de dados, inteligência artificial, Python, compartilhar projetos e entre outros temas. Essas dicas são baseadas nos conhecimentos que adquiro nos livros que leio e nos cursos que faço.
+    Minha meta é me tornar um cientista de dados e contribuir para soluções que façam a diferença.
+             """)   
 st.divider()
 
 st.subheader("🎓 Formação")

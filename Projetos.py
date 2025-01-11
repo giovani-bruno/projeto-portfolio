@@ -30,22 +30,22 @@ adicionar_projeto("Prevendo Preços de Imóveis no Airbnb",
                 ["Python", "pandas", "numpy", "matplotlib", "seaborn", "plotly", "scikit-learn"], "projeto_emprestimos.png", "prevendo_precos_airbnb.py", col2)
 
 adicionar_projeto("Pesquisa de Preços",
-                ["Python", "pandas", "Selenium", "Tkinter", "smtplib"], "projeto_emprestimos.png", "pesquisa_de_precos.py", col3)
+                ["Python", "pandas", "Selenium", "Tkinter", "smtplib"], "projeto_emprestimos.png", "pesquisa_precos.py", col3)
              
 adicionar_projeto("Prevendo a Qualidade de Carros",
                 ["Python", "pandas", "streamlit", "scikit-learn"], "projeto_emprestimos.png", "prevendo_qualidade_carros.py", col1)
 
 adicionar_projeto("Gerador de Relatório",
-                  ["Python", "streamlit", "ReportLab", "pandas", "smtplib"], "projeto_emprestimos.png", "teste.py", col2)
+                  ["Python", "streamlit", "ReportLab", "pandas", "smtplib"], "projeto_emprestimos.png", "gerador_relatorio.py", col2)
 
 adicionar_projeto("Automações em um Wifi Corporativo",
-                ["Python", "Tkinter", "Selenium", "smtplib"], "projeto_emprestimos.png", "teste.py", col3)
+                ["Python", "Tkinter", "Selenium", "smtplib"], "projeto_emprestimos.png", "automacoes_wifi.py", col3)
 
 adicionar_projeto("Algoritmo Genético para Otimização",
                 ["Python", "pandas", "streamlit", "genetical algorithm"], "projeto_emprestimos.png", "algoritmo_genetico.py", col1)
 
 adicionar_projeto("Análise de Desempenho dos Líderes",
-                ["Python", "pandas", "streamlit", "plotly"], "projeto_emprestimos.png", "teste.py", col2)
+                ["Python", "pandas", "streamlit", "plotly"], "projeto_emprestimos.png", "analise_lideres.py", col2)
 
 adicionar_projeto("Calculadora",
                 ["Python", "Kivy"], "projeto_emprestimos.png", "calculadora.py", col3)

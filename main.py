@@ -1,4 +1,4 @@
-#TODO inserir o video do projeto em cada pagina individual dos projetos
+#TODO finalizar as seguintes paginas: analise_lideres.py e automacoes_wifi.py
 #TODO colocar o nome das seguintes tecnologias do lado da logo: power bi, excel, git e tkinter
 #TODO criar uma imagem pra cada projeto
 
@@ -13,8 +13,9 @@ def main():
         st.Page("Projetos.py", title="💻 Projetos")
         ]
 
-    paginas_projetos = listdir("projetos")
-    for pagina in paginas_projetos:
+    for pagina in listdir("projetos"):
+        if pagina == "videos":
+            continue
         paginas.append(st.Page(f"projetos/{pagina}"))
     
     pg = st.navigation(paginas, position='hidden')

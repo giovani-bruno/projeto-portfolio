@@ -1,12 +1,13 @@
 import streamlit as st
 from main import barra_navegacao
-from auxiliar import tecnologias, adicionar_tecnologia, voltar_para_projetos, imagem_temp_projetos
+from auxiliar import tecnologias, adicionar_tecnologia, voltar_para_projetos, adicionar_video
 
-st.set_page_config(layout='wide')
+st.set_page_config(layout='wide',page_title="Calculadora")
 barra_navegacao()
 voltar_para_projetos()
 
 st.title("Calculadora")
+
 st.write("""Este projeto consiste no desenvolvimento de uma calculadora 
          simples utilizando Python e a biblioteca Kivy para criar a interface gráfica. 
          A aplicação permite realizar operações matemáticas básicas, como adição, subtração,
@@ -22,12 +23,16 @@ st.divider()
 
 st.subheader("Tecnologias Utilizadas")
 coluna1, coluna2 = st.columns(2)
-adicionar_tecnologia(tecnologias['Python'], "Linguagem de programação usada para criar a calculadora.", 150, coluna1)
-adicionar_tecnologia(tecnologias['Kivy'], "Biblioteca do Python usada para criar a interface da calculadora.", 100, coluna2)
+adicionar_tecnologia(tecnologias['Python'], "Linguagem de programação usada para criar a calculadora.", 
+                     150, coluna1)
+
+adicionar_tecnologia(tecnologias['Kivy'], "Biblioteca do Python usada para criar a interface da calculadora.", 
+                     100, coluna2)
 
 st.divider()
 
-st.image(imagem_temp_projetos)
+adicionar_video("calculadora.mp4")
+
 st.write("""Este projeto demonstrou como 
          é possível criar uma aplicação funcional e interativa utilizando 
          ferramentas acessíveis. Desde a lógica para realizar operações 

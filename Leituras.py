@@ -11,7 +11,7 @@ st.write("""Aqui compartilho os livros que me ajudaram a expandir meu conhecimen
 A leitura constante é uma das minhas formas favoritas de aprender e crescer profissionalmente.""")
 st.divider()
 
-adicionar_livro(livros['Storytelling com Dados']['imagem'], "Storytelling com Dados", livros['Storytelling com Dados']["autor (a)"], '''
+adicionar_livro(livros['Storytelling'], '''
                 Aprendi que a verdadeira essência de uma boa visualização de dados
                 vai além de simplesmente apresentar números. 
                É sobre contar uma história com os dados de forma que o público
@@ -20,7 +20,7 @@ adicionar_livro(livros['Storytelling com Dados']['imagem'], "Storytelling com Da
                 e o contexto são fundamentais para transmitir a informação de forma eficaz.
                 Minha frase favorita desse livro é: "Há uma história em seus dados, mas suas ferramentes não sabem qual é essa história."''')
 
-adicionar_livro(livros['Python para Análise de Dados']['imagem'], "Python para Análise de Dados", livros['Python para Análise de Dados']['autor (a)'], """Escrito pelo criador da biblioteca pandas, aprendi a importância 
+adicionar_livro(livros['Python Dados'], """Escrito pelo criador da biblioteca pandas, aprendi a importância 
                 de dominar as ferramentas do Python para lidar com dados de forma eficiente. 
                 A obra me proporcionou uma compreensão profunda de como o Python pode ser 
                 usado para explorar, limpar, manipular e visualizar dados. Desde o início, 
@@ -31,4 +31,4 @@ adicionar_livro(livros['Python para Análise de Dados']['imagem'], "Python para 
                 operações numéricas, e como essas ferramentas se complementam perfeitamente 
                 no processamento de dados.""")
 
-adicionar_livro(livros['Data Science do Zero']['imagem'], "Data Science do Zero", livros['Data Science do Zero']['autor (a)'], "Lendo! Feedback em breve...")
+adicionar_livro(livros['Data Science'], "Lendo! Feedback em breve...")

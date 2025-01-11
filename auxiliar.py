@@ -66,19 +66,42 @@ tecnologias = {
     "Kivy": {
         "link_doc": "https://kivy.org/doc/stable/",
         "logo": "imagens/logo_kivy.png"
+    },
+    "Figma": {
+        "link_doc": "https://www.figma.com/pt-br/",
+        "logo": "imagens/logo_figma.png"
+    },
+    "Proxlight": {
+        "link_doc": "https://github.com/Proxlight/Proxlight-Designer",
+        "logo": "imagens/logo_proxlight.png"
+    },
+    "SMTP": {
+        "link_doc": "https://docs.python.org/3/library/smtplib.html",
+        "logo": "imagens/logo_smtp.png"
+    },
+    "ReportLab": {
+        "link_doc": "https://docs.reportlab.com/demos/hello_world/hello_world/",
+        "logo": "imagens/logo_reportlab.png"
+    },
+    "SQLAlchemy": {
+        "link_doc": "https://www.sqlalchemy.org/",
+        "logo": "imagens/logo_sqlalchemy.png"
     }
 }
 
 livros = {
-    "Storytelling com Dados": {
+    "Storytelling": {
+        "nome": "Storytelling com Dados",
         "autor (a)": "Cole Nussbaumer Knaflic",
         "imagem": "imagens/livro_storytelling.jpg"
     },
-    "Python para Análise de Dados": {
+    "Python Dados": {
+        "nome": "Python para Análise de Dados",
         "autor (a)": "Wes McKinney",
         "imagem": "imagens/livro_python_dados.jpg"
     },
-    "Data Science do Zero": {
+    "Data Science": {
+        "nome": "Data Science do Zero",
         "autor (a)": "Joel Grus",
         "imagem": "imagens/livro_data_science.jpg"
     }
@@ -115,14 +138,19 @@ def adicionar_certificado(certificado, duracao, data_inicio, data_conclusao, res
     pdf_viewer(rf"certificados/{certificado}", width=725, height=500, resolution_boost=1.4)
     st.divider()
 
-def adicionar_livro(imagem_livro, titulo, autor, resumo):
+def adicionar_livro(livro, feedback):
     col1, col2 = st.columns([0.5, 1])
-    col1.image(imagem_livro, width=350)
-    col2.subheader(titulo)
-    col2.write(f"Por: {autor}")
-    col2.write(resumo)
+    col1.image(livro['imagem'], width=350)
+    col2.subheader(livro['nome'])
+    col2.write(f"Por: {livro['autor (a)']}")
+    col2.write(feedback)
     st.divider()
 
 def voltar_para_projetos():
     if st.button("Voltar", type='tertiary', icon="↩"):
         st.switch_page("Projetos.py")
+
+def adicionar_video(video_projeto):
+    video = open(f"projetos/videos/{video_projeto}", "rb")
+    video_bytes = video.read()
+    st.video(video_bytes, muted=True, loop=True)

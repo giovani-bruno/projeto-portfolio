@@ -1,4 +1,4 @@
-#TODO finalizar a pagina: analise_lideres.py
+#TODO fazer o video do projeto analise_lideres
 
 import streamlit as st
 from os import listdir

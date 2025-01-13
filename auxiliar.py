@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_pdf_viewer import pdf_viewer
 import base64
+from os import listdir
 
 tecnologias = {
     "Python": {
@@ -136,6 +137,8 @@ def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
     coluna.write("")
 
 def adicionar_certificado(certificado, duracao, data_inicio, data_conclusao, feedback):
+    assert certificado + ".pdf" in listdir("certificados"), f"Certificado '{certificado}' não registrado."
+    
     st.subheader(certificado)
     col1, col2, col3 = st.columns([0.5, 1, 1])
     col1.write(f" ⏱ {duracao}")
@@ -154,6 +157,9 @@ def adicionar_livro(livro, feedback):
     st.divider()
 
 def adicionar_projeto(nome, imagem, link_pagina, coluna):
+    assert imagem in listdir("imagens/projetos"), f"Imagem '{imagem}' não existe em imagens/projetos"
+    assert link_pagina in listdir("projetos"), f"O arquivo '{link_pagina}' para a página do projeto não existe."
+
     with coluna.container(border=True):
         st.write(f"##### {nome}")
         st.image(f"imagens/projetos/{imagem}")
@@ -167,6 +173,8 @@ def voltar_para_projetos():
         st.switch_page("Projetos.py")
 
 def adicionar_video(video_projeto):
+    assert video_projeto in listdir("projetos/videos"), f"O video '{video_projeto}' não existe em projetos/videos"
+
     video = open(f"projetos/videos/{video_projeto}", "rb")
     video_bytes = video.read()
     st.video(video_bytes, muted=True, loop=True)

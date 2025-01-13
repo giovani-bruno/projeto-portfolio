@@ -82,3 +82,8 @@ st.subheader("Automação Remover Usuário")
 st.image(r"projetos\videos\automacao_remover_usuario.png")
 
 st.write("Não é possível mostrar a imagem da automação de trocar a senha, pois ela não tem interface. Só é preciso executar.")
+
+st.write("""Essas automações trouxeram eficiência e economia de tempo para processos essenciais na gestão do Wi-Fi corporativo da empresa. 
+         Desde o registro e gerenciamento de dispositivos pelo endereço MAC até a atualização mensal das senhas dos Wi-Fis de convidados, 
+         cada solução foi projetada para eliminar tarefas repetitivas e minimizar erros manuais. Com essas ferramentas, a equipe pode se 
+         concentrar em atividades estratégicas, enquanto a automação garante a execução confiável e segura das operações de rede.""")

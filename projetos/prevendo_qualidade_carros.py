@@ -20,18 +20,18 @@ st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/p
 st.divider()
 
 st.subheader("Tecnologias Utilizadas")
-coluna1, coluna2, coluna3 = st.columns(3)
+col1, col2, col3 = st.columns(3)
 adicionar_tecnologia(tecnologias['Python'], "Linguagem de programação utilizada para treinar o modelo de machine learning e criar a interface", 
-                     150, coluna1)
+                     200, col1)
 
 adicionar_tecnologia(tecnologias['Pandas'], "Biblioteca do Python usada para carregar os dados.", 
-                     150, coluna2)
+                     200, col2)
 
 adicionar_tecnologia(tecnologias['Scikit-learn'], "Biblioteca do Python usada para treinar o modelo de machine learning (Random Forest Classifier).", 
-                     100, coluna3)
+                     150, col3)
 
 adicionar_tecnologia(tecnologias['Streamlit'], "Biblioteca do Python usada para criar a interface do projeto na web.",
-                     150, coluna1)
+                     200, col1)
 
 st.divider()
 

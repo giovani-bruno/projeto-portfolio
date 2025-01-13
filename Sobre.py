@@ -13,20 +13,20 @@ with col1:
     c1, c2, c3 = st.columns(3)
     c1.markdown(
         f"""<a href="https://www.linkedin.com/in/giovani-bruno-dos-santos-costa/">
-        <img src="data:image/png;base64,{base64.b64encode(open("imagens/logo_linkedin.png", "rb").read()).decode()}" width="50">
+        <img src="data:image/png;base64,{base64.b64encode(open("imagens/logos/linkedin.png", "rb").read()).decode()}" width="50">
         </a>""",
         unsafe_allow_html=True
     )
     c2.markdown(
         f"""<a href="https://github.com/giovani-bruno">
-        <img src="data:image/png;base64,{base64.b64encode(open("imagens/logo_github.png", "rb").read()).decode()}" width="50">
+        <img src="data:image/png;base64,{base64.b64encode(open("imagens/logos/github.png", "rb").read()).decode()}" width="50">
         </a>""",
         unsafe_allow_html=True
 
     )
     c3.markdown(
         f"""<a href="https://www.instagram.com/giovanibrn_/">
-        <img src="data:image/png;base64,{base64.b64encode(open("imagens/logo_instagram.png", "rb").read()).decode()}" width="50">
+        <img src="data:image/png;base64,{base64.b64encode(open("imagens/logos/instagram.png", "rb").read()).decode()}" width="50">
         </a>""",
         unsafe_allow_html=True
     )
@@ -41,7 +41,7 @@ st.divider()
 
 st.subheader("🎓 Formação")
 col1, col2 = st.columns([0.2, 1])
-col1.image("imagens/logo_unama.png", width=150)
+col1.image("imagens/logos/unama.png", width=150)
 col2.subheader("UNAMA - Universidade da Amazônia")
 col2.write("Bacharelado, Ciência da Computação (2023 - 2026)")
 col2.write("Atualmente no 5° semestre, previsão de conlusão para 2026")
@@ -52,18 +52,21 @@ st.write("")
 col1, col2, col3, col4 = st.columns(4)
     
 adicionar_habilidade(tecnologias["Python"], col1, 150)
-adicionar_habilidade(tecnologias["Power BI"], col2, 50)
-adicionar_habilidade(tecnologias["Excel"], col3, 50)
-adicionar_habilidade(tecnologias["SQL"], col4, 50)
-adicionar_habilidade(tecnologias["Git"], col1, 50)
+adicionar_habilidade(tecnologias["Power BI"], col2, 170)
+adicionar_habilidade(tecnologias["Excel"], col3, 150)
+adicionar_habilidade(tecnologias["SQL"], col4, 170)
+adicionar_habilidade(tecnologias["Git"], col1, 150)
 adicionar_habilidade(tecnologias["Pandas"], col2, 150)
 adicionar_habilidade(tecnologias["NumPy"], col3, 150)
 adicionar_habilidade(tecnologias["Matplotlib"], col4, 150)
 adicionar_habilidade(tecnologias["Seaborn"], col1, 150)
-adicionar_habilidade(tecnologias["Plotly"], col2, 100)
+adicionar_habilidade(tecnologias["Plotly"], col2, 150)
 adicionar_habilidade(tecnologias["Streamlit"], col3, 150)
 adicionar_habilidade(tecnologias["Scikit-learn"], col4, 100)
 adicionar_habilidade(tecnologias["Selenium"], col1, 150)
+adicionar_habilidade(tecnologias["Tkinter"], col2, 150)
+adicionar_habilidade(tecnologias["Figma"], col3, 150)
+adicionar_habilidade(tecnologias["AWS"], col4, 120)
 
 
 st.subheader("📬 Entre em contato")

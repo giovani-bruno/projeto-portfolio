@@ -24,18 +24,18 @@ st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/a
 st.divider()
 
 st.subheader("Tecnologias Utilizadas")
-coluna1, coluna2, coluna3 = st.columns(3)
+col1, col2, col3 = st.columns(3)
 adicionar_tecnologia(tecnologias['Python'], "Linguagem de programação usada para analisar, manipular e visualizar os dados.", 
-                     150, coluna1)
+                     200, col1)
 
 adicionar_tecnologia(tecnologias['Pandas'], "Biblioteca do Python usada para ler, tratar e manipular os dados.", 
-                     150, coluna2)
+                     200, col2)
 
 adicionar_tecnologia(tecnologias['Matplotlib'], "Biblioteca do Python usada para criar os gráficos.", 
-                     150, coluna3)
+                     200, col3)
 
 adicionar_tecnologia(tecnologias['Seaborn'], "Outra biblioteca do Python usada para criar gráficos.", 
-                     150, coluna1)
+                     200, col1)
 
 st.divider()
 

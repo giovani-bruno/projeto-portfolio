@@ -13,7 +13,7 @@ st.write("""Este projeto consiste no desenvolvimento de uma calculadora
          A aplicação permite realizar operações matemáticas básicas, como adição, subtração,
          multiplicação e divisão, de forma intuitiva e eficiente.""")
 
-st.write("""Este projeto foi inteiramente idealizado e desenvolvido por mim, 
+st.write("""Este projeto foi inteiramente desenvolvido por mim, 
          desde a concepção da ideia até a implementação final.
          Esse é um trabalho que reflete exclusivamente minha criatividade e habilidades técnicas.""")
 
@@ -22,12 +22,15 @@ st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/c
 st.divider()
 
 st.subheader("Tecnologias Utilizadas")
-coluna1, coluna2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 adicionar_tecnologia(tecnologias['Python'], "Linguagem de programação usada para criar a calculadora.", 
-                     150, coluna1)
+                     200, col1)
 
-adicionar_tecnologia(tecnologias['Kivy'], "Biblioteca do Python usada para criar a interface da calculadora.", 
-                     100, coluna2)
+adicionar_tecnologia(tecnologias['Kivy'], "Biblioteca do Python usada para criar a janela da calculadora.", 
+                     150, col2)
+
+adicionar_tecnologia(tecnologias['Figma'], "Ferramenta utilizada para para criar o layout da calculadora.", 
+                     150, col3)
 
 st.divider()
 

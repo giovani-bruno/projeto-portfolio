@@ -25,18 +25,18 @@ st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/a
 st.divider()
 
 st.subheader("Tecnologias Utilizadas")
-coluna1, coluna2, coluna3 = st.columns(3)
+col1, col2, col3 = st.columns(3)
 adicionar_tecnologia(tecnologias['Python'], "Linguagem de programação usada para desenvolver todas as funcionalidades do projeto.", 
-                     150, coluna1)
+                     200, col1)
 
 adicionar_tecnologia(tecnologias['Streamlit'], "Biblioteca do Python usada pra criar a interface do projeto.", 
-                     150, coluna2)
+                     200, col2)
 
 adicionar_tecnologia(tecnologias['Pandas'], "Biblioteca do Python usada para carregar os dados.", 
-                     150, coluna3)
+                     200, col3)
 
 adicionar_tecnologia(tecnologias['Geneticalgorithm'], "Biblioteca do Python usada para treinar o algoritmo genético.", 
-                     150, coluna1)
+                     200, col1)
 
 st.divider()
 

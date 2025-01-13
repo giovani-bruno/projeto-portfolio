@@ -26,24 +26,24 @@ st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/m
 st.divider()
 
 st.subheader("Tecnologias Utilizadas")
-coluna1, coluna2, coluna3 = st.columns(3)
+col1, col2, col3 = st.columns(3)
 adicionar_tecnologia(tecnologias["Python"], "Linguagem de programação usada para analisar os dados e treinar os modelos de machine learning.", 
-                     150, coluna1)
+                     200, col1)
 
 adicionar_tecnologia(tecnologias["Pandas"], "Biblioteca do Python usada para ler, tratar e manipular os dados.", 
-                     150, coluna2)
+                     200, col2)
 
 adicionar_tecnologia(tecnologias["Matplotlib"], "Biblioteca do Python usada para criar os gráficos.", 
-                     150, coluna3)
+                     200, col3)
 
 adicionar_tecnologia(tecnologias["Seaborn"], "Outra biblioteca do Python usada para criar gráficos.", 
-                     150, coluna1)
+                     200, col1)
 
 adicionar_tecnologia(tecnologias["Plotly"], "Biblioteca do Python usada para criar gráficos interativos.", 
-                     150, coluna2)
+                     200, col2)
 
 adicionar_tecnologia(tecnologias["Scikit-learn"], "Biblioteca do Python usada para treinar os modelos de machine learning.", 
-                     100, coluna3)
+                     150, col3)
 
 st.divider()
 

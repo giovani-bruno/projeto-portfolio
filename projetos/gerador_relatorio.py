@@ -29,7 +29,7 @@ st.write("""A aplicação começa com um formulário interativo onde o usuário 
          o relatório em formato PDF e outro para enviá-lo automaticamente por e-mail com o corpo da mensagem já formatado. 
          O banco de dados mantém um histórico dos materiais descartados, incluindo a data de descarte, o que ajuda no controle ao longo do tempo.""")
 
-st.write("""Este projeto foi inteiramente idealizado e desenvolvido por mim, 
+st.write("""Este projeto foi inteiramente desenvolvido por mim, 
          desde a concepção da ideia até a implementação final.
          Esse é um trabalho que reflete exclusivamente minha criatividade e habilidades técnicas.""")
 
@@ -38,22 +38,21 @@ st.write("Por se tratar de um projeto interno para a empresa, o código-fonte es
 st.divider()
 
 st.subheader("Tecnologias Utilizadas")
-coluna1, coluna2, coluna3 = st.columns(3)
-
+col1, col2, col3 = st.columns(3)
 adicionar_tecnologia(tecnologias['Python'], "Linguaguem de programação utilizada para criar a interface, gerar o relatorio, criar e adicionar os materiais no banco de dados.",
-                     150, coluna1)
+                     200, col1)
 
 adicionar_tecnologia(tecnologias['Streamlit'], "Biblioteca do Python para criar a interface do projeto, com um formulário simples e intuitivo.",
-                     150, coluna2)
+                     200, col2)
 
 adicionar_tecnologia(tecnologias['ReportLab'], "Biblioteca do Python usada para gerar o relatório em formato PDF.",
-                     150, coluna3)
+                     200, col3)
 
 adicionar_tecnologia(tecnologias['SQLAlchemy'], "Biblioteca do Python usada para criar e gerenciar o banco de dados dos materiais descartados.",
-                     150, coluna1)
+                     200, col1)
 
 adicionar_tecnologia(tecnologias['SMTP'], "Biblioteca do Python utilizada para enviar o e-mail com o relatório anexado para a diretoria automaticamente.",
-                     150, coluna2)
+                     200, col2)
 
 st.divider()
 

@@ -39,34 +39,34 @@ st.write("""Gostaria de agradecer ao meu amigo da faculdade, Gabriel Rodrigues B
 st.divider()
 
 st.subheader("Tecnologias Utilizadas")
-coluna1, coluna2, coluna3 = st.columns(3)
+col1, col2, col3 = st.columns(3)
 adicionar_tecnologia(tecnologias['Python'], 
                      "Linguagem de Programação usada para automatizar a pesquisa, filtrar os preços e enviar o email.",
-                     150, coluna1)
+                     200, col1)
 
 adicionar_tecnologia(tecnologias['Selenium'],
                      "Biblioteca do Python usada para automatizar o navegador e coletar os dados.", 
-                     150, coluna2)
+                     200, col2)
 
 adicionar_tecnologia(tecnologias['Pandas'], 
                      "Biblioteca do Python usada para gerar a tabela com as informações do produto que será enviada por e-mail.", 
-                     150, coluna3)
+                     200, col3)
 
 adicionar_tecnologia(tecnologias['Tkinter'],
                      "Biblioteca do Python usada para criar a janela onde o usuário insere as informações do produto e o e-mail.",
-                     75, coluna1)
+                     210, col1)
 
 adicionar_tecnologia(tecnologias['Figma'],  
                      "Ferramenta utilizada para criar o design do layout da janela, garantindo uma interface visual limpa e intuitiva.",  
-                     150, coluna2)
+                     200, col2)
 
 adicionar_tecnologia(tecnologias['Proxlight'],  
                      "Ferramenta utilizada para gerar o código do layout feito no Figma em Python, facilitando a implementação no Tkinter.",  
-                     150, coluna3)
+                     200, col3)
 
 adicionar_tecnologia(tecnologias['SMTP'],
                      "Biblioteca do Python usada para enviar o e-mail para o usuário com a tabela de preços do produto.",
-                     150, coluna1)
+                     200, col1)
 
 st.divider()
 

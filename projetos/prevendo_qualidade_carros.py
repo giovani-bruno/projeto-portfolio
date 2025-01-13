@@ -6,7 +6,7 @@ st.set_page_config(layout='wide', page_title="Prevendo Qualidade de Veículos")
 barra_navegacao()
 voltar_para_projetos()
 
-st.subheader("Prevendo a Qualidade de Veículos com Machine Learning")
+st.title("Prevendo a Qualidade de Veículos com Machine Learning")
 
 st.write("""Este projeto utiliza algoritmos de aprendizado de máquina 
          para prever a qualidade de veículos com base em suas características, 

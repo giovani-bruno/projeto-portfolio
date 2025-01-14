@@ -68,6 +68,72 @@ adicionar_habilidade(tecnologias["Tkinter"], col2, 150)
 adicionar_habilidade(tecnologias["Figma"], col3, 150)
 adicionar_habilidade(tecnologias["AWS"], col4, 120)
 
+st.divider()
 
-st.subheader("📬 Entre em contato")
-st.write("[giovainic@gmail.com](mailto:giovainic@gmail.com)")
+st.markdown("""
+    <style>
+        .contact-form {
+            background-color: #1B221E;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 0 auto;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            background-color: #f9f9f9;
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #4CAF50;
+            color: #000000;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-row input {
+            width: 48%;
+        }
+        .form-row input:first-child {
+            margin-right: 4%;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+st.subheader("📨 Entre em contato")
+
+form_contato = f"""
+    <form class="contact-form" action="https://formsubmit.co/58e51974853553c0014dc737cb5461cd" method="POST">
+        <div class="form-row">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="name" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu email" required>
+        </div>
+        <textarea name="message" placeholder="Sua mensagem aqui" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+"""
+
+st.markdown(form_contato, unsafe_allow_html=True)

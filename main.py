@@ -1,5 +1,3 @@
-#TODO fazer o video do projeto analise_lideres
-
 import streamlit as st
 from os import listdir
 
@@ -12,7 +10,7 @@ def main():
         ]
 
     for pagina in listdir("projetos"):
-        if pagina == "videos":
+        if pagina == "videos-imagens":
             continue
         paginas.append(st.Page(f"projetos/{pagina}"))
     

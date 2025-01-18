@@ -33,17 +33,20 @@ adicionar_tecnologia(tecnologias["Python"], "Linguagem de programação usada pa
 adicionar_tecnologia(tecnologias["Pandas"], "Biblioteca do Python usada para ler, tratar e manipular os dados.", 
                      200, col2)
 
-adicionar_tecnologia(tecnologias["Matplotlib"], "Biblioteca do Python usada para criar os gráficos.", 
+adicionar_tecnologia(tecnologias["NumPy"], "Biblioteca do Python usada para tratar os dados de forma mais eficiente.", 
                      200, col3)
 
-adicionar_tecnologia(tecnologias["Seaborn"], "Outra biblioteca do Python usada para criar gráficos.", 
+adicionar_tecnologia(tecnologias["Matplotlib"], "Biblioteca do Python usada para criar os gráficos.", 
                      200, col1)
 
-adicionar_tecnologia(tecnologias["Plotly"], "Biblioteca do Python usada para criar gráficos interativos.", 
+adicionar_tecnologia(tecnologias["Seaborn"], "Outra biblioteca do Python usada para criar gráficos.", 
                      200, col2)
 
+adicionar_tecnologia(tecnologias["Plotly"], "Biblioteca do Python usada para criar gráficos interativos.", 
+                     200, col3)
+
 adicionar_tecnologia(tecnologias["Scikit-learn"], "Biblioteca do Python usada para treinar os modelos de machine learning.", 
-                     150, col3)
+                     150, col1)
 
 st.divider()
 

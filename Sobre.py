@@ -1,7 +1,7 @@
 import streamlit as st
 import base64
 from main import barra_navegacao
-from auxiliar import tecnologias, adicionar_habilidade
+from auxiliar import tecnologias, adicionar_habilidade, css_formulario
 
 st.set_page_config(page_title="Sobre", layout='wide')
 barra_navegacao()
@@ -63,68 +63,19 @@ adicionar_habilidade(tecnologias["Seaborn"], col1, 150)
 adicionar_habilidade(tecnologias["Plotly"], col2, 150)
 adicionar_habilidade(tecnologias["Streamlit"], col3, 150)
 adicionar_habilidade(tecnologias["Scikit-learn"], col4, 100)
-adicionar_habilidade(tecnologias["Selenium"], col1, 150)
-adicionar_habilidade(tecnologias["Tkinter"], col2, 150)
-adicionar_habilidade(tecnologias["Figma"], col3, 150)
-adicionar_habilidade(tecnologias["AWS"], col4, 120)
+adicionar_habilidade(tecnologias["Scipy"], col1, 150)
+adicionar_habilidade(tecnologias["statsmodels"], col2, 200)
+adicionar_habilidade(tecnologias["Selenium"], col3, 150)
+adicionar_habilidade(tecnologias["Tkinter"], col4, 150)
+adicionar_habilidade(tecnologias["Figma"], col1, 150)
+adicionar_habilidade(tecnologias["AWS"], col2, 120)
 
 st.divider()
-
-st.markdown("""
-    <style>
-        .contact-form {
-            background-color: #1B221E;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 0 auto;
-            margin: 0 auto;
-        }
-        .contact-form input, .contact-form textarea {
-            background-color: #f9f9f9;
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-        .contact-form button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-        }
-        .contact-form button:hover {
-            background-color: #45a049;
-        }
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: #4CAF50;
-            color: #000000;
-        }
-        .form-row {
-            display: flex;
-            justify-content: space-between;
-        }
-        .form-row input {
-            width: 48%;
-        }
-        .form-row input:first-child {
-            margin-right: 4%;
-        }
-    </style>
-""", unsafe_allow_html=True)
 
 st.subheader("📨 Entre em contato")
 
 form_contato = f"""
+    {css_formulario}
     <form class="contact-form" action="https://formsubmit.co/58e51974853553c0014dc737cb5461cd" method="POST">
         <div class="form-row">
             <input type="hidden" name="_captcha" value="false">
@@ -132,7 +83,9 @@ form_contato = f"""
             <input type="email" name="email" placeholder="Seu email" required>
         </div>
         <textarea name="message" placeholder="Sua mensagem aqui" required></textarea>
-        <button type="submit">Enviar</button>
+        <div class="button-container">
+            <button type="submit">Enviar</button>
+        </div>
     </form>
 """
 

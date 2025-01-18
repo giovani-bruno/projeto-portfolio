@@ -14,6 +14,12 @@ st.write("""Este projeto visa otimizar o processo de geração de relatórios de
          de descartes, a aplicação garante eficiência, economia de tempo e maior precisão no controle dos itens descartados. 
          A solução representa um avanço significativo no fluxo de trabalho, transformando um processo lento em uma ferramenta ágil e confiável.""")
 
+st.write("""Nesta empresa, frequentemente lidamos com o descarte de materiais de TI que não funcionam mais, 
+         como mouse, teclado, monitor, entre outros. Para isso, é necessário criar um relatório contendo, para cada material, 
+         informações como: nome, modelo, fabricante, código de ativo (um identificador próprio da empresa, nem todos possuem), 
+         número de série e uma foto do material. Depois que o relatório é concluído, enviamos um e-mail para a diretoria com o 
+         documento anexado, garantindo o controle adequado dos itens descartados.""")
+
 st.write("""Antes de eu ter criado essa aplicação, todo o processo era feito de forma manual. Criávamos um documento 
          contendo todos os materiais, preenchendo todas as informações e adicionando a foto correspondente. 
          Esse método era extremamente ineficiente e demandava muito tempo, especialmente em casos em que havia 

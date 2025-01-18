@@ -78,7 +78,7 @@ tecnologias = {
     },
     "SMTP": {
         "link_doc": "https://docs.python.org/3/library/smtplib.html",
-        "logo": "imagens/logos/smtp.png"
+        "logo": "imagens/logos/smtplib.png"
     },
     "ReportLab": {
         "link_doc": "https://docs.reportlab.com/demos/hello_world/hello_world/",
@@ -99,6 +99,14 @@ tecnologias = {
     "Random": {
         "link_doc": "https://docs.python.org/pt-br/3/library/random.html",
         "logo": "imagens/logos/random.png"
+    },
+    "Scipy": {
+        "link_doc": "https://docs.scipy.org/doc/scipy-1.15.0/index.html",
+        "logo": "imagens/logos/scipy.png"
+    },
+    "statsmodels": {
+        "link_doc": "https://www.statsmodels.org/stable/index.html",
+        "logo": "imagens/logos/statsmodels.png"
     }
 }
 
@@ -156,25 +164,97 @@ def adicionar_livro(livro, feedback):
     col2.write(feedback)
     st.divider()
 
-def adicionar_projeto(nome, imagem, link_pagina, coluna):
-    assert imagem in listdir("imagens/projetos"), f"Imagem '{imagem}' não existe em imagens/projetos"
-    assert link_pagina in listdir("projetos"), f"O arquivo '{link_pagina}' para a página do projeto não existe."
+def adicionar_projeto(projeto, coluna):
+    assert projeto + '.png' in listdir("imagens/projetos"), f"Imagem '{projeto}.png' não existe em imagens/projetos"
+    assert projeto + '.py' in listdir("projetos"), f"O arquivo '{projeto}.py' para a página do projeto não existe."
 
     with coluna.container(border=True):
-        st.write(f"##### {nome}")
-        st.image(f"imagens/projetos/{imagem}")
-        st.write("")
+        st.image(f"imagens/projetos/{projeto}.png")
         _, c2, = st.columns([0.6, 1])
-        if c2.button("Ver Projeto", key=nome):
-            st.switch_page(f"projetos/{link_pagina}")
+        if c2.button("Ver Projeto", key=projeto):
+            st.switch_page(f"projetos/{projeto}.py")
 
 def voltar_para_projetos():
     if st.button("Voltar", type='tertiary', icon="↩"):
         st.switch_page("Projetos.py")
 
 def adicionar_video(video_projeto):
-    assert video_projeto in listdir("projetos/videos"), f"O video '{video_projeto}' não existe em projetos/videos"
+    assert video_projeto in listdir("projetos/videos_imagens"), f"O video '{video_projeto}' não existe em projetos/videos_imagens"
 
-    video = open(f"projetos/videos/{video_projeto}", "rb")
+    video = open(f"projetos/videos_imagens/{video_projeto}", "rb")
     video_bytes = video.read()
-    st.video(video_bytes, muted=True, loop=True)
+    st.video(video_bytes, muted=True)
+
+css_formulario = """
+    <style>
+        .contact-form {
+            background-color: #262730;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            background-color: #f9f9f9;
+            color: #000;
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-form button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 400;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            min-height: 2.5rem;
+            width: 20%;
+            cursor: pointer;
+            user-select: none;
+            background-color: rgb(19, 23, 32);
+            border: 1px solid rgba(250, 250, 250, 0.2);
+            color: white;
+            transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+        }
+
+        .contact-form button:hover {
+            border-color: #FF4B4B;
+        }
+
+        .contact-form button:active {
+            background-color: #FF4B4B;
+            transform: scale(0.98);
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #4CAF50;
+            color: #000000;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-row input {
+            width: 48%;
+        }
+
+        .form-row input:first-child {
+            margin-right: 4%;
+        }
+    </style>
+    """

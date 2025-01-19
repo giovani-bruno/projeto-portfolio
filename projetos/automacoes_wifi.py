@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from auxiliar import tecnologias, adicionar_tecnologia, voltar_para_projetos
+from utils import tecnologias, adicionar_tecnologia, voltar_para_projetos
 
 st.set_page_config(layout='wide', page_title="Automações no Wifi")
 barra_navegacao()
@@ -16,7 +16,7 @@ st.write("""Este projeto foi criado para otimizar o gerenciamento do Wi-Fi corpo
 st.write("""O processo manual envolvia acessar o site do Wi-Fi para cada setor, localizar a tabela de usuários, 
          preencher as informações (nome, endereço MAC e setor) e salvar as alterações. Este método era extremamente lento.""")
 
-st.write("Para resolver esses problemas, foram desenvolvidas três automações:")
+st.write("Para resolver esses problemas, desenvolvi três automações:")
 
 st.write("""1. Adicionar Usuário: Essa automação permite registrar até 10 dispositivos simultaneamente. 
          O usuário preenche informações como nome (seguindo o padrão: DISPOSITIVO - NOME - SETOR), 
@@ -59,7 +59,7 @@ adicionar_tecnologia(tecnologias['Python'], "Linguagem de Programação utilizad
 
 adicionar_tecnologia(tecnologias['Selenium'], "Biblioteca do Python responsável por automatizar o navegador.", 200, col2)
 
-adicionar_tecnologia(tecnologias['Tkinter'], "Biblioteca do Python utilizada para criar a janela onde o usuários insere as informações.", 150, col3)
+adicionar_tecnologia(tecnologias['Tkinter'], "Biblioteca do Python utilizada para criar a janela onde o usuário insere as informações.", 150, col3)
 
 adicionar_tecnologia(tecnologias['SMTP'], "Biblioteca do Python utilizada para enviar o e-mail automaticamente para meu chefe informando as novas senhas.", 150, col1)
 
@@ -73,13 +73,13 @@ st.write("Não é possível mostrar os vídeos demonstrando as automações em e
 st.write("A seguir, apenas as imagens da interface do programa onde o usuário insere as informações:")
 
 st.subheader("Automação Adicionar Usuários")
-st.image(r"projetos\videos\automacao_adicionar_usuario.png")
+st.image(r"projetos\videos-imagens\automacao_adicionar_usuario.png")
 
 st.subheader("Automação Editar Mac")
-st.image(r"projetos\videos\automacao_editar_mac.png")
+st.image(r"projetos\videos-imagens\automacao_editar_mac.png")
 
 st.subheader("Automação Remover Usuário")
-st.image(r"projetos\videos\automacao_remover_usuario.png")
+st.image(r"projetos\videos-imagens\automacao_remover_usuario.png")
 
 st.write("Não é possível mostrar a imagem da automação de trocar a senha, pois ela não tem interface. Só é preciso executar.")
 

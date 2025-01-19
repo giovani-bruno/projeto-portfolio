@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from auxiliar import tecnologias, adicionar_tecnologia, adicionar_video, voltar_para_projetos
+from utils import tecnologias, adicionar_tecnologia, adicionar_video, voltar_para_projetos
 
 st.set_page_config(layout='wide', page_title="Prevendo Qualidade de Veículos")
 barra_navegacao()
@@ -8,7 +8,7 @@ voltar_para_projetos()
 
 st.title("Prevendo a Qualidade de Veículos com Machine Learning")
 
-st.write("""Este projeto utiliza algoritmos de aprendizado de máquina 
+st.write("""Este projeto utiliza algoritmos de machine learning 
          para prever a qualidade de veículos com base em suas características, 
          como preço, manutenção, número de portas, capacidade de passageiros, 
          entre outros fatores. A qualidade é categorizada como "Ruim", "Aceitável", "Bom" ou "Muito bom".""")

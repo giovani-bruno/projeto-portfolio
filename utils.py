@@ -107,6 +107,14 @@ tecnologias = {
     "statsmodels": {
         "link_doc": "https://www.statsmodels.org/stable/index.html",
         "logo": "imagens/logos/statsmodels.png"
+    },
+    "Canva": {
+        "link_doc": "https://www.canva.com/",
+        "logo": "imagens/logos/canva.png"
+    },
+    "FormSubmit": {
+        "link_doc": "https://formsubmit.co/",
+        "logo": "imagens/logos/formsubmit.png"
     }
 }
 
@@ -168,10 +176,19 @@ def adicionar_projeto(projeto, coluna):
     assert projeto + '.png' in listdir("imagens/projetos"), f"Imagem '{projeto}.png' não existe em imagens/projetos"
     assert projeto + '.py' in listdir("projetos"), f"O arquivo '{projeto}.py' para a página do projeto não existe."
 
+    css_botao = """
+        <style>
+        .stButton > button {
+            display: block;
+            margin: 0 auto;
+        }
+        </style>
+    """
+    st.markdown(css_botao, unsafe_allow_html=True)
+
     with coluna.container(border=True):
         st.image(f"imagens/projetos/{projeto}.png")
-        _, c2, = st.columns([0.6, 1])
-        if c2.button("Ver Projeto", key=projeto):
+        if st.button("Ver Projeto", key=projeto):
             st.switch_page(f"projetos/{projeto}.py")
 
 def voltar_para_projetos():
@@ -179,9 +196,9 @@ def voltar_para_projetos():
         st.switch_page("Projetos.py")
 
 def adicionar_video(video_projeto):
-    assert video_projeto in listdir("projetos/videos_imagens"), f"O video '{video_projeto}' não existe em projetos/videos_imagens"
+    assert video_projeto in listdir("projetos/videos-imagens"), f"O video '{video_projeto}' não existe em projetos/videos-imagens"
 
-    video = open(f"projetos/videos_imagens/{video_projeto}", "rb")
+    video = open(f"projetos/videos-imagens/{video_projeto}", "rb")
     video_bytes = video.read()
     st.video(video_bytes, muted=True)
 
@@ -232,10 +249,12 @@ css_formulario = """
 
         .contact-form button:hover {
             border-color: #FF4B4B;
+            color: #FF4B4B;
         }
 
         .contact-form button:active {
             background-color: #FF4B4B;
+            color: #f9f9f9;
             transform: scale(0.98);
         }
 

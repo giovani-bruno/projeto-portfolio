@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from auxiliar import tecnologias, adicionar_tecnologia, voltar_para_projetos
+from utils import tecnologias, adicionar_tecnologia, voltar_para_projetos
 
 st.set_page_config(layout='wide',page_title="Dashboard SAC")
 barra_navegacao()
@@ -36,8 +36,10 @@ adicionar_tecnologia(tecnologias['Excel'], "Ferramenta de onde os dados foram re
 
 st.divider()
 
-st.markdown('<iframe title="Dashboard SAC" width="1024" height="612" src="https://app.powerbi.com/view?r=eyJrIjoiZGZkMTYxZTQtZmYzMy00YzZkLThkNTYtNGMwZjhjZWU1MzY0IiwidCI6ImQxNjgyYjJjLWRhMzMtNGZiOC1hN2FkLThjNjA5YzE2YzNiMCJ9&pageName=ReportSection9b21469c08043acbb796" frameborder="0" allowFullScreen="true"></iframe>',
+st.markdown('<iframe title="Dashboard SAC" width="1330" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiZGZkMTYxZTQtZmYzMy00YzZkLThkNTYtNGMwZjhjZWU1MzY0IiwidCI6ImQxNjgyYjJjLWRhMzMtNGZiOC1hN2FkLThjNjA5YzE2YzNiMCJ9&pageName=ReportSection9b21469c08043acbb796" frameborder="0" allowFullScreen="true"></iframe>',
             unsafe_allow_html=True)
+
+st.divider()
 
 st.write("""A análise de dados em tempo real, com recursos como tooltips e gráficos interativos, 
          demonstrou ser essencial para melhorar a tomada de decisões e a eficiência da equipe de 

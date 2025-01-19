@@ -1,5 +1,5 @@
 import streamlit as st
-from auxiliar import adicionar_certificado
+from utils import adicionar_certificado
 from main import barra_navegacao
 
 st.set_page_config(page_title="Certificados", layout='centered', page_icon='📃')

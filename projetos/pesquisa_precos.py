@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from auxiliar import tecnologias, adicionar_tecnologia, voltar_para_projetos, adicionar_video
+from utils import tecnologias, adicionar_tecnologia, voltar_para_projetos, adicionar_video
 
 st.set_page_config(layout='wide', page_title="Pesquisa de Preços")
 barra_navegacao()
@@ -24,7 +24,7 @@ st.write("""Você pode executar este projeto simplesmente baixando
          o arquivo 'pesquisaPrecos.exe' no [repositório do projeto](https://github.com/giovani-bruno/pesquisa_de_precos)!
          Insira o produto desejado, preço mínimo, máximo e o seu endereço de e-mail para receber os resultados.
          No final da automação, aparecerá uma mensagem na tela informando que o e-mail foi enviado para o endereço especificado.
-         Você receberá o e-mail de 'comaparacaodeprecos@gmail.com', um e-mail que criei apenas para o propósito deste projeto.
+         Você receberá o e-mail de 'comparacaodeprecos@gmail.com', um e-mail que criei apenas para o propósito deste projeto.
          """)
 
 st.write("""Tive a ideia de criar este projeto a partir do curso Python Impressionador da Hashtag Treinamentos.

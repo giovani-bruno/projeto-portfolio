@@ -1,7 +1,7 @@
 import streamlit as st
 import base64
 from main import barra_navegacao
-from auxiliar import tecnologias, adicionar_habilidade, css_formulario
+from utils import tecnologias, adicionar_habilidade, css_formulario
 
 st.set_page_config(page_title="Sobre", layout='wide')
 barra_navegacao()
@@ -35,7 +35,7 @@ with col2:
     Sou um estudante de Ciência da Computação, atualmente no 5° semestre, com grande interesse em ciência de dados. Concluí cursos de destaque na área de dados, maioria deles pela Hashtag Treinamentos.
     Estou constantemente buscando fortalecer minhas habilidades em manipulação de dados, visualização e machine learning, utilizando datasets públicos e projetos próprios. Também procuro aplicar esse conhecimento em automação e otimização de tarefas no ambiente corporativo.
     Atualmente, faço postagens semanais no meu LinkedIn onde compartilho dicas práticas sobre ciência de dados, análise de dados, inteligência artificial, Python, compartilhar projetos e entre outros temas. Essas dicas são baseadas nos conhecimentos que adquiro nos livros que leio e nos cursos que faço.
-    Minha meta é me tornar um cientista de dados e contribuir para soluções que façam a diferença.
+    Meu objetivo é atuar como cientista de dados, trabalhando com dados para criar soluções que façam a diferença.
              """)   
 st.divider()
 
@@ -44,7 +44,7 @@ col1, col2 = st.columns([0.2, 1])
 col1.image("imagens/logos/unama.png", width=150)
 col2.subheader("UNAMA - Universidade da Amazônia")
 col2.write("Bacharelado, Ciência da Computação (2023 - 2026)")
-col2.write("Atualmente no 5° semestre, previsão de conlusão para 2026")
+col2.write("Atualmente no 5° semestre.")
 st.divider()
 
 st.subheader("⚒️ Habilidades")
@@ -55,7 +55,7 @@ adicionar_habilidade(tecnologias["Python"], col1, 150)
 adicionar_habilidade(tecnologias["Power BI"], col2, 170)
 adicionar_habilidade(tecnologias["Excel"], col3, 150)
 adicionar_habilidade(tecnologias["SQL"], col4, 170)
-adicionar_habilidade(tecnologias["Git"], col1, 150)
+adicionar_habilidade(tecnologias["Git"], col1, 120)
 adicionar_habilidade(tecnologias["Pandas"], col2, 150)
 adicionar_habilidade(tecnologias["NumPy"], col3, 150)
 adicionar_habilidade(tecnologias["Matplotlib"], col4, 150)
@@ -66,9 +66,7 @@ adicionar_habilidade(tecnologias["Scikit-learn"], col4, 100)
 adicionar_habilidade(tecnologias["Scipy"], col1, 150)
 adicionar_habilidade(tecnologias["statsmodels"], col2, 200)
 adicionar_habilidade(tecnologias["Selenium"], col3, 150)
-adicionar_habilidade(tecnologias["Tkinter"], col4, 150)
-adicionar_habilidade(tecnologias["Figma"], col1, 150)
-adicionar_habilidade(tecnologias["AWS"], col2, 120)
+adicionar_habilidade(tecnologias["AWS"], col4, 120)
 
 st.divider()
 
@@ -78,7 +76,7 @@ form_contato = f"""
     {css_formulario}
     <form class="contact-form" action="https://formsubmit.co/58e51974853553c0014dc737cb5461cd" method="POST">
         <div class="form-row">
-            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
             <input type="text" name="name" placeholder="Seu nome" required>
             <input type="email" name="email" placeholder="Seu email" required>
         </div>

@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from auxiliar import livros, adicionar_livro
+from utils import livros, adicionar_livro
 
 st.set_page_config(page_title='Leituras', layout='wide', page_icon='📚')
 barra_navegacao()

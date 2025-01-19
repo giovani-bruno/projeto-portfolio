@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from auxiliar import tecnologias, adicionar_tecnologia, adicionar_video, voltar_para_projetos
+from utils import tecnologias, adicionar_tecnologia, adicionar_video, voltar_para_projetos
 
 st.set_page_config(layout='wide', page_title="Algoritmo Genético")
 barra_navegacao()

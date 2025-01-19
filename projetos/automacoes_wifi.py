@@ -73,13 +73,13 @@ st.write("Não é possível mostrar os vídeos demonstrando as automações em e
 st.write("A seguir, apenas as imagens da interface do programa onde o usuário insere as informações:")
 
 st.subheader("Automação Adicionar Usuários")
-st.image(r"projetos\videos-imagens\automacao_adicionar_usuario.png")
+st.image("projetos/videos-imagens/automacao_adicionar_usuario.png")
 
 st.subheader("Automação Editar Mac")
-st.image(r"projetos\videos-imagens\automacao_editar_mac.png")
+st.image("projetos/videos-imagens/automacao_editar_mac.png")
 
 st.subheader("Automação Remover Usuário")
-st.image(r"projetos\videos-imagens\automacao_remover_usuario.png")
+st.image("projetos/videos-imagens/automacao_remover_usuario.png")
 
 st.write("Não é possível mostrar a imagem da automação de trocar a senha, pois ela não tem interface. Só é preciso executar.")
 

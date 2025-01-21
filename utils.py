@@ -191,7 +191,7 @@ def adicionar_projeto(projeto, coluna):
         if st.button("Ver Projeto", key=projeto):
             st.switch_page(f"projetos/{projeto}.py")
 
-def voltar_para_projetos():
+def botao_voltar():
     if st.button("Voltar", type='tertiary', icon="↩"):
         st.switch_page("Projetos.py")
 

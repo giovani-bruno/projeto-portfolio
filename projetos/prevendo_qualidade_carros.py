@@ -1,10 +1,10 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import tecnologias, adicionar_tecnologia, adicionar_video, voltar_para_projetos
+from utils import tecnologias, adicionar_tecnologia, adicionar_video, botao_voltar
 
 st.set_page_config(layout='wide', page_title="Prevendo Qualidade de Veículos")
 barra_navegacao()
-voltar_para_projetos()
+botao_voltar()
 
 st.title("Prevendo a Qualidade de Veículos com Machine Learning")
 

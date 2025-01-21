@@ -1,10 +1,10 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import tecnologias, adicionar_tecnologia, voltar_para_projetos
+from utils import tecnologias, adicionar_tecnologia, botao_voltar
 
 st.set_page_config(layout='wide', page_title="Meu Portfólio")
 barra_navegacao()
-voltar_para_projetos()
+botao_voltar()
 
 st.title("Meu Portfólio Interativo em Python com Streamlit")
 

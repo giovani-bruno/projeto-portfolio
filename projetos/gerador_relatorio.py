@@ -1,10 +1,10 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import tecnologias, adicionar_tecnologia, voltar_para_projetos, adicionar_video
+from utils import tecnologias, adicionar_tecnologia, botao_voltar, adicionar_video
 
 st.set_page_config(layout='wide', page_title="Gerador de Relatório")
 barra_navegacao()
-voltar_para_projetos()
+botao_voltar()
 
 st.title("Gerador de Relatório")
 

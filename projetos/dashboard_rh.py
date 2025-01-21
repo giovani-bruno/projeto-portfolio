@@ -1,10 +1,10 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import tecnologias, adicionar_tecnologia, voltar_para_projetos
+from utils import tecnologias, adicionar_tecnologia, botao_voltar
 
 st.set_page_config(layout='wide',page_title="Dashboard RH")
 barra_navegacao()
-voltar_para_projetos()
+botao_voltar()
 
 st.title("Dashboard de Recursos Humanos no Power BI")
 
@@ -45,7 +45,7 @@ adicionar_tecnologia(tecnologias['Excel'], "Ferramenta de onde os dados foram re
 
 st.divider()
 
-st.markdown('<iframe title="Dashboard RH" width="1330" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiMmZiZTE0MjctZjhkMC00MjZlLTgzNGQtMWY2MDA3NDAzNjM0IiwidCI6ImQxNjgyYjJjLWRhMzMtNGZiOC1hN2FkLThjNjA5YzE2YzNiMCJ9&pageName=ReportSection62440c407ac07b287c1b" frameborder="0" allowFullScreen="true"></iframe>',
+st.markdown('<iframe title="Dashboard RH" width="1024" height="612" src="https://app.powerbi.com/view?r=eyJrIjoiMmZiZTE0MjctZjhkMC00MjZlLTgzNGQtMWY2MDA3NDAzNjM0IiwidCI6ImQxNjgyYjJjLWRhMzMtNGZiOC1hN2FkLThjNjA5YzE2YzNiMCJ9&pageName=ReportSection62440c407ac07b287c1b" frameborder="0" allowFullScreen="true"></iframe>',
             unsafe_allow_html=True)
 
 st.divider()

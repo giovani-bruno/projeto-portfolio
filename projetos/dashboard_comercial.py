@@ -1,10 +1,10 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import tecnologias, adicionar_tecnologia, voltar_para_projetos
+from utils import tecnologias, adicionar_tecnologia, botao_voltar
 
 st.set_page_config(layout='wide',page_title="Dashboard Comercial")
 barra_navegacao()
-voltar_para_projetos()
+botao_voltar()
 
 st.title("Dashboard de Desempenho de Vendas e Clientes no Power BI")
 
@@ -43,7 +43,7 @@ adicionar_tecnologia(tecnologias['SQL'], "Banco de dados utilizadado para se con
 
 st.divider()
 
-st.markdown('<iframe title="Dashboard Comercial" width="1330" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiZDg3MjQ2ODgtNGRkOS00NWQwLTg5NGYtNWUzMmI4MTIwNjQ1IiwidCI6ImQxNjgyYjJjLWRhMzMtNGZiOC1hN2FkLThjNjA5YzE2YzNiMCJ9&pageName=069e44aa7599c5eae4ad" frameborder="0" allowFullScreen="true"></iframe>',
+st.markdown('<iframe title="Dashboard Comercial" width="1024" height="612" src="https://app.powerbi.com/view?r=eyJrIjoiZDg3MjQ2ODgtNGRkOS00NWQwLTg5NGYtNWUzMmI4MTIwNjQ1IiwidCI6ImQxNjgyYjJjLWRhMzMtNGZiOC1hN2FkLThjNjA5YzE2YzNiMCJ9&pageName=069e44aa7599c5eae4ad" frameborder="0" allowFullScreen="true"></iframe>',
             unsafe_allow_html=True)
 
 st.divider()

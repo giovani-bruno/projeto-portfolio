@@ -9,6 +9,12 @@ st.title("Certificados")
 st.write("#### Nesta página você encontra todos os meus certificados conquistados até o momento.")
 st.divider()
 
+adicionar_certificado("Estatística para Ciência de Dados e Machine Learning", "20h", "03/01/2024", "21/01/2024",
+                       """Aprendi os principais conceitos de estatística e probabilidade aplicados à ciência de dados, 
+                       explorando tanto a teoria quanto a prática. O curso abordou tópicos fundamentais como distribuições, 
+                       intervalos de confiança, testes de hipóteses, correlações e outros conceitos essenciais para análises de dados e modelos de machine learning. 
+                       Gostei muito desse assunto e pretendo me aprofundar ainda mais para ampliar minhas habilidades e conhecimentos na área.""")
+
 adicionar_certificado("Power BI Impressionador", "118h", "20/11/2024", "02/01/2025", 
                       """Desenvolvi habilidades para criar dashboards dinâmicos e 
                       visualizações impactantes, dominando o tratamento de dados no 

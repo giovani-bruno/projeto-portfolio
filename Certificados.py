@@ -9,6 +9,11 @@ st.title("Certificados")
 st.write("#### Nesta página você encontra todos os meus certificados conquistados até o momento.")
 st.divider()
 
+adicionar_certificado("Python Data Visualization - Dashboards with Plotly & Dash", "8h", "22/01/2025", "29/01/2025",
+                      """Aprendi a criar dashboards interativos e profissionais utilizando as bibliotecas Dash e Plotly do Python. 
+                      O curso abordou desde os conceitos básicos da estrutura de uma aplicação Dash até a construção de dashboards completos, 
+                      explorando vários tipos de visualizações.""")
+
 adicionar_certificado("Estatística para Ciência de Dados e Machine Learning", "20h", "03/01/2025", "21/01/2025",
                        """Aprendi os principais conceitos de estatística e probabilidade aplicados à ciência de dados, 
                        explorando tanto a teoria quanto a prática. O curso abordou tópicos fundamentais como distribuições, 

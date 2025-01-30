@@ -115,6 +115,10 @@ tecnologias = {
     "FormSubmit": {
         "link_doc": "https://formsubmit.co/",
         "logo": "imagens/logos/formsubmit.png"
+    },
+    "Dash": {
+        "link_doc": "https://dash.plotly.com/",
+        "logo": "imagens/logos/dash.png"
     }
 }
 

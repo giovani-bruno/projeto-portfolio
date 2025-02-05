@@ -6,7 +6,7 @@ Você pode acessar o portfólio por este link: https://portfolio-giovani.streaml
 
 ### 📂 Estrutura do Projeto
 ```
-├── certificados/        # Certificados obtidos
+├── certificados/       # Certificados obtidos
 ├── imagens/            # Logos, capas de livros e outras imagens utilizadas
 ├── projetos/           # Páginas individuais dos projetos
 ├── Certificados.py     # Página para exibir certificados

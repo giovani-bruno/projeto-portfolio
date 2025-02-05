@@ -1,6 +1,6 @@
 # Meu Portfólio - Streamlit
 
-Bem-vindo ao repositório do meu portfólio interativo desenvolvido com Streamlit! Este projeto foi criado para apresentar meus habilidades, certificados, leituras e projetos de forma dinâmica e acessível.
+Bem-vindo ao repositório do meu portfólio interativo desenvolvido com Streamlit! Este projeto foi criado para apresentar minhas habilidades, certificados, leituras e projetos de forma dinâmica e acessível.
 
 Você pode acessar o portfólio por este link: https://portfolio-giovani.streamlit.app/
 

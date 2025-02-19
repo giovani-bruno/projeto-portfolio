@@ -126,17 +126,25 @@ livros = {
     "Storytelling": {
         "nome": "Storytelling com Dados",
         "autor (a)": "Cole Nussbaumer Knaflic",
-        "imagem": "imagens/livros/livro_storytelling.jpg"
+        "imagem": "imagens/livros/storytelling_dados.jpg"
     },
+
     "Python Dados": {
         "nome": "Python para Análise de Dados",
         "autor (a)": "Wes McKinney",
-        "imagem": "imagens/livros/livro_python_dados.jpg"
+        "imagem": "imagens/livros/python_dados.jpg"
     },
+
     "Data Science": {
         "nome": "Data Science do Zero",
         "autor (a)": "Joel Grus",
-        "imagem": "imagens/livros/livro_data_science.jpg"
+        "imagem": "imagens/livros/data_science.jpg"
+    },
+
+    "Hands on ML": {
+        "nome": "Mãos à obra: Aprendizado de Máquina com Scikit-Learn, Keras, & TensorFlow",
+        "autor (a)": "Aurélien Géron",
+        "imagem": "imagens/livros/hands_on_ml.jpg"
     }
 }
 

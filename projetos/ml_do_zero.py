@@ -18,7 +18,11 @@ st.write("""Tive a ideia para esse projeto a partir do livro Data Science do Zer
 
 st.write("""Após desenvolver cada modelo manualmente, realizamos testes comparando sua precisão com a implementação equivalente da biblioteca scikit-learn.""")
 
-st.write("""Atualmente, o projeto conta com a implementação do algoritmo KNN e do Naive Bayes. Ao longo do tempo novos modelos serão adicionados, 
+st.write("Atualmente, o projeto conta com a implementação dos seguintes algoritmos:")
+
+st.markdown("""- K-Nearest Neighbors\n- Naive Bayes\n- Regressão Linear Simples""")
+         
+st.write("""Ao longo do tempo novos modelos serão adicionados, 
          expandindo o repositório com diferentes técnicas de aprendizado de máquina.""")
 
 st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/ml_do_zero)")

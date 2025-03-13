@@ -9,6 +9,13 @@ st.title("Certificados")
 st.write("#### Nesta página você encontra todos os meus certificados conquistados até o momento.")
 st.divider()
 
+adicionar_certificado("What is Data Science", "11h", "08/03/2025", "12/03/2025",
+                      """Desenvolvi uma compreensão sólida sobre os fundamentos da ciência de dados, 
+                      explorando o papel do cientista de dados, o ciclo de vida de um projeto, a importância da 
+                      ética na análise de dados e como transformar dados em insights acionáveis para a tomada de decisões.
+                      Este é o primeiro curso do programa de Certificação Profissional em Ciência de Dados da IBM.""",
+                      nome_alt="What is Data Science?")
+
 adicionar_certificado("Python Data Visualization - Dashboards with Plotly & Dash", "8h", "22/01/2025", "29/01/2025",
                       """Aprendi a criar dashboards interativos e profissionais utilizando as bibliotecas Dash e Plotly do Python. 
                       O curso abordou desde os conceitos básicos da estrutura de uma aplicação Dash até a construção de dashboards completos, 

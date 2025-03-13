@@ -164,10 +164,10 @@ def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
     coluna.write(descricao)
     coluna.write("")
 
-def adicionar_certificado(certificado, duracao, data_inicio, data_conclusao, feedback):
+def adicionar_certificado(certificado, duracao, data_inicio, data_conclusao, feedback, nome_alt=None):
     assert certificado + ".pdf" in listdir("certificados"), f"Certificado '{certificado}' não registrado."
     
-    st.subheader(certificado)
+    st.subheader(certificado if not nome_alt else nome_alt) 
     col1, col2, col3 = st.columns([0.5, 1, 1])
     col1.write(f" ⏱ {duracao}")
     col2.write(f"Iniciado em: {data_inicio}")

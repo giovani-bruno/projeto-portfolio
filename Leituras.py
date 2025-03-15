@@ -17,7 +17,7 @@ adicionar_livro(livros['Storytelling'], '''
                É sobre contar uma história com os dados de forma que o público
                 consiga entender a mensagem de maneira clara e envolvente. 
                A autora reforça que a escolha de gráficos, o design visual
-                e o contexto são fundamentais para transmitir a informação de forma eficaz.''', frase="Há uma história em seus dados, mas suas ferramentes não sabem qual é essa história.")
+                e o contexto são fundamentais para transmitir a informação de forma eficaz.''', frase="Há uma história em seus dados, mas suas ferramentas não sabem qual é essa história.")
 
 adicionar_livro(livros['Python Dados'], """Escrito pelo criador da biblioteca pandas, aprendi a importância 
                 de dominar as ferramentas do Python para lidar com dados de forma eficiente. 

@@ -176,10 +176,11 @@ def adicionar_certificado(certificado, duracao, data_inicio, data_conclusao, fee
     pdf_viewer(f"certificados/{certificado}.pdf", width=725, height=500, resolution_boost=1.4)
     st.divider()
 
-def adicionar_livro(livro, feedback):
+def adicionar_livro(livro, feedback, frase=None):
     col1, col2 = st.columns([0.5, 1])
     col1.image(livro['imagem'], width=350)
     col2.subheader(livro['nome'])
+    col2.markdown(f"📖 *{frase}*")
     col2.write(f"Por: {livro['autor (a)']}")
     col2.write(feedback)
     st.divider()

@@ -17,8 +17,7 @@ adicionar_livro(livros['Storytelling'], '''
                É sobre contar uma história com os dados de forma que o público
                 consiga entender a mensagem de maneira clara e envolvente. 
                A autora reforça que a escolha de gráficos, o design visual
-                e o contexto são fundamentais para transmitir a informação de forma eficaz.
-                Minha frase favorita desse livro é: "Há uma história em seus dados, mas suas ferramentes não sabem qual é essa história."''')
+                e o contexto são fundamentais para transmitir a informação de forma eficaz.''', frase="Há uma história em seus dados, mas suas ferramentes não sabem qual é essa história.")
 
 adicionar_livro(livros['Python Dados'], """Escrito pelo criador da biblioteca pandas, aprendi a importância 
                 de dominar as ferramentas do Python para lidar com dados de forma eficiente. 
@@ -29,7 +28,7 @@ adicionar_livro(livros['Python Dados'], """Escrito pelo criador da biblioteca pa
                 operações complexas de forma simples e rápida. 
                 Além disso, pude entender como utilizar o NumPy para trabalhar com arrays e 
                 operações numéricas, e como essas ferramentas se complementam perfeitamente 
-                no processamento de dados.""")
+                no processamento de dados.""", frase="Uma preparação de dados eficiente pode aumentar significativamente a produtividade, permitindo que você passe mais tempo analisando dados e menos tempo preparando-o para análise.")
 
 adicionar_livro(livros['Data Science'], """O título do livro me enganou um pouco. Pelo nome, imaginei que 
                 fosse um material introdutório para quem quer começar na área de Data Science. No entanto, 
@@ -45,6 +44,6 @@ adicionar_livro(livros['Data Science'], """O título do livro me enganou um pouc
                 aplicá-los na prática. No entanto, devido à complexidade dos tópicos, não o 
                 recomendaria para iniciantes, mas sim para quem já tem experiência na área e 
                 deseja aprofundar seus conhecimentos.
-                """)
+                """, frase="Vivemos em mundo cada vez mais imerso em dados.")
 
-adicionar_livro(livros["Hands on ML"], "Lendo! Feedback em breve...")
+adicionar_livro(livros["Hands on ML"], "Lendo! Feedback em breve...", frase="Aprendizado de máquina é a ciência (e a arte) da programação de computadores de modo que eles possam aprender com os dados.")

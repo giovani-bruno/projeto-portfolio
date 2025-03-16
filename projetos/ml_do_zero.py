@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import tecnologias, adicionar_tecnologia, botao_voltar, adicionar_video
+from utils import tecnologias, adicionar_tecnologia, botao_voltar, acessar_repositorio
 
 st.set_page_config(layout='wide', page_title="Machine Learning do Zero")
 barra_navegacao()
@@ -25,7 +25,7 @@ st.markdown("""- K-Nearest Neighbors\n- Naive Bayes\n- Regressão Linear Simples
 st.write("""Ao longo do tempo novos modelos serão adicionados, 
          expandindo o repositório com diferentes técnicas de aprendizado de máquina.""")
 
-st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/ml_do_zero)")
+acessar_repositorio("https://github.com/giovani-bruno/ml_do_zero")
 
 st.divider()
 

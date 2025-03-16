@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import tecnologias, adicionar_tecnologia, botao_voltar, adicionar_video
+from utils import tecnologias, adicionar_tecnologia, botao_voltar, adicionar_video, acessar_repositorio
 
 st.set_page_config(layout='wide', page_title="Analisando Empréstimos")
 barra_navegacao()
@@ -19,7 +19,7 @@ st.write("""Este projeto analisa os dados de empréstimos do sistema de bibliote
 
 st.write('Este projeto foi realizado por meio do desafio "7 Days of Code" da Alura, onde, a cada dia, foi apresentado um novo desafio relacionado à análise de dados para ser resolvido.')
 
-st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/analisando_emprestimos)")
+acessar_repositorio("https://github.com/giovani-bruno/analisando_emprestimos")
 
 st.divider()
 

@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import tecnologias, adicionar_tecnologia, botao_voltar, adicionar_video
+from utils import tecnologias, adicionar_tecnologia, botao_voltar, adicionar_video, acessar_repositorio
 
 st.set_page_config(layout='wide', page_title="Prevendo Preços no Airbnb")
 barra_navegacao()
@@ -21,7 +21,7 @@ st.write("""Este projeto aplicou técnicas de Machine Learning para
 
 st.write("Este projeto foi realizado por meio do curso Python Impressionador da Hashtag Treinamentos.")
 
-st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/ml_prever_precos_airbnb)")
+acessar_repositorio("https://github.com/giovani-bruno/ml_prever_precos_airbnb")
 
 st.divider()
 

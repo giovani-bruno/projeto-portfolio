@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import tecnologias, adicionar_tecnologia, botao_voltar, adicionar_video
+from utils import tecnologias, adicionar_tecnologia, botao_voltar, adicionar_video, acessar_repositorio
 
 st.set_page_config(layout='wide', page_title="Pesquisa de Preços")
 barra_navegacao()
@@ -21,7 +21,7 @@ st.write("""Este projeto em Python automatiza a pesquisa de preços
          Essa tabela, que destaca o produto com o menor preço, é enviada por e-mail ao usuário.""")
 
 st.write("""Você pode executar este projeto simplesmente baixando 
-         o arquivo 'pesquisaPrecos.exe' no [repositório do projeto](https://github.com/giovani-bruno/pesquisa_de_precos)!
+         o arquivo 'pesquisaPrecos.exe' no repositório do projeto!
          Insira o produto desejado, preço mínimo, máximo e o seu endereço de e-mail para receber os resultados.
          No final da automação, aparecerá uma mensagem na tela informando que o e-mail foi enviado para o endereço especificado.
          Você receberá o e-mail de 'comparacaodeprecos@gmail.com', um e-mail que criei apenas para o propósito deste projeto.
@@ -35,6 +35,8 @@ st.write("""Tive a ideia de criar este projeto a partir do curso Python Impressi
 st.write("""Gostaria de agradecer ao meu amigo da faculdade, Gabriel Rodrigues Bezerra, 
          pela criação do layout da janela no Figma. Sem a contribuição dele, 
          o design não teria ficado tão bonito e profissional como ficou!""")
+
+acessar_repositorio("https://github.com/giovani-bruno/pesquisa_de_precos")
 
 st.divider()
 

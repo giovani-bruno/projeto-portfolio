@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import tecnologias, adicionar_tecnologia, botao_voltar
+from utils import tecnologias, adicionar_tecnologia, botao_voltar, acessar_repositorio
 
 st.set_page_config(layout='wide', page_title="Meu Portfólio")
 barra_navegacao()
@@ -14,7 +14,7 @@ st.write("""Este projeto é uma aplicação web interativa desenvolvida com Stre
          visualmente atraente. O objetivo principal é proporcionar uma experiência interativa 
          para quem deseja conhecer meu trabalho e habilidades.""")
 
-st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/projeto-portfolio)")
+acessar_repositorio("https://github.com/giovani-bruno/projeto-portfolio")
 
 st.divider()
 

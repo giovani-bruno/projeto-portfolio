@@ -215,6 +215,13 @@ def adicionar_video(video_projeto):
     video_bytes = video.read()
     st.video(video_bytes, muted=True)
 
+def acessar_repositorio(link):
+    st.markdown(
+    f"""<a href="{link}">
+    <img src="data:image/png;base64,{base64.b64encode(open("imagens/acessar_repositorio.png", "rb").read()).decode()}" width="200">
+    </a>""",
+    unsafe_allow_html=True)
+
 css_formulario = """
     <style>
         .contact-form {

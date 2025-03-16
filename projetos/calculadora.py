@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import tecnologias, adicionar_tecnologia, botao_voltar, adicionar_video
+from utils import tecnologias, adicionar_tecnologia, botao_voltar, adicionar_video, acessar_repositorio
 
 st.set_page_config(layout='wide',page_title="Calculadora")
 barra_navegacao()
@@ -17,7 +17,7 @@ st.write("""Este projeto foi inteiramente desenvolvido por mim,
          desde a concepção da ideia até a implementação final.
          Esse é um trabalho que reflete exclusivamente minha criatividade e habilidades técnicas.""")
 
-st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/calculadora_kivy)")
+acessar_repositorio("https://github.com/giovani-bruno/calculadora_kivy")
 
 st.divider()
 

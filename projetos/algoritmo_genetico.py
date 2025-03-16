@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import tecnologias, adicionar_tecnologia, adicionar_video, botao_voltar
+from utils import tecnologias, adicionar_tecnologia, adicionar_video, botao_voltar, acessar_repositorio
 
 st.set_page_config(layout='wide', page_title="Algoritmo Genético")
 barra_navegacao()
@@ -20,7 +20,7 @@ st.write("""Com uma interface interativa desenvolvida em Streamlit,
 
 st.write("Este projeto foi desenvolvido por meio do curso: [Streamlit: Crie 12 Aplicações Web de Inteligência Artificial](https://www.udemy.com/course/streamlit-aplicacoes-web-de-ia)")
 
-st.write("[Repositório do projeto no GitHub](https://github.com/giovani-bruno/algoritmo_genetico)")
+acessar_repositorio("https://github.com/giovani-bruno/algoritmo_genetico")
 
 st.divider()
 

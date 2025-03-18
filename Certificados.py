@@ -9,6 +9,12 @@ st.title("Certificados")
 st.write("#### Nesta página você encontra todos os meus certificados conquistados até o momento.")
 st.divider()
 
+adicionar_certificado("Tools for Data Science", "18h", "13/03/2025", "18/03/2025", 
+                      """Explorei as principais linguagens, bibliotecas e ferramentas usadas por cientistas de dados, 
+                      incluindo Jupyter Notebooks, RStudio IDE e IBM Watson Studio. 
+                      Aprendi suas funcionalidades, e como aplicá-las em 
+                      projetos práticos de data science.""")
+
 adicionar_certificado("What is Data Science", "11h", "08/03/2025", "12/03/2025",
                       """Desenvolvi uma compreensão sólida sobre os fundamentos da ciência de dados, 
                       explorando o papel do cientista de dados, o ciclo de vida de um projeto, a importância da 

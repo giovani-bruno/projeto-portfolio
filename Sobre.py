@@ -73,7 +73,7 @@ st.divider()
 
 st.subheader("📨 Entre em contato")
 
-form_contato = f"""
+st.html(f"""
     {css_formulario}
     <form class="contact-form" action="https://formsubmit.co/58e51974853553c0014dc737cb5461cd" method="POST">
         <div class="form-row">
@@ -86,6 +86,4 @@ form_contato = f"""
             <button type="submit">Enviar</button>
         </div>
     </form>
-"""
-
-st.markdown(form_contato, unsafe_allow_html=True)
+""")

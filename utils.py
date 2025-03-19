@@ -149,18 +149,16 @@ livros = {
 }
 
 def adicionar_habilidade(habilidade, coluna, largura):
-    coluna.markdown(
+    coluna.html(
         f"""<a href="{habilidade['link_doc']}">
         <img src="data:image/png;base64,{base64.b64encode(open(habilidade['logo'], "rb").read()).decode()}" width="{largura}" style="margin-bottom: 50px;">
-        </a>""",
-        unsafe_allow_html=True)
+        </a>""")
 
 def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
-    coluna.markdown(
+    coluna.html(
         f"""<a href="{tecnologia['link_doc']}">
         <img src="data:image/png;base64,{base64.b64encode(open(tecnologia['logo'], "rb").read()).decode()}" width="{largura_img}">
-        </a>""",
-        unsafe_allow_html=True)
+        </a>""")
     coluna.write(descricao)
     coluna.write("")
 
@@ -189,15 +187,14 @@ def adicionar_projeto(projeto, coluna):
     assert projeto + '.png' in listdir("imagens/projetos"), f"Imagem '{projeto}.png' não existe em imagens/projetos"
     assert projeto + '.py' in listdir("projetos"), f"O arquivo '{projeto}.py' para a página do projeto não existe."
 
-    css_botao = """
+    st.html("""
         <style>
         .stButton > button {
             display: block;
             margin: 0 auto;
         }
         </style>
-    """
-    st.markdown(css_botao, unsafe_allow_html=True)
+    """)
 
     with coluna.container(border=True):
         st.image(f"imagens/projetos/{projeto}.png")
@@ -216,11 +213,10 @@ def adicionar_video(video_projeto):
     st.video(video_bytes, muted=True)
 
 def acessar_repositorio(link):
-    st.markdown(
+    st.html(
     f"""<a href="{link}">
     <img src="data:image/png;base64,{base64.b64encode(open("imagens/acessar_repositorio.png", "rb").read()).decode()}" width="200">
-    </a>""",
-    unsafe_allow_html=True)
+    </a>""")
 
 css_formulario = """
     <style>

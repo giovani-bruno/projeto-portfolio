@@ -3,6 +3,10 @@ import streamlit as st
 from main import barra_navegacao
 from os import listdir
 from streamlit_pdf_viewer import pdf_viewer
+from fitz import open as fitz_open
+from PIL import Image
+from io import BytesIO
+
 
 st.set_page_config(page_title="Certificados", layout='wide', page_icon='📃')
 barra_navegacao()
@@ -13,10 +17,10 @@ st.divider()
 
 
 def adicionar_certificado(certificado, feedback, instituicao, 
-                          duracao, data_inicio, data_conclusao, link, coluna):
+                          duracao, data_inicio, data_conclusao, link, coluna, nome_alt=None):
     assert certificado + '.pdf' in listdir("certificados"), f"Certificado não registrado."
 
-    @st.dialog(f"{certificado} - {instituicao}", width='large')
+    @st.dialog(f"{certificado if not nome_alt else nome_alt} - {instituicao}", width='large')
     def verificar_certificado(certificado, feedback, duracao, 
                               data_inicio, data_conclusao, link):
         col1, col2, col3 = st.columns([0.5, 1, 1])
@@ -24,7 +28,7 @@ def adicionar_certificado(certificado, feedback, instituicao,
         col2.write(f"Iniciado em: {data_inicio}")
         col3.write(f"Concluído em: {data_conclusao}")
         st.write(feedback)
-        pdf_viewer(f"certificados/{certificado}.pdf", key="pop-up")
+        pdf_viewer(f"certificados/{certificado}.pdf", resolution_boost=1.5)
         st.write(f"Verifique em: {link}")
 
     st.html("""
@@ -36,14 +40,18 @@ def adicionar_certificado(certificado, feedback, instituicao,
             </style>
         """)
         
-
     with coluna.container(border=True):
-        st.write(f"{certificado} - {instituicao}")
-        pdf_viewer(f"certificados/{certificado}.pdf", pages_to_render=[1], resolution_boost=2)
+        st.write(f"{certificado if not nome_alt else nome_alt} - {instituicao}") 
+        with open(f"certificados/{certificado}.pdf", "rb") as pdf_file:
+            pdf_bytes = pdf_file.read()
+        certificado_pdf = fitz_open(stream=pdf_bytes, filetype="pdf")
+        primeira_pagina = certificado_pdf.load_page(0)
+        pix = primeira_pagina.get_pixmap()
+        st.image(Image.open(BytesIO(pix.tobytes("png"))))
         if st.button("Saiba mais", key=certificado):
             verificar_certificado(certificado, feedback, duracao,
                                   data_inicio, data_conclusao, link)
-
+            
 col1, col2, col3 = st.columns(3)
 
 adicionar_certificado("Tools for Data Science", 
@@ -60,14 +68,16 @@ adicionar_certificado("What is Data Science",
                       ética na análise de dados e como transformar dados em insights acionáveis para a tomada de decisões.
                       Este é o primeiro curso do programa de Certificação Profissional em Ciência de Dados da IBM.""",
                       "IBM", "11h", "08/03/2025", "12/03/2025",
-                      "https://www.coursera.org/account/accomplishments/verify/KQ801LVS4B63", col2)
+                      "https://www.coursera.org/account/accomplishments/verify/KQ801LVS4B63", col2,
+                      nome_alt="What is Data Science?")
 
 adicionar_certificado("Python Data Visualization - Dashboards with Plotly & Dash", 
                       """Aprendi a criar dashboards interativos e profissionais utilizando as bibliotecas Dash e Plotly do Python. 
                       O curso abordou desde os conceitos básicos da estrutura de uma aplicação Dash até a construção de dashboards completos, 
                       explorando vários tipos de visualizações.""",
                       "Udemy", "8h", "22/01/2025", "29/01/2025",
-                      "https://www.udemy.com/certificate/UC-386dc837-6abf-474d-bb19-badec744ea3e/", col3)
+                      "https://www.udemy.com/certificate/UC-386dc837-6abf-474d-bb19-badec744ea3e/", col3,
+                      nome_alt="Dashboards with Plotly & Dash")
 
 adicionar_certificado("Estatística para Ciência de Dados e Machine Learning",
                       """Aprendi os principais conceitos de estatística e probabilidade aplicados à ciência de dados, 

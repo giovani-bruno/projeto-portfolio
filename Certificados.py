@@ -40,7 +40,7 @@ def adicionar_certificado(certificado, feedback, instituicao,
             </style>
         """)
         
-    with coluna.container(border=True):
+    with coluna.container(border=True, height=360):
         st.write(f"{certificado if not nome_alt else nome_alt} - {instituicao}") 
         with open(f"certificados/{certificado}.pdf", "rb") as pdf_file:
             pdf_bytes = pdf_file.read()

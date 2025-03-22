@@ -16,7 +16,7 @@ adicionar_certificado("Data Science Methodology",
                       problema, coleta e compreensão dos dados, preparação para modelagem, construção e avaliação de modelos. 
                       O curso abordou o processo CRISP-DM e explorou diferentes tipos de modelos analíticos, como preditivos, 
                       descritivos e de classificação.""",
-                      "IBM", "6H", "18/03/2025", "20/03/2025",
+                      "IBM", "6h", "18/03/2025", "20/03/2025",
                       "https://www.coursera.org/account/accomplishments/verify/0VDFAH1MRLEK", col1)
 
 adicionar_certificado("Tools for Data Science",

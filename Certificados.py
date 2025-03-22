@@ -9,6 +9,11 @@ st.title("Certificados")
 st.write("#### Nesta página você encontra todos os meus certificados conquistados até o momento.")
 st.divider()
 
+adicionar_certificado("Data Science Methodology", "6h", "18/03/2025", "20/03/2025",
+                      """Aprendi sobre as principais etapas da metodologia de ciência de dados, incluindo a formulação do problema, 
+                      coleta e compreensão dos dados, preparação para modelagem, construção e avaliação de modelos. O curso abordou o 
+                      processo CRISP-DM e explorou diferentes tipos de modelos analíticos, como preditivos, descritivos e de classificação""")
+
 adicionar_certificado("Tools for Data Science", "18h", "13/03/2025", "18/03/2025", 
                       """Explorei as principais linguagens, bibliotecas e ferramentas usadas por cientistas de dados, 
                       incluindo Jupyter Notebooks, RStudio IDE e IBM Watson Studio. 

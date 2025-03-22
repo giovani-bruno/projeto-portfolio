@@ -2,6 +2,9 @@ import streamlit as st
 from streamlit_pdf_viewer import pdf_viewer
 import base64
 from os import listdir
+from fitz import open as pymupdf
+from PIL import Image
+from io import BytesIO
 
 tecnologias = {
     "Python": {
@@ -162,17 +165,41 @@ def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
     coluna.write(descricao)
     coluna.write("")
 
-def adicionar_certificado(certificado, duracao, data_inicio, data_conclusao, feedback, nome_alt=None):
-    assert certificado + ".pdf" in listdir("certificados"), f"Certificado '{certificado}' não registrado."
-    
-    st.subheader(certificado if not nome_alt else nome_alt) 
-    col1, col2, col3 = st.columns([0.5, 1, 1])
-    col1.write(f" ⏱ {duracao}")
-    col2.write(f"Iniciado em: {data_inicio}")
-    col3.write(f"Concluído em: {data_conclusao}")
-    st.write(feedback)
-    pdf_viewer(f"certificados/{certificado}.pdf", width=725, height=500, resolution_boost=1.4)
-    st.divider()
+def adicionar_certificado(certificado, feedback, instituicao, 
+                          duracao, data_inicio, data_conclusao, link, coluna, nome_alt=None):
+    assert certificado + '.pdf' in listdir("certificados"), f"Certificado não registrado."
+
+    @st.dialog(f"{certificado if not nome_alt else nome_alt} - {instituicao}", width='large')
+    def verificar_certificado(certificado, feedback, duracao, 
+                              data_inicio, data_conclusao, link):
+        col1, col2, col3 = st.columns([0.5, 1, 1])
+        col1.write(f" ⏱ {duracao}")
+        col2.write(f"Iniciado em: {data_inicio}")
+        col3.write(f"Concluído em: {data_conclusao}")
+        st.write(feedback)
+        pdf_viewer(f"certificados/{certificado}.pdf", resolution_boost=1.5)
+        st.write(f"Verifique em: {link}")
+
+    st.html("""
+            <style>
+            .stButton > button {
+                display: block;
+                margin: 0 auto;
+            }
+            </style>
+        """)
+        
+    with coluna.container(border=True):
+        st.write(f"{certificado if not nome_alt else nome_alt} - {instituicao}") 
+        with open(f"certificados/{certificado}.pdf", "rb") as pdf_file:
+            pdf_bytes = pdf_file.read()
+        certificado_pdf = pymupdf(stream=pdf_bytes, filetype="pdf")
+        primeira_pagina = certificado_pdf.load_page(0)
+        pix = primeira_pagina.get_pixmap()
+        st.image(Image.open(BytesIO(pix.tobytes("png"))).resize((792, 612)))
+        if st.button("Saiba mais", key=certificado):
+            verificar_certificado(certificado, feedback, duracao,
+                                  data_inicio, data_conclusao, link)
 
 def adicionar_livro(livro, feedback, frase=None):
     col1, col2 = st.columns([0.5, 1])

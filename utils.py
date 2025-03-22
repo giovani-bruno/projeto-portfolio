@@ -2,6 +2,9 @@ import streamlit as st
 from streamlit_pdf_viewer import pdf_viewer
 import base64
 from os import listdir
+from fitz import open as pymupdf
+from PIL import Image
+from io import BytesIO
 
 tecnologias = {
     "Python": {
@@ -149,32 +152,54 @@ livros = {
 }
 
 def adicionar_habilidade(habilidade, coluna, largura):
-    coluna.markdown(
+    coluna.html(
         f"""<a href="{habilidade['link_doc']}">
         <img src="data:image/png;base64,{base64.b64encode(open(habilidade['logo'], "rb").read()).decode()}" width="{largura}" style="margin-bottom: 50px;">
-        </a>""",
-        unsafe_allow_html=True)
+        </a>""")
 
 def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
-    coluna.markdown(
+    coluna.html(
         f"""<a href="{tecnologia['link_doc']}">
         <img src="data:image/png;base64,{base64.b64encode(open(tecnologia['logo'], "rb").read()).decode()}" width="{largura_img}">
-        </a>""",
-        unsafe_allow_html=True)
+        </a>""")
     coluna.write(descricao)
     coluna.write("")
 
-def adicionar_certificado(certificado, duracao, data_inicio, data_conclusao, feedback, nome_alt=None):
-    assert certificado + ".pdf" in listdir("certificados"), f"Certificado '{certificado}' não registrado."
-    
-    st.subheader(certificado if not nome_alt else nome_alt) 
-    col1, col2, col3 = st.columns([0.5, 1, 1])
-    col1.write(f" ⏱ {duracao}")
-    col2.write(f"Iniciado em: {data_inicio}")
-    col3.write(f"Concluído em: {data_conclusao}")
-    st.write(feedback)
-    pdf_viewer(f"certificados/{certificado}.pdf", width=725, height=500, resolution_boost=1.4)
-    st.divider()
+def adicionar_certificado(certificado, feedback, instituicao, 
+                          duracao, data_inicio, data_conclusao, link, coluna, nome_alt=None):
+    assert certificado + '.pdf' in listdir("certificados"), f"Certificado não registrado."
+
+    @st.dialog(f"{certificado if not nome_alt else nome_alt} - {instituicao}", width='large')
+    def verificar_certificado(certificado, feedback, duracao, 
+                              data_inicio, data_conclusao, link):
+        col1, col2, col3 = st.columns([0.5, 1, 1])
+        col1.write(f" ⏱ {duracao}")
+        col2.write(f"Iniciado em: {data_inicio}")
+        col3.write(f"Concluído em: {data_conclusao}")
+        st.write(feedback)
+        pdf_viewer(f"certificados/{certificado}.pdf", resolution_boost=1.5)
+        st.write(f"Verifique em: {link}")
+
+    st.html("""
+            <style>
+            .stButton > button {
+                display: block;
+                margin: 0 auto;
+            }
+            </style>
+        """)
+        
+    with coluna.container(border=True):
+        st.write(f"{certificado if not nome_alt else nome_alt} - {instituicao}") 
+        with open(f"certificados/{certificado}.pdf", "rb") as pdf_file:
+            pdf_bytes = pdf_file.read()
+        certificado_pdf = pymupdf(stream=pdf_bytes, filetype="pdf")
+        primeira_pagina = certificado_pdf.load_page(0)
+        pix = primeira_pagina.get_pixmap()
+        st.image(Image.open(BytesIO(pix.tobytes("png"))).resize((792, 612)))
+        if st.button("Saiba mais", key=certificado):
+            verificar_certificado(certificado, feedback, duracao,
+                                  data_inicio, data_conclusao, link)
 
 def adicionar_livro(livro, feedback, frase=None):
     col1, col2 = st.columns([0.5, 1])
@@ -189,15 +214,14 @@ def adicionar_projeto(projeto, coluna):
     assert projeto + '.png' in listdir("imagens/projetos"), f"Imagem '{projeto}.png' não existe em imagens/projetos"
     assert projeto + '.py' in listdir("projetos"), f"O arquivo '{projeto}.py' para a página do projeto não existe."
 
-    css_botao = """
+    st.html("""
         <style>
         .stButton > button {
             display: block;
             margin: 0 auto;
         }
         </style>
-    """
-    st.markdown(css_botao, unsafe_allow_html=True)
+    """)
 
     with coluna.container(border=True):
         st.image(f"imagens/projetos/{projeto}.png")
@@ -216,11 +240,10 @@ def adicionar_video(video_projeto):
     st.video(video_bytes, muted=True)
 
 def acessar_repositorio(link):
-    st.markdown(
+    st.html(
     f"""<a href="{link}">
     <img src="data:image/png;base64,{base64.b64encode(open("imagens/acessar_repositorio.png", "rb").read()).decode()}" width="200">
-    </a>""",
-    unsafe_allow_html=True)
+    </a>""")
 
 css_formulario = """
     <style>

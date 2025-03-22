@@ -19,11 +19,11 @@ adicionar_certificado("Data Science Methodology",
                       "IBM", "6H", "18/03/2025", "20/03/2025",
                       "https://www.coursera.org/account/accomplishments/verify/0VDFAH1MRLEK", col1)
 
-adicionar_certificado("Tools for Data Science", "18h", "13/03/2025", "18/03/2025", 
+adicionar_certificado("Tools for Data Science",
                       """Explorei as principais linguagens, bibliotecas e ferramentas usadas por cientistas de dados, 
                       incluindo Jupyter Notebooks, RStudio IDE e IBM Watson Studio. 
                       Aprendi suas funcionalidades, e como aplicá-las em 
-                      projetos práticos de data science.""", 
+                      projetos práticos de data science.""",
                       "IBM", "18h", "13/03/2025", "18/03/2025",
                       "https://www.coursera.org/account/accomplishments/verify/UPR3W5F0NXR8", col2)
 

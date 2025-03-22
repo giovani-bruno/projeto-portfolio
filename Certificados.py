@@ -3,7 +3,7 @@ import streamlit as st
 from main import barra_navegacao
 from os import listdir
 from streamlit_pdf_viewer import pdf_viewer
-from fitz import open as fitz_open
+from fitz import open as pymupdf
 from PIL import Image
 from io import BytesIO
 
@@ -40,19 +40,27 @@ def adicionar_certificado(certificado, feedback, instituicao,
             </style>
         """)
         
-    with coluna.container(border=True, height=360):
+    with coluna.container(border=True):
         st.write(f"{certificado if not nome_alt else nome_alt} - {instituicao}") 
         with open(f"certificados/{certificado}.pdf", "rb") as pdf_file:
             pdf_bytes = pdf_file.read()
-        certificado_pdf = fitz_open(stream=pdf_bytes, filetype="pdf")
+        certificado_pdf = pymupdf(stream=pdf_bytes, filetype="pdf")
         primeira_pagina = certificado_pdf.load_page(0)
         pix = primeira_pagina.get_pixmap()
-        st.image(Image.open(BytesIO(pix.tobytes("png"))))
+        st.image(Image.open(BytesIO(pix.tobytes("png"))).resize((792, 612)))
         if st.button("Saiba mais", key=certificado):
             verificar_certificado(certificado, feedback, duracao,
                                   data_inicio, data_conclusao, link)
             
 col1, col2, col3 = st.columns(3)
+
+adicionar_certificado("Data Science Methodology", 
+                      """"Aprendi sobre as principais etapas da metodologia de ciência de dados, incluindo a formulação do 
+                      problema, coleta e compreensão dos dados, preparação para modelagem, construção e avaliação de modelos. 
+                      O curso abordou o processo CRISP-DM e explorou diferentes tipos de modelos analíticos, como preditivos, 
+                      descritivos e de classificação.""",
+                      "IBM", "6H", "18/03/2025", "20/03/2025",
+                      "https://www.coursera.org/account/accomplishments/verify/0VDFAH1MRLEK", col1)
 
 adicionar_certificado("Tools for Data Science", 
                       """Explorei as principais linguagens, bibliotecas e ferramentas usadas por cientistas de dados, 

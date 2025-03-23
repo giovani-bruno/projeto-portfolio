@@ -6,6 +6,8 @@ st.set_page_config(layout='wide', page_title="Machine Learning do Zero")
 barra_navegacao()
 botao_voltar()
 
+modelos = ["K-Nearest Neighbors", "Naive Bayes", "Regressão Linear Simples", "Regressão Linear Múltipla"]
+
 st.title("Implementando Machine Learning do Zero")
 
 st.write("""Este projeto tem como objetivo compreender o funcionamento interno dos modelos de Machine Learning, 
@@ -20,8 +22,9 @@ st.write("""Após desenvolver cada modelo manualmente, realizamos testes compara
 
 st.write("Atualmente, o projeto conta com a implementação dos seguintes algoritmos:")
 
-st.markdown("""- K-Nearest Neighbors\n- Naive Bayes\n- Regressão Linear Simples""")
-         
+for modelo in modelos:
+    st.markdown(f"- {modelo}")
+
 st.write("""Ao longo do tempo novos modelos serão adicionados, 
          expandindo o repositório com diferentes técnicas de aprendizado de máquina.""")
 

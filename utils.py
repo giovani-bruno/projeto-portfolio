@@ -241,7 +241,7 @@ def adicionar_video(video_projeto):
 
 def acessar_repositorio(link):
     st.html(
-    f"""<a href="{link}">
+    f"""<a href="{link}" target="_blank">
     <img src="data:image/png;base64,{base64.b64encode(open("imagens/acessar_repositorio.png", "rb").read()).decode()}" width="200">
     </a>""")
 

@@ -6,7 +6,7 @@ st.set_page_config(layout='wide', page_title="Machine Learning do Zero")
 barra_navegacao()
 botao_voltar()
 
-modelos = ["K-Nearest Neighbors", "Naive Bayes", "Regressão Linear Simples", "Regressão Linear Múltipla"]
+modelos = ["K-Nearest Neighbors", "Naive Bayes", "Regressão Linear Simples", "Regressão Linear Múltipla", "Regressão Logística"]
 
 st.title("Implementando Machine Learning do Zero")
 

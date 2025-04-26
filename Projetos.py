@@ -14,28 +14,30 @@ st.divider()
 
 col1, col2, col3 = st.columns(3)
 
-adicionar_projeto("ml_do_zero", col1)
+adicionar_projeto("prevendo_doenca_cardiaca", col1)
 
-adicionar_projeto("analisando_emprestimos", col2)
+adicionar_projeto("ml_do_zero", col2)
 
-adicionar_projeto("prevendo_precos_airbnb", col3)
+adicionar_projeto("analisando_emprestimos", col3)
 
-adicionar_projeto("pesquisa_precos", col1)
+adicionar_projeto("prevendo_precos_airbnb", col1)
+
+adicionar_projeto("pesquisa_precos", col2)
              
-adicionar_projeto("prevendo_qualidade_carros", col2)
+adicionar_projeto("prevendo_qualidade_carros", col3)
 
-adicionar_projeto("gerador_relatorio", col3)
+adicionar_projeto("gerador_relatorio", col1)
 
-adicionar_projeto("automacoes_wifi", col1)
+adicionar_projeto("automacoes_wifi", col2)
 
-adicionar_projeto("algoritmo_genetico", col2)
+adicionar_projeto("algoritmo_genetico", col3)
 
-adicionar_projeto("calculadora", col3)
+adicionar_projeto("calculadora", col1)
 
-adicionar_projeto("dashboard_comercial", col1)
+adicionar_projeto("dashboard_comercial", col2)
 
-adicionar_projeto("dashboard_sac", col2)
+adicionar_projeto("dashboard_sac", col3)
 
-adicionar_projeto("dashboard_rh", col3)
+adicionar_projeto("dashboard_rh", col1)
 
-adicionar_projeto("portfolio", col1)
+adicionar_projeto("portfolio", col2)

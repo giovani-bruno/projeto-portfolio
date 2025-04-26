@@ -122,6 +122,10 @@ tecnologias = {
     "Dash": {
         "link_doc": "https://dash.plotly.com/",
         "logo": "imagens/logos/dash.png"
+    },
+    "Joblib": {
+        "link_doc": "https://joblib.readthedocs.io/en/stable/",
+        "logo": "imagens/logos/joblib.png"
     }
 }
 
@@ -153,13 +157,13 @@ livros = {
 
 def adicionar_habilidade(habilidade, coluna, largura):
     coluna.html(
-        f"""<a href="{habilidade['link_doc']}">
+        f"""<a href="{habilidade['link_doc']}" target="_blank">
         <img src="data:image/png;base64,{base64.b64encode(open(habilidade['logo'], "rb").read()).decode()}" width="{largura}" style="margin-bottom: 50px;">
         </a>""")
 
 def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
     coluna.html(
-        f"""<a href="{tecnologia['link_doc']}">
+        f"""<a href="{tecnologia['link_doc']}" target="_blank">
         <img src="data:image/png;base64,{base64.b64encode(open(tecnologia['logo'], "rb").read()).decode()}" width="{largura_img}">
         </a>""")
     coluna.write(descricao)

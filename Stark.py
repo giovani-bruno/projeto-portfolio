@@ -5,19 +5,31 @@ from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
 from llama_index.llms.groq import Groq
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from openai._exceptions import RateLimitError
+import os
+from tempfile import TemporaryDirectory
 
 st.set_page_config(page_title="Stark", layout="wide", page_icon="🤖")
 barra_navegacao()
 
 embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-GROQ_API_KEY = st.secrets['API_GROQ']
+GROQ_API_KEY = st.secrets['API']['API_GROQ']
 llm = Groq(model="llama-3.3-70b-versatile", api_key=GROQ_API_KEY)
 
 @st.cache_resource(show_spinner="Stark está acordando...")
+
+
 def carregar_index():
-    documentos = SimpleDirectoryReader("./contexto_stark").load_data()
-    index = VectorStoreIndex.from_documents(documentos, embed_model=embed_model)
+    conteudo_stark = st.secrets['stark']['conteudo']
+    
+    with TemporaryDirectory() as temp_dir:
+        arquivo_temp = os.path.join(temp_dir, "stark.md")
+        with open(arquivo_temp, "w", encoding="utf-8") as f:
+            f.write(conteudo_stark)
+        
+        documentos = SimpleDirectoryReader(temp_dir).load_data()
+        index = VectorStoreIndex.from_documents(documentos, embed_model=embed_model)
+        
     return index
 
 def response_generator(pergunta):

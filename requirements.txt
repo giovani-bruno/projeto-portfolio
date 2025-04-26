@@ -4,4 +4,4 @@ pymupdf
 llama_index.core
 llama_index.llms.groq
 llama_index.embeddings.huggingface
-openai._exceptions
+openai

@@ -4,7 +4,6 @@ from time import sleep
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
 from llama_index.llms.groq import Groq
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-from openai._exceptions import RateLimitError
 import os
 from tempfile import TemporaryDirectory
 
@@ -34,9 +33,7 @@ def carregar_index():
 
 def response_generator(pergunta):
     resposta = chat_engine.chat(pergunta).response
-    for palavra in resposta.split():
-        yield palavra + " "
-        sleep(0.05)
+    return resposta
     
 index = carregar_index()
 chat_engine = index.as_chat_engine(llm=llm, chat_mode="condense_plus_context")
@@ -68,7 +65,20 @@ try:
             st.markdown(pergunta)
 
         with st.chat_message("assistant"):
-            resposta_completa = st.write_stream(response_generator(pergunta))
+            placeholder = st.empty()
+            resposta_completa = response_generator(pergunta)
+            
+            palavras = resposta_completa.split()
+            texto_atual = ""
+            for palavra in palavras:
+                texto_atual += palavra + " "
+                placeholder.empty()
+                placeholder.markdown(texto_atual)
+                sleep(0.05)
+            
         st.session_state.mensagens.append({"role": "assistant", "content": resposta_completa})
-except RateLimitError:
-    st.error("Desculpe, o limite de requisições foi excedido. Por favor, tente novamente mais tarde.")
+        
+        st.rerun()
+except Exception as e:
+    st.error("Desculpe, houve um erro ao gerar a resposta. Tente novamente mais tarde ou contate o Giovani.")
+    st.error(e)

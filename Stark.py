@@ -14,7 +14,7 @@ embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-
 GROQ_API_KEY = st.secrets['API_GROQ']
 llm = Groq(model="llama-3.3-70b-versatile", api_key=GROQ_API_KEY)
 
-@st.cache_resource
+@st.cache_resource(show_spinner="Stark está acordando...")
 def carregar_index():
     documentos = SimpleDirectoryReader("./contexto_stark").load_data()
     index = VectorStoreIndex.from_documents(documentos, embed_model=embed_model)
@@ -27,18 +27,17 @@ def response_generator(pergunta):
         sleep(0.05)
     
 index = carregar_index()
-chat_engine = index.as_chat_engine(llm=llm, chat_mode="condense_question")
+chat_engine = index.as_chat_engine(llm=llm, chat_mode="condense_plus_context")
 
 st.title("🤖 Stark")
 st.markdown("Converse com uma IA treinada com informações sobre Giovani! Fique à vontade para perguntar sobre projetos, experiências, estudos, e muito mais.")
 
 with st.expander("Sugestões de Perguntas"):
     st.markdown("""
-        - Quais são os projetos de Giovani?
         - Quais são as principais habilidades de Giovani?
-        - Me conte algumas curiosidades sobre Giovani.
+        - Me conte curiosidades sobre ele.
         - O que Giovani tem estudado ultimamente?
-        - Quais são os interesses profissionais e pessoais?
+        - O que é a LADS?
         - Como Giovani desenvolveu interesse por Ciência de Dados?
         - Por que seu nome é Stark?
     """)

@@ -16,8 +16,6 @@ GROQ_API_KEY = st.secrets['API']['API_GROQ']
 llm = Groq(model="llama-3.3-70b-versatile", api_key=GROQ_API_KEY)
 
 @st.cache_resource(show_spinner="Stark está acordando...")
-
-
 def carregar_index():
     conteudo_stark = st.secrets['stark']['conteudo']
     
@@ -43,7 +41,7 @@ st.markdown("Converse com uma IA treinada com informações sobre Giovani! Fique
 
 with st.expander("Sugestões de Perguntas"):
     st.markdown("""
-        - Quais são as principais habilidades de Giovani?
+        - Quais são as habilidades de Giovani?
         - Me conte curiosidades sobre ele.
         - O que Giovani tem estudado ultimamente?
         - O que é a LADS?

@@ -4,8 +4,8 @@ from time import sleep
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
 from llama_index.llms.groq import Groq
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-import os
 from tempfile import TemporaryDirectory
+import os
 
 st.set_page_config(page_title="Stark", layout="wide", page_icon="🤖")
 barra_navegacao()
@@ -43,7 +43,6 @@ with st.expander("Sugestões de Perguntas"):
     st.markdown("""
         - Quais são as habilidades de Giovani?
         - Me conte curiosidades sobre ele.
-        - O que Giovani tem estudado ultimamente?
         - O que é a LADS?
         - Como Giovani desenvolveu interesse por Ciência de Dados?
         - Por que seu nome é Stark?

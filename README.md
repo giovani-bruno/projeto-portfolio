@@ -13,6 +13,7 @@ Você pode acessá-lo por este link: https://portfolio-giovani.streamlit.app/
 ├── Leituras.py         # Página com livros lidos e em andamento
 ├── Projetos.py         # Página de apresentação dos projetos
 ├── Sobre.py            # Página sobre mim, habilidades e contato
+├── Stark.py            # Página com uma inteligência artificial treinada para responder perguntaas sobre mim
 ├── main.py             # Arquivo principal para execução do projeto
 ├── utils.py            # Arquivo auxiliar com funções e variáveis reutilizáveis
 ├── requirements.txt    # Dependências do projeto

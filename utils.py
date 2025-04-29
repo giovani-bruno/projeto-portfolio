@@ -126,6 +126,18 @@ tecnologias = {
     "Joblib": {
         "link_doc": "https://joblib.readthedocs.io/en/stable/",
         "logo": "imagens/logos/joblib.png"
+    },
+    "Groq": {
+        "link_doc": "https://groq.com/",
+        "logo": "imagens/logos/groq.png"
+    },
+    "Llama Index": {
+        "link_doc": "https://docs.llamaindex.ai/en/stable/",
+        "logo": "imagens/logos/llama_index.png"
+    },
+    "Hugging Face": {
+        "link_doc": "https://huggingface.co/",
+        "logo": "imagens/logos/hugging_face.png"
     }
 }
 

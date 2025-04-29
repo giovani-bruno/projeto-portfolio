@@ -1,3 +1,6 @@
 streamlit
 streamlit-pdf-viewer
 pymupdf
+llama_index.core
+llama_index.llms.groq
+llama_index.embeddings.huggingface

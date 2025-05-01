@@ -42,7 +42,7 @@ st.markdown("Converse com uma IA treinada com informações sobre Giovani! Fique
 with st.expander("Sugestões de Perguntas"):
     st.markdown("""
         - Quais são as habilidades de Giovani?
-        - Me conte curiosidades sobre ele.
+        - Me conte curiosidades sobre Giovani.
         - O que é a LADS?
         - Como Giovani desenvolveu interesse por Ciência de Dados?
         - Por que seu nome é Stark?

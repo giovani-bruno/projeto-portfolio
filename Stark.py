@@ -10,7 +10,7 @@ import os
 st.set_page_config(page_title="Stark", layout="wide", page_icon="🤖")
 barra_navegacao()
 
-embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
+embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2", device="cpu")
 
 GROQ_API_KEY = st.secrets['API']['API_GROQ']
 llm = Groq(model="llama-3.3-70b-versatile", api_key=GROQ_API_KEY)

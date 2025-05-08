@@ -138,6 +138,18 @@ tecnologias = {
     "Hugging Face": {
         "link_doc": "https://huggingface.co/",
         "logo": "imagens/logos/hugging_face.png"
+    },
+    "Tensor Flow": {
+        "link_doc": "https://www.tensorflow.org/?hl=pt-br",
+        "logo": "imagens/logos/tensorflow.png"
+    },
+    "Keras": {
+        "link_doc": "https://keras.io/",
+        "logo": "imagens/logos/keras.png"
+    },
+    "Beautiful Soup": {
+        "link_doc": "https://beautiful-soup-4.readthedocs.io/en/latest/",
+        "logo": "imagens/logos/beautiful_soup.png"
     }
 }
 

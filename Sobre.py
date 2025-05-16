@@ -78,7 +78,7 @@ st.subheader("📨 Entre em contato")
 
 st.html(f"""
     {css_formulario}
-    <form class="contact-form" action="https://formsubmit.co/58e51974853553c0014dc737cb5461cd" method="POST">
+    <form class="contact-form" action="https://formsubmit.co/{st.secrets['form_submit_code']}" method="POST">
         <div class="form-row">
             <input type="hidden" name="_template" value="table">
             <input type="text" name="name" placeholder="Seu nome" required>

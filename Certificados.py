@@ -19,7 +19,8 @@ certificados = [
         "duracao": "13h",
         "data_inicio": "16/05/2025",
         "data_conclusao": "19/05/2025",
-        "link": "https://www.coursera.org/account/accomplishments/verify/NV35R36ZD30G"
+        "link": "https://www.coursera.org/account/accomplishments/verify/NV35R36ZD30G",
+        "destaque": True
     },
     {
         "certificado": "Machine Learning with Python",
@@ -253,5 +254,65 @@ for i, cert in enumerate(certificados):
         data_conclusao=cert["data_conclusao"],
         link=cert["link"],
         coluna=coluna,
-        nome_alt=cert.get("nome_alt")
+        key=i,
+        nome_alt=cert.get("nome_alt"),
     )
+
+    if cert.get("destaque"):
+        st.html(f"""
+            <style>
+            @keyframes goldenSnake {{
+                0% {{
+                border-image-source: linear-gradient(90deg, #bc8700, transparent 100%);
+                border-image-slice: 1;
+                }}
+                25% {{
+                border-image-source: linear-gradient(180deg, #bc8700, transparent 100%);
+                border-image-slice: 1;
+                }}
+                50% {{
+                border-image-source: linear-gradient(270deg, #bc8700, transparent 100%);
+                border-image-slice: 1;
+                }}
+                75% {{
+                border-image-source: linear-gradient(360deg, #bc8700, transparent 100%);
+                border-image-slice: 1;
+                }}
+                100% {{
+                border-image-source: linear-gradient(90deg, #bc8700, transparent 100%);
+                border-image-slice: 1;
+                }}
+            }}
+
+            .stElementContainer {{
+                display: flex;
+                justify-content: center;
+                position: relative;
+            }}
+
+            .st-key-{i} {{
+                border: 1px solid;
+                border-radius: 0.75rem;
+                padding: 1rem;
+                animation: goldenSnake 6s linear infinite;
+                border-width: 3px;
+                border-image-source: linear-gradient(90deg, #bc8700, transparent 100%);
+                border-image-slice: 1;
+            }}
+            </style>
+        """)
+    else:
+        st.html(f"""
+            <style>
+                .stElementContainer {{
+                    width: 100%;
+                    position: relative;
+                }}    
+                    
+                .st-key-{i} {{
+                    border: 1px solid rgba(250, 250, 250, 0.2);
+                    border-radius: 0.75rem;
+                    padding: 1rem;
+                }}
+            </style>
+        """)

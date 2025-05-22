@@ -194,7 +194,7 @@ def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
     coluna.write("")
 
 def adicionar_certificado(certificado, feedback, instituicao, 
-                          duracao, data_inicio, data_conclusao, link, coluna, nome_alt=None):
+                          duracao, data_inicio, data_conclusao, link, coluna, key, nome_alt=None, destaque=False):
     assert certificado + '.pdf' in listdir("certificados"), f"Certificado não registrado."
 
     @st.dialog(f"{certificado if not nome_alt else nome_alt} - {instituicao}", width='large')
@@ -209,16 +209,27 @@ def adicionar_certificado(certificado, feedback, instituicao,
         st.write(f"Verifique em: {link}")
 
     st.html("""
-            <style>
+        <style>
             .stButton > button {
                 display: block;
                 margin: 0 auto;
             }
-            </style>
-        """)
+            
+            .certificado-titulo {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                width: 90%;
+                display: block;
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+        </style>
+    """)
         
-    with coluna.container(border=True):
-        st.write(f"{certificado if not nome_alt else nome_alt} - {instituicao}") 
+    with coluna.container(key=key):
+        titulo = f"{certificado if not nome_alt else nome_alt} - {instituicao}"
+        st.markdown(f'<div class="certificado-titulo">{titulo}</div>', unsafe_allow_html=True)
+        
         with open(f"certificados/{certificado}.pdf", "rb") as pdf_file:
             pdf_bytes = pdf_file.read()
         certificado_pdf = pymupdf(stream=pdf_bytes, filetype="pdf")

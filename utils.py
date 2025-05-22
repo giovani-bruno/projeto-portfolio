@@ -249,7 +249,7 @@ def adicionar_livro(livro, feedback, frase=None):
     col2.write(feedback)
     st.divider()
 
-def adicionar_projeto(projeto, coluna):
+def adicionar_projeto(projeto, coluna, key, destaque=False):
     assert projeto + '.png' in listdir("imagens/projetos"), f"Imagem '{projeto}.png' não existe em imagens/projetos"
     assert projeto + '.py' in listdir("projetos"), f"O arquivo '{projeto}.py' para a página do projeto não existe."
 
@@ -262,7 +262,7 @@ def adicionar_projeto(projeto, coluna):
         </style>
     """)
 
-    with coluna.container(border=True):
+    with coluna.container(key=key):
         st.image(f"imagens/projetos/{projeto}.png")
         if st.button("Ver Projeto", key=projeto):
             st.switch_page(f"projetos/{projeto}.py")

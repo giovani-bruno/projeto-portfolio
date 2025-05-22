@@ -12,34 +12,25 @@ Aqui estão os principais projetos que desenvolvi. Cada projeto reflete meu apre
 """)
 st.divider()
 
-col1, col2, col3 = st.columns(3)
+projetos = [
+    "stark",
+    "prevendo_doenca_cardiaca",
+    "ml_do_zero",
+    "analisando_emprestimos",
+    "prevendo_precos_airbnb",
+    "pesquisa_precos",
+    "prevendo_qualidade_carros",
+    "gerador_relatorio",
+    "automacoes_wifi",
+    "algoritmo_genetico",
+    "calculadora",
+    "dashboard_comercial",
+    "dashboard_sac",
+    "dashboard_rh",
+    "portfolio"
+]
 
-adicionar_projeto("stark", col1)
-
-adicionar_projeto("prevendo_doenca_cardiaca", col2)
-
-adicionar_projeto("ml_do_zero", col3)
-
-adicionar_projeto("analisando_emprestimos", col1)
-
-adicionar_projeto("prevendo_precos_airbnb", col2)
-
-adicionar_projeto("pesquisa_precos", col3)
-             
-adicionar_projeto("prevendo_qualidade_carros", col1)
-
-adicionar_projeto("gerador_relatorio", col2)
-
-adicionar_projeto("automacoes_wifi", col3)
-
-adicionar_projeto("algoritmo_genetico", col1)
-
-adicionar_projeto("calculadora", col2)
-
-adicionar_projeto("dashboard_comercial", col3)
-
-adicionar_projeto("dashboard_sac", col1)
-
-adicionar_projeto("dashboard_rh", col2)
-
-adicionar_projeto("portfolio", col3)
+colunas = st.columns(3)
+for i, projeto in enumerate(projetos):
+    coluna = colunas[i % 3]
+    adicionar_projeto(projeto, coluna)

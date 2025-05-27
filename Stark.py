@@ -4,6 +4,8 @@ from time import sleep
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
 from llama_index.llms.groq import Groq
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.core.storage.chat_store import SimpleChatStore
+from llama_index.core.memory import ChatMemoryBuffer
 from tempfile import TemporaryDirectory
 import os
 
@@ -33,8 +35,21 @@ def response_generator(pergunta):
     resposta = chat_engine.chat(pergunta).response
     return resposta
     
+if "chat_store" not in st.session_state:
+    st.session_state.chat_store = SimpleChatStore()
+
+if "chat_memory" not in st.session_state:
+    st.session_state.chat_memory = ChatMemoryBuffer.from_defaults(
+        chat_store=st.session_state.chat_store,
+        token_limit=3000
+    )
+
 index = carregar_index()
-chat_engine = index.as_chat_engine(llm=llm, chat_mode="condense_plus_context")
+chat_engine = index.as_chat_engine(
+    llm=llm,
+    chat_mode="condense_plus_context",
+    memory=st.session_state.chat_memory
+)
 
 st.title("🤖 Stark")
 st.markdown("Converse com uma IA treinada com informações sobre Giovani! Fique à vontade para perguntar sobre projetos, experiências, estudos, e muito mais.")

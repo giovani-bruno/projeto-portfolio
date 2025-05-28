@@ -333,6 +333,11 @@ for i, cert in enumerate(certificados):
                     animation: goldenSnake 6s linear infinite;
                     background: transparent;
                 }}
+
+                div[role="dialog"] {{
+                    animation: goldenSnake 6s linear infinite;
+                }}
+
             </style>
         """)
     else:

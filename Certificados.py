@@ -256,76 +256,77 @@ for i, cert in enumerate(certificados):
         coluna=coluna,
         key=i,
         nome_alt=cert.get("nome_alt"),
+        destaque=cert.get("destaque", False)
     )
 
     if cert.get("destaque"):
         st.html(f"""
             <style>
                 @keyframes goldenSnake {{
-                    0% {{
-                        box-shadow: 
-                            0 -3px 0 0 #bc8700,
-                            2px -2px 0 0 #bc870080,
-                            3px 0 0 0 #bc870040,
-                            2px 2px 0 0 #bc870020;
+                        0% {{
+                            box-shadow: 
+                                0 -3px 0 0 #bc8700,
+                                2px -2px 0 0 #bc870080,
+                                3px 0 0 0 #bc870040,
+                                2px 2px 0 0 #bc870020;
+                        }}
+                        12.5% {{
+                            box-shadow: 
+                                2px -2px 0 0 #bc8700,
+                                3px 0 0 0 #bc870080,
+                                2px 2px 0 0 #bc870040,
+                                0 3px 0 0 #bc870020;
+                        }}
+                        25% {{
+                            box-shadow: 
+                                3px 0 0 0 #bc8700,
+                                2px 2px 0 0 #bc870080,
+                                0 3px 0 0 #bc870040,
+                                -2px 2px 0 0 #bc870020;
+                        }}
+                        37.5% {{
+                            box-shadow: 
+                                2px 2px 0 0 #bc8700,
+                                0 3px 0 0 #bc870080,
+                                -2px 2px 0 0 #bc870040,
+                                -3px 0 0 0 #bc870020;
+                        }}
+                        50% {{
+                            box-shadow: 
+                                0 3px 0 0 #bc8700,
+                                -2px 2px 0 0 #bc870080,
+                                -3px 0 0 0 #bc870040,
+                                -2px -2px 0 0 #bc870020;
+                        }}
+                        62.5% {{
+                            box-shadow: 
+                                -2px 2px 0 0 #bc8700,
+                                -3px 0 0 0 #bc870080,
+                                -2px -2px 0 0 #bc870040,
+                                0 -3px 0 0 #bc870020;
+                        }}
+                        75% {{
+                            box-shadow: 
+                                -3px 0 0 0 #bc8700,
+                                -2px -2px 0 0 #bc870080,
+                                0 -3px 0 0 #bc870040,
+                                2px -2px 0 0 #bc870020;
+                        }}
+                        87.5% {{
+                            box-shadow: 
+                                -2px -2px 0 0 #bc8700,
+                                0 -3px 0 0 #bc870080,
+                                2px -2px 0 0 #bc870040,
+                                3px 0 0 0 #bc870020;
+                        }}
+                        100% {{
+                            box-shadow: 
+                                0 -3px 0 0 #bc8700,
+                                2px -2px 0 0 #bc870080,
+                                3px 0 0 0 #bc870040,
+                                2px 2px 0 0 #bc870020;
+                        }}
                     }}
-                    12.5% {{
-                        box-shadow: 
-                            2px -2px 0 0 #bc8700,
-                            3px 0 0 0 #bc870080,
-                            2px 2px 0 0 #bc870040,
-                            0 3px 0 0 #bc870020;
-                    }}
-                    25% {{
-                        box-shadow: 
-                            3px 0 0 0 #bc8700,
-                            2px 2px 0 0 #bc870080,
-                            0 3px 0 0 #bc870040,
-                            -2px 2px 0 0 #bc870020;
-                    }}
-                    37.5% {{
-                        box-shadow: 
-                            2px 2px 0 0 #bc8700,
-                            0 3px 0 0 #bc870080,
-                            -2px 2px 0 0 #bc870040,
-                            -3px 0 0 0 #bc870020;
-                    }}
-                    50% {{
-                        box-shadow: 
-                            0 3px 0 0 #bc8700,
-                            -2px 2px 0 0 #bc870080,
-                            -3px 0 0 0 #bc870040,
-                            -2px -2px 0 0 #bc870020;
-                    }}
-                    62.5% {{
-                        box-shadow: 
-                            -2px 2px 0 0 #bc8700,
-                            -3px 0 0 0 #bc870080,
-                            -2px -2px 0 0 #bc870040,
-                            0 -3px 0 0 #bc870020;
-                    }}
-                    75% {{
-                        box-shadow: 
-                            -3px 0 0 0 #bc8700,
-                            -2px -2px 0 0 #bc870080,
-                            0 -3px 0 0 #bc870040,
-                            2px -2px 0 0 #bc870020;
-                    }}
-                    87.5% {{
-                        box-shadow: 
-                            -2px -2px 0 0 #bc8700,
-                            0 -3px 0 0 #bc870080,
-                            2px -2px 0 0 #bc870040,
-                            3px 0 0 0 #bc870020;
-                    }}
-                    100% {{
-                        box-shadow: 
-                            0 -3px 0 0 #bc8700,
-                            2px -2px 0 0 #bc870080,
-                            3px 0 0 0 #bc870040,
-                            2px 2px 0 0 #bc870020;
-                    }}
-                }}
 
                 .st-key-{i} {{
                     border-radius: 0.75rem;
@@ -333,11 +334,6 @@ for i, cert in enumerate(certificados):
                     animation: goldenSnake 6s linear infinite;
                     background: transparent;
                 }}
-
-                div[role="dialog"] {{
-                    animation: goldenSnake 6s linear infinite;
-                }}
-
             </style>
         """)
     else:
@@ -347,13 +343,6 @@ for i, cert in enumerate(certificados):
                     border: 1px solid rgba(250, 250, 250, 0.2);
                     border-radius: 0.75rem;
                     padding: 1rem;
-                }}
-
-                .stElementContainer {{
-                    display: flex;
-                    justify-content: center;
-                    position: relative;
-                    width: 100%;
                 }}
             </style>
         """)

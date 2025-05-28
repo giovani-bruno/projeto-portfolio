@@ -193,13 +193,25 @@ def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
     coluna.write(descricao)
     coluna.write("")
 
+
 def adicionar_certificado(certificado, feedback, instituicao, 
                           duracao, data_inicio, data_conclusao, link, coluna, key, nome_alt=None, destaque=False):
     assert certificado + '.pdf' in listdir("certificados"), f"Certificado não registrado."
 
     @st.dialog(f"{certificado if not nome_alt else nome_alt} - {instituicao}", width='large')
     def verificar_certificado(certificado, feedback, duracao, 
-                              data_inicio, data_conclusao, link):
+                              data_inicio, data_conclusao, link, destaque):
+
+        if destaque:
+            st.html("""
+                <style>
+                    div[role="dialog"] {
+                        animation: goldenSnake 6s linear infinite !important;
+                        border-radius: 0.75rem;
+                    }                    
+                </style>
+            """)
+        
         col1, col2, col3 = st.columns([0.5, 1, 1])
         col1.write(f" ⏱ {duracao}")
         col2.write(f"Iniciado em: {data_inicio}")
@@ -223,6 +235,13 @@ def adicionar_certificado(certificado, feedback, instituicao,
                 font-size: 1rem;
                 margin-bottom: 0.5rem;
             }
+            
+            .stElementContainer {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                width: 100%;
+            }
         </style>
     """)
         
@@ -236,9 +255,10 @@ def adicionar_certificado(certificado, feedback, instituicao,
         primeira_pagina = certificado_pdf.load_page(0)
         pix = primeira_pagina.get_pixmap()
         st.image(Image.open(BytesIO(pix.tobytes("png"))).resize((792, 612)))
+        
         if st.button("Saiba mais", key=certificado):
             verificar_certificado(certificado, feedback, duracao,
-                                  data_inicio, data_conclusao, link)
+                                  data_inicio, data_conclusao, link, destaque)
 
 def adicionar_livro(livro, feedback, frase=None):
     col1, col2 = st.columns([0.5, 1])

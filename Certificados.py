@@ -11,6 +11,18 @@ st.divider()
             
 certificados = [
     {
+        "certificado": "Generative AI Elevate Your Data Science Career",
+        "feedback": """Durante este curso, aprendi a aplicar inteligência artificial generativa em fluxos de trabalho de ciência de dados, utilizando LLMs para explorar, 
+        transformar e enriquecer dados. Através de laboratórios práticos, desenvolvi habilidades em engenharia de atributos, aumento de dados e automação de tarefas analíticas, 
+        utilizando ferramentas como ChatGPT, CTGAN, Tomat.ai, Column.ai e mais para otimizar processos de análise, visualização e modelagem de dados.""",
+        "instituicao": "IBM",
+        "duracao": "13h",
+        "data_inicio": "20/05/2025",
+        "data_conclusao": "28/05/2025",
+        "link": "https://www.coursera.org/account/accomplishments/verify/BZGD2GJCPXOX",
+        "nome_alt": "Generative AI: Elevate Your Data Science Career"
+    },
+    {
         "certificado": "Applied Data Science Capstone",
         "feedback": """Neste projeto final da Certificação Profissional em Ciência de Dados da IBM, apliquei na prática todas as etapas do ciclo de ciência de dados. 
                       Utilizei APIs e técnicas de web scraping para coletar dados reais sobre lançamentos da SpaceX, realizando o tratamento, análise exploratória, 

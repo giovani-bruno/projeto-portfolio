@@ -11,6 +11,22 @@ st.divider()
             
 certificados = [
     {
+        "certificado": "IBM Data Science Professional Certificate",
+        "feedback": """Este foi um programa intensivo com foco em preparar profissionais para atuarem na área de ciência de dados. Ao longo de três meses, 
+        mergulhei em doze cursos completos, que cobriram desde os fundamentos da área até a aplicação prática de técnicas de machine learning.
+        Durante essa jornada, desenvolvi habilidades sólidas em Python, SQL, análise exploratória, visualização de dados e aprendizado de máquina, utilizando 
+        bibliotecas como Pandas, NumPy, Matplotlib, Seaborn e Scikit-learn. Também trabalhei com Jupyter Notebooks e explorei ferramentas do ecossistema de 
+        ciência de dados, como Watson Studio e IBM Cloud. Além dos conhecimentos técnicos, aprendi a aplicar a metodologia de ciência de dados, organizar 
+        projetos de forma estruturada e comunicar resultados com clareza. Finalizei o programa com um projeto prático completo e uma preparação voltada para 
+        entrevistas e construção de portfólio, fortalecendo meu posicionamento profissional na área.""",
+        "instituicao": "IBM",
+        "duracao": "176h",
+        "data_inicio": "07/03/2025",
+        "data_conclusao": "07/06/2025",
+        "link": "https://www.coursera.org/account/accomplishments/professional-cert/GA234IWIQR5H",
+        "nome_alt": "Data Science Professional Certificate"
+    },
+    {
         "certificado": "Data Scientist Career Guide and Interview",
         "feedback": """Este curso é voltado à preparação para o mercado de trabalho na área de ciência de dados. Nele, aprendi a montar um portfólio estruturado com 
         projetos relevantes, construir um currículo direcionado para vagas na área e desenvolver um pitch pessoal que comunica de forma clara minhas habilidades e objetivos. 

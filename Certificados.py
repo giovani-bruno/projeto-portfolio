@@ -11,6 +11,19 @@ st.divider()
             
 certificados = [
     {
+        "certificado": "Data Scientist Career Guide and Interview",
+        "feedback": """Este curso é voltado à preparação para o mercado de trabalho na área de ciência de dados. Nele, aprendi a montar um portfólio estruturado com 
+        projetos relevantes, construir um currículo direcionado para vagas na área e desenvolver um pitch pessoal que comunica de forma clara minhas habilidades e objetivos. 
+        O curso também abordou estratégias de networking, formas eficazes de se apresentar no LinkedIn e como se preparar para diferentes tipos de entrevistas, técnicas, 
+        comportamentais e baseadas em casos de negócio. Foi uma etapa importante para fortalecer minha apresentação profissional e alinhar meu perfil às exigências do mercado de dados.
+        Este foi o último curso da Certificação Profissional em Ciência de Dados da IBM.""",
+        "instituicao": "IBM",
+        "duracao": "9h",
+        "data_inicio": "29/05/2025",
+        "data_conclusao": "06/06/2025",
+        "link": "https://www.coursera.org/account/accomplishments/verify/JLVDVA6TLXLZ",
+    },
+    {
         "certificado": "Generative AI Elevate Your Data Science Career",
         "feedback": """Durante este curso, aprendi a aplicar inteligência artificial generativa em fluxos de trabalho de ciência de dados, utilizando LLMs para explorar, 
         transformar e enriquecer dados. Através de laboratórios práticos, desenvolvi habilidades em engenharia de atributos, aumento de dados e automação de tarefas analíticas, 

@@ -226,8 +226,6 @@ def adicionar_certificado(certificado, feedback, instituicao,
             
             .stElementContainer {
                 display: flex;
-                justify-content: center;
-                position: relative;
                 width: 100%;
             }
         </style>
@@ -344,11 +342,10 @@ def adicionar_projeto(projeto, coluna, key):
             display: block;
             margin: 0 auto;
         }
+            
         .stElementContainer {
-            display: flex;
-            justify-content: center;
-            position: relative;
-            width: 100%;
+                display: flex;
+                width: 100%;
         }
         </style>
     """)

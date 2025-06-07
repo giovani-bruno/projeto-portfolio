@@ -1,5 +1,5 @@
 streamlit
-streamlit-pdf-viewer
+streamlit-pdf-viewer==0.0.23
 pymupdf
 llama_index.core
 llama_index.llms.groq

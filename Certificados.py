@@ -24,7 +24,8 @@ certificados = [
         "data_inicio": "07/03/2025",
         "data_conclusao": "07/06/2025",
         "link": "https://www.coursera.org/account/accomplishments/professional-cert/GA234IWIQR5H",
-        "nome_alt": "Data Science Professional Certificate"
+        "nome_alt": "Data Science Professional Certificate",
+        "destaque": True
     },
     {
         "certificado": "Data Scientist Career Guide and Interview",

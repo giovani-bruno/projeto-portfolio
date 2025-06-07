@@ -10,7 +10,16 @@ st.write("""
 ### Explore meus projetos
 Aqui estão os principais projetos que desenvolvi. Cada projeto reflete meu aprendizado e dedicação para resolver problemas.
 """)
-st.divider()
+st.html("""
+    <hr style='
+        width: auto;
+        max-width: 100%;
+        position: relative;
+        border: none;
+        border-top: 1px solid #3D4044;
+        margin: 1rem 0;
+    '>
+""")
 
 projetos = [
         {"projeto": "stark", "destaque": True},

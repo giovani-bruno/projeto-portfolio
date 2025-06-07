@@ -7,7 +7,16 @@ barra_navegacao()
 
 st.title("Certificados")
 st.write("#### Nesta página você encontra todos os meus certificados conquistados até o momento.")
-st.divider()
+st.html("""
+    <hr style='
+        width: auto;
+        max-width: 100%;
+        position: relative;
+        border: none;
+        border-top: 1px solid #3D4044;
+        margin: 1rem 0;
+    '>
+""")
             
 certificados = [
     {

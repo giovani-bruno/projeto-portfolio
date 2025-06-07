@@ -1,6 +1,6 @@
 import streamlit as st
 from main import barra_navegacao
-from utils import adicionar_projeto
+from utils import adicionar_projeto, destacar_borda
 
 st.set_page_config(page_title='Projetos', layout='wide', page_icon='💻')
 barra_navegacao()
@@ -36,82 +36,7 @@ for i, projeto in enumerate(projetos):
     adicionar_projeto(projeto['projeto'], coluna, i)
 
     if projeto.get("destaque"):
-        st.html(f"""
-            <style>
-                @keyframes goldenSnake {{
-                    0% {{
-                        box-shadow: 
-                            0 -3px 0 0 #bc8700,
-                            2px -2px 0 0 #bc870080,
-                            3px 0 0 0 #bc870040,
-                            2px 2px 0 0 #bc870020;
-                    }}
-                    12.5% {{
-                        box-shadow: 
-                            2px -2px 0 0 #bc8700,
-                            3px 0 0 0 #bc870080,
-                            2px 2px 0 0 #bc870040,
-                            0 3px 0 0 #bc870020;
-                    }}
-                    25% {{
-                        box-shadow: 
-                            3px 0 0 0 #bc8700,
-                            2px 2px 0 0 #bc870080,
-                            0 3px 0 0 #bc870040,
-                            -2px 2px 0 0 #bc870020;
-                    }}
-                    37.5% {{
-                        box-shadow: 
-                            2px 2px 0 0 #bc8700,
-                            0 3px 0 0 #bc870080,
-                            -2px 2px 0 0 #bc870040,
-                            -3px 0 0 0 #bc870020;
-                    }}
-                    50% {{
-                        box-shadow: 
-                            0 3px 0 0 #bc8700,
-                            -2px 2px 0 0 #bc870080,
-                            -3px 0 0 0 #bc870040,
-                            -2px -2px 0 0 #bc870020;
-                    }}
-                    62.5% {{
-                        box-shadow: 
-                            -2px 2px 0 0 #bc8700,
-                            -3px 0 0 0 #bc870080,
-                            -2px -2px 0 0 #bc870040,
-                            0 -3px 0 0 #bc870020;
-                    }}
-                    75% {{
-                        box-shadow: 
-                            -3px 0 0 0 #bc8700,
-                            -2px -2px 0 0 #bc870080,
-                            0 -3px 0 0 #bc870040,
-                            2px -2px 0 0 #bc870020;
-                    }}
-                    87.5% {{
-                        box-shadow: 
-                            -2px -2px 0 0 #bc8700,
-                            0 -3px 0 0 #bc870080,
-                            2px -2px 0 0 #bc870040,
-                            3px 0 0 0 #bc870020;
-                    }}
-                    100% {{
-                        box-shadow: 
-                            0 -3px 0 0 #bc8700,
-                            2px -2px 0 0 #bc870080,
-                            3px 0 0 0 #bc870040,
-                            2px 2px 0 0 #bc870020;
-                    }}
-                }}
-
-                .st-key-{i} {{
-                    border-radius: 0.75rem;
-                    padding: 1rem;
-                    animation: goldenSnake 6s linear infinite;
-                    background: transparent;
-                }}
-            </style>
-        """)
+        destacar_borda(i)
     else:
         st.html(f"""
             <style>   
@@ -119,13 +44,6 @@ for i, projeto in enumerate(projetos):
                     border: 1px solid rgba(250, 250, 250, 0.2);
                     border-radius: 0.75rem;
                     padding: 1rem;
-                }}
-
-                .stElementContainer {{
-                    display: flex;
-                    justify-content: center;
-                    position: relative;
-                    width: 100%;
                 }}
             </style>
         """)

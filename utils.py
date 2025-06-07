@@ -200,17 +200,7 @@ def adicionar_certificado(certificado, feedback, instituicao,
 
     @st.dialog(f"{certificado if not nome_alt else nome_alt} - {instituicao}", width='large')
     def verificar_certificado(certificado, feedback, duracao, 
-                              data_inicio, data_conclusao, link, destaque):
-
-        if destaque:
-            st.html("""
-                <style>
-                    div[role="dialog"] {
-                        animation: goldenSnake 6s linear infinite !important;
-                        border-radius: 0.75rem;
-                    }                    
-                </style>
-            """)
+                              data_inicio, data_conclusao, link):
         
         col1, col2, col3 = st.columns([0.5, 1, 1])
         col1.write(f" ⏱ {duracao}")
@@ -258,7 +248,85 @@ def adicionar_certificado(certificado, feedback, instituicao,
         
         if st.button("Saiba mais", key=certificado):
             verificar_certificado(certificado, feedback, duracao,
-                                  data_inicio, data_conclusao, link, destaque)
+                                  data_inicio, data_conclusao, link)
+            
+def destacar_borda(key):
+    st.html(f"""
+        <style>
+            @keyframes goldenSnake {{
+                    0% {{
+                        box-shadow: 
+                            0 -3px 0 0 #bc8700,
+                            2px -2px 0 0 #bc870080,
+                            3px 0 0 0 #bc870040,
+                            2px 2px 0 0 #bc870020;
+                    }}
+                    12.5% {{
+                        box-shadow: 
+                            2px -2px 0 0 #bc8700,
+                            3px 0 0 0 #bc870080,
+                            2px 2px 0 0 #bc870040,
+                            0 3px 0 0 #bc870020;
+                    }}
+                    25% {{
+                        box-shadow: 
+                            3px 0 0 0 #bc8700,
+                            2px 2px 0 0 #bc870080,
+                            0 3px 0 0 #bc870040,
+                            -2px 2px 0 0 #bc870020;
+                    }}
+                    37.5% {{
+                        box-shadow: 
+                            2px 2px 0 0 #bc8700,
+                            0 3px 0 0 #bc870080,
+                            -2px 2px 0 0 #bc870040,
+                            -3px 0 0 0 #bc870020;
+                    }}
+                    50% {{
+                        box-shadow: 
+                            0 3px 0 0 #bc8700,
+                            -2px 2px 0 0 #bc870080,
+                            -3px 0 0 0 #bc870040,
+                            -2px -2px 0 0 #bc870020;
+                    }}
+                    62.5% {{
+                        box-shadow: 
+                            -2px 2px 0 0 #bc8700,
+                            -3px 0 0 0 #bc870080,
+                            -2px -2px 0 0 #bc870040,
+                            0 -3px 0 0 #bc870020;
+                    }}
+                    75% {{
+                        box-shadow: 
+                            -3px 0 0 0 #bc8700,
+                            -2px -2px 0 0 #bc870080,
+                            0 -3px 0 0 #bc870040,
+                            2px -2px 0 0 #bc870020;
+                    }}
+                    87.5% {{
+                        box-shadow: 
+                            -2px -2px 0 0 #bc8700,
+                            0 -3px 0 0 #bc870080,
+                            2px -2px 0 0 #bc870040,
+                            3px 0 0 0 #bc870020;
+                    }}
+                    100% {{
+                        box-shadow: 
+                            0 -3px 0 0 #bc8700,
+                            2px -2px 0 0 #bc870080,
+                            3px 0 0 0 #bc870040,
+                            2px 2px 0 0 #bc870020;
+                    }}
+                }}
+
+        .st-key-{key} {{
+                border-radius: 0.75rem;
+                padding: 1rem;
+                animation: goldenSnake 6s linear infinite;
+                background: transparent;
+            }}
+        </style>
+    """)
 
 def adicionar_livro(livro, feedback, frase=None):
     col1, col2 = st.columns([0.5, 1])
@@ -269,7 +337,7 @@ def adicionar_livro(livro, feedback, frase=None):
     col2.write(feedback)
     st.divider()
 
-def adicionar_projeto(projeto, coluna, key, destaque=False):
+def adicionar_projeto(projeto, coluna, key):
     assert projeto + '.png' in listdir("imagens/projetos"), f"Imagem '{projeto}.png' não existe em imagens/projetos"
     assert projeto + '.py' in listdir("projetos"), f"O arquivo '{projeto}.py' para a página do projeto não existe."
 
@@ -278,6 +346,12 @@ def adicionar_projeto(projeto, coluna, key, destaque=False):
         .stButton > button {
             display: block;
             margin: 0 auto;
+        }
+        .stElementContainer {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            width: 100%;
         }
         </style>
     """)

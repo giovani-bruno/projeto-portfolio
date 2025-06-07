@@ -193,13 +193,15 @@ def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
     coluna.write(descricao)
     coluna.write("")
 
+
 def adicionar_certificado(certificado, feedback, instituicao, 
-                          duracao, data_inicio, data_conclusao, link, coluna, nome_alt=None):
+                          duracao, data_inicio, data_conclusao, link, coluna, key, nome_alt=None, destaque=False):
     assert certificado + '.pdf' in listdir("certificados"), f"Certificado não registrado."
 
     @st.dialog(f"{certificado if not nome_alt else nome_alt} - {instituicao}", width='large')
     def verificar_certificado(certificado, feedback, duracao, 
                               data_inicio, data_conclusao, link):
+        
         col1, col2, col3 = st.columns([0.5, 1, 1])
         col1.write(f" ⏱ {duracao}")
         col2.write(f"Iniciado em: {data_inicio}")
@@ -209,25 +211,122 @@ def adicionar_certificado(certificado, feedback, instituicao,
         st.write(f"Verifique em: {link}")
 
     st.html("""
-            <style>
+        <style>
             .stButton > button {
                 display: block;
                 margin: 0 auto;
             }
-            </style>
-        """)
+            
+            .certificado-titulo {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                width: 90%;
+                display: block;
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .stElementContainer {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                width: 100%;
+            }
+        </style>
+    """)
         
-    with coluna.container(border=True):
-        st.write(f"{certificado if not nome_alt else nome_alt} - {instituicao}") 
+    with coluna.container(key=key):
+        titulo = f"{certificado if not nome_alt else nome_alt} - {instituicao}"
+        st.markdown(f'<div class="certificado-titulo">{titulo}</div>', unsafe_allow_html=True)
+        
         with open(f"certificados/{certificado}.pdf", "rb") as pdf_file:
             pdf_bytes = pdf_file.read()
         certificado_pdf = pymupdf(stream=pdf_bytes, filetype="pdf")
         primeira_pagina = certificado_pdf.load_page(0)
         pix = primeira_pagina.get_pixmap()
         st.image(Image.open(BytesIO(pix.tobytes("png"))).resize((792, 612)))
+        
         if st.button("Saiba mais", key=certificado):
             verificar_certificado(certificado, feedback, duracao,
                                   data_inicio, data_conclusao, link)
+            
+def destacar_borda(key):
+    st.html(f"""
+        <style>
+            @keyframes goldenSnake {{
+                    0% {{
+                        box-shadow: 
+                            0 -3px 0 0 #bc8700,
+                            2px -2px 0 0 #bc870080,
+                            3px 0 0 0 #bc870040,
+                            2px 2px 0 0 #bc870020;
+                    }}
+                    12.5% {{
+                        box-shadow: 
+                            2px -2px 0 0 #bc8700,
+                            3px 0 0 0 #bc870080,
+                            2px 2px 0 0 #bc870040,
+                            0 3px 0 0 #bc870020;
+                    }}
+                    25% {{
+                        box-shadow: 
+                            3px 0 0 0 #bc8700,
+                            2px 2px 0 0 #bc870080,
+                            0 3px 0 0 #bc870040,
+                            -2px 2px 0 0 #bc870020;
+                    }}
+                    37.5% {{
+                        box-shadow: 
+                            2px 2px 0 0 #bc8700,
+                            0 3px 0 0 #bc870080,
+                            -2px 2px 0 0 #bc870040,
+                            -3px 0 0 0 #bc870020;
+                    }}
+                    50% {{
+                        box-shadow: 
+                            0 3px 0 0 #bc8700,
+                            -2px 2px 0 0 #bc870080,
+                            -3px 0 0 0 #bc870040,
+                            -2px -2px 0 0 #bc870020;
+                    }}
+                    62.5% {{
+                        box-shadow: 
+                            -2px 2px 0 0 #bc8700,
+                            -3px 0 0 0 #bc870080,
+                            -2px -2px 0 0 #bc870040,
+                            0 -3px 0 0 #bc870020;
+                    }}
+                    75% {{
+                        box-shadow: 
+                            -3px 0 0 0 #bc8700,
+                            -2px -2px 0 0 #bc870080,
+                            0 -3px 0 0 #bc870040,
+                            2px -2px 0 0 #bc870020;
+                    }}
+                    87.5% {{
+                        box-shadow: 
+                            -2px -2px 0 0 #bc8700,
+                            0 -3px 0 0 #bc870080,
+                            2px -2px 0 0 #bc870040,
+                            3px 0 0 0 #bc870020;
+                    }}
+                    100% {{
+                        box-shadow: 
+                            0 -3px 0 0 #bc8700,
+                            2px -2px 0 0 #bc870080,
+                            3px 0 0 0 #bc870040,
+                            2px 2px 0 0 #bc870020;
+                    }}
+                }}
+
+        .st-key-{key} {{
+                border-radius: 0.75rem;
+                padding: 1rem;
+                animation: goldenSnake 6s linear infinite;
+                background: transparent;
+            }}
+        </style>
+    """)
 
 def adicionar_livro(livro, feedback, frase=None):
     col1, col2 = st.columns([0.5, 1])
@@ -238,7 +337,7 @@ def adicionar_livro(livro, feedback, frase=None):
     col2.write(feedback)
     st.divider()
 
-def adicionar_projeto(projeto, coluna):
+def adicionar_projeto(projeto, coluna, key):
     assert projeto + '.png' in listdir("imagens/projetos"), f"Imagem '{projeto}.png' não existe em imagens/projetos"
     assert projeto + '.py' in listdir("projetos"), f"O arquivo '{projeto}.py' para a página do projeto não existe."
 
@@ -248,10 +347,16 @@ def adicionar_projeto(projeto, coluna):
             display: block;
             margin: 0 auto;
         }
+        .stElementContainer {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+        }
         </style>
     """)
 
-    with coluna.container(border=True):
+    with coluna.container(key=key):
         st.image(f"imagens/projetos/{projeto}.png")
         if st.button("Ver Projeto", key=projeto):
             st.switch_page(f"projetos/{projeto}.py")

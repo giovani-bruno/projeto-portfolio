@@ -1,5 +1,5 @@
 import streamlit as st
-from utils import adicionar_certificado
+from utils import adicionar_certificado, destacar_borda
 from main import barra_navegacao
 
 st.set_page_config(page_title="Certificados", layout='wide', page_icon='📃')
@@ -60,7 +60,7 @@ certificados = [
         "duracao": "13h",
         "data_inicio": "16/05/2025",
         "data_conclusao": "19/05/2025",
-        "link": "https://www.coursera.org/account/accomplishments/verify/NV35R36ZD30G"
+        "link": "https://www.coursera.org/account/accomplishments/verify/NV35R36ZD30G",
     },
     {
         "certificado": "Machine Learning with Python",
@@ -294,5 +294,19 @@ for i, cert in enumerate(certificados):
         data_conclusao=cert["data_conclusao"],
         link=cert["link"],
         coluna=coluna,
-        nome_alt=cert.get("nome_alt")
+        key=i,
+        nome_alt=cert.get("nome_alt"),
     )
+
+    if cert.get("destaque"):
+        destacar_borda(i)
+    else:
+        st.html(f"""
+            <style>               
+                .st-key-{i} {{
+                    border: 1px solid rgba(250, 250, 250, 0.2);
+                    border-radius: 0.75rem;
+                    padding: 1rem;
+                }}
+            </style>
+        """)

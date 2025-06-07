@@ -216,7 +216,6 @@ def adicionar_certificado(certificado, feedback, instituicao,
             }
             
             .certificado-titulo {
-                word-wrap: break-word;
                 overflow-wrap: break-word;
                 width: 90%;
                 display: block;

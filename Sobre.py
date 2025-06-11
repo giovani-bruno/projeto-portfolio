@@ -32,11 +32,11 @@ with col1:
     )
 with col2:
     st.write("""
-    Sou um estudante de Ciência da Computação, atualmente no 5° semestre. Tenho 20 anos e possuo grande interesse em ciência de dados. Concluí cursos de destaque na área de dados, maioria deles pela Hashtag Treinamentos.
-    Estou constantemente buscando fortalecer minhas habilidades em manipulação de dados, visualização e machine learning, utilizando datasets públicos e projetos próprios. Também procuro aplicar esse conhecimento em automação e otimização de tarefas no ambiente corporativo.
-    Atualmente, faço postagens semanais no meu LinkedIn onde compartilho dicas práticas sobre ciência de dados, análise de dados, inteligência artificial, Python, compartilhar projetos e entre outros temas. Essas dicas são baseadas nos conhecimentos que adquiro nos livros que leio e nos cursos que faço.
-    Meu objetivo é atuar como cientista de dados, trabalhando com dados para criar soluções que façam a diferença.
-             """)   
+        Sou estudante de Ciência da Computação, atualmente no 5° semestre na Universidade da Amazônia. Tenho 20 anos e grande interesse em ciência de dados, especialmente nas áreas de machine learning, deep learning e LLMs. Concluí a Certificação Profissional em Ciência de Dados da IBM pela Coursera, e atualmente a maior parte dos meus estudos são realizados nessa plataforma, complementando com livros e outras fontes de aprendizado.
+        Minhas formas favoritas de aprender são por meio de cursos, realizando projetos, livros e, principalmente, ensinando. Por isso, compartilho semanalmente no LinkedIn conteúdos práticos sobre ciência de dados, Python, inteligência artificial e outros temas relacionados, uma maneira de fixar o que aprendo e ajudar outras pessoas a aprenderem também.
+        Cofundei a LADS (League of Artificial Intelligence and Data Science), uma liga onde reunimos entusiastas da área para crescermos juntos. Na LADS, desenvolvemos projetos em parceria com empresas e sou um dos responsáveis por ministrar aulas para os membros, trabalhando ao lado dos outros fundadores e professores parceiros da liga.
+        Atuo constantemente no fortalecimento das minhas habilidades em manipulação e visualização de dados, automação e desenvolvimento de modelos preditivos, sempre buscando aplicar esse conhecimento na prática para gerar soluções com impacto real. Meu objetivo é atuar como cientista de dados, criando valor por meio da análise e inteligência aplicada aos dados.
+            """)   
 st.divider()
 
 st.subheader("🎓 Formação")

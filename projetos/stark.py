@@ -8,7 +8,7 @@ botao_voltar()
 
 st.title("Stark")
 
-st.write("O Stark é um inteligência artificial personalizada feita para responder perguntas sobre mim no meu portfólio.")
+st.write("O Stark é uma inteligência artificial personalizada feita para responder perguntas sobre mim no meu portfólio.")
 st.write("Para criar o Stark, utilizei uma combinação de tecnologias modernas de IA que trabalham em conjunto para proporcionar uma experiência conversacional personalizada.")
 
 st.write('''No coração do sistema está o [LlamaIndex](https://docs.llamaindex.ai/en/stable/), que funciona como o "cérebro" do Stark. 

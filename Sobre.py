@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import base64
 from main import barra_navegacao
 from utils import tecnologias, adicionar_habilidade, css_formulario
@@ -47,30 +48,132 @@ col2.write("Bacharelado, Ciência da Computação (2023 - 2026)")
 col2.write("Atualmente no 5° semestre.")
 st.divider()
 
+def carrossel_habilidades(tecnologias, habilidades):
+    def gerar_slide(h):
+        with open(tecnologias[h]['logo'], "rb") as img_file:
+            img_base64 = base64.b64encode(img_file.read()).decode()
+        return f'''
+        <div class="slide">
+            <a href="{tecnologias[h]['link_doc']}" target="_blank">
+                <img src="data:image/png;base64,{img_base64}" alt="{h}" title="{h}" />
+            </a>
+        </div>
+        '''
+
+    html_code = f"""
+    <style>
+    .slider {{
+        background: #262730;
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+        height: 100px;
+        margin: 2rem auto;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        width: 100%;
+    }}
+
+    .slider::before,
+    .slider::after {{
+        content: "";
+        height: 100px;
+        position: absolute;
+        width: 200px;
+        z-index: 2;
+    }}
+
+    .slider::after {{
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+    }}
+
+    .slider::before {{
+        left: 0;
+        top: 0;
+    }}
+
+    .slide-track {{
+        display: flex;
+        width: calc((250px + 60px) * {len(habilidades) * 2});
+        animation: scroll 80s linear infinite;
+    }}
+
+    .slider:hover .slide-track {{
+        animation-play-state: paused;
+    }}
+
+    @keyframes scroll {{
+        0% {{ transform: translateX(0); }}
+        100% {{ transform: translateX(calc(-250px * {len(habilidades)})); }}
+    }}
+
+    .slide {{
+        height: 100px;
+        min-width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 30px;
+    }}
+
+
+    .slide img {{
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+    }}
+    </style>
+
+    <div class="slider">
+        <div class="slide-track">
+            {''.join(gerar_slide(h) for h in habilidades)}
+            {''.join(gerar_slide(h) for h in habilidades)}
+        </div>
+    </div>
+    """
+
+    components.html(html_code, height=150)
+
+
+
 st.subheader("⚒️ Habilidades")
-st.write("")
-col1, col2, col3, col4 = st.columns(4)
-    
-adicionar_habilidade(tecnologias["Python"], col1, 150)
-adicionar_habilidade(tecnologias["Power BI"], col2, 170)
-adicionar_habilidade(tecnologias["Excel"], col3, 150)
-adicionar_habilidade(tecnologias["SQL"], col4, 170)
-adicionar_habilidade(tecnologias["AWS"], col1, 120)
-adicionar_habilidade(tecnologias["Git"], col2, 120)
-adicionar_habilidade(tecnologias["Pandas"], col3, 150)
-adicionar_habilidade(tecnologias["NumPy"], col4, 150)
-adicionar_habilidade(tecnologias["Matplotlib"], col1, 150)
-adicionar_habilidade(tecnologias["Seaborn"], col2, 150)
-adicionar_habilidade(tecnologias["Plotly"], col3, 150)
-adicionar_habilidade(tecnologias["Dash"], col4, 150)
-adicionar_habilidade(tecnologias["Streamlit"], col1, 150)
-adicionar_habilidade(tecnologias["Scikit-learn"], col2, 100)
-adicionar_habilidade(tecnologias["Tensor Flow"], col3, 200)
-adicionar_habilidade(tecnologias["Keras"], col4, 200)
-adicionar_habilidade(tecnologias["Scipy"], col1, 150)
-adicionar_habilidade(tecnologias["statsmodels"], col2, 200)
-adicionar_habilidade(tecnologias["Selenium"], col3, 150)
-adicionar_habilidade(tecnologias["Beautiful Soup"], col4, 150)
+
+habilidades = [
+    "Python", "Power BI", "Excel", "SQL",
+    "AWS", "Git", "Pandas", "NumPy",
+    "Matplotlib", "Seaborn", "Plotly", "Dash",
+    "Streamlit", "Scikit-learn", "Tensor Flow", "Keras",
+    "Scipy", "statsmodels", "Selenium", "Beautiful Soup"
+]
+
+carrossel_habilidades(tecnologias, habilidades)
+
+
+# st.subheader("⚒️ Habilidades")
+# st.write("")
+# col1, col2, col3, col4 = st.columns(4)
+
+# adicionar_habilidade(tecnologias["Python"], col1, 150)
+# adicionar_habilidade(tecnologias["Power BI"], col2, 170)
+# adicionar_habilidade(tecnologias["Excel"], col3, 150)
+# adicionar_habilidade(tecnologias["SQL"], col4, 170)
+# adicionar_habilidade(tecnologias["AWS"], col1, 120)
+# adicionar_habilidade(tecnologias["Git"], col2, 120)
+# adicionar_habilidade(tecnologias["Pandas"], col3, 150)
+# adicionar_habilidade(tecnologias["NumPy"], col4, 150)
+# adicionar_habilidade(tecnologias["Matplotlib"], col1, 150)
+# adicionar_habilidade(tecnologias["Seaborn"], col2, 150)
+# adicionar_habilidade(tecnologias["Plotly"], col3, 150)
+# adicionar_habilidade(tecnologias["Dash"], col4, 150)
+# adicionar_habilidade(tecnologias["Streamlit"], col1, 150)
+# adicionar_habilidade(tecnologias["Scikit-learn"], col2, 100)
+# adicionar_habilidade(tecnologias["Tensor Flow"], col3, 200)
+# adicionar_habilidade(tecnologias["Keras"], col4, 200)
+# adicionar_habilidade(tecnologias["Scipy"], col1, 150)
+# adicionar_habilidade(tecnologias["statsmodels"], col2, 200)
+# adicionar_habilidade(tecnologias["Selenium"], col3, 150)
+# adicionar_habilidade(tecnologias["Beautiful Soup"], col4, 150)
 
 st.divider()
 

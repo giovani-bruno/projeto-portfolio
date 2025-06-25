@@ -117,7 +117,6 @@ def carrossel_habilidades(tecnologias, habilidades):
         padding: 0 30px;
     }}
 
-
     .slide img {{
         height: 50px;
         width: auto;
@@ -135,7 +134,19 @@ def carrossel_habilidades(tecnologias, habilidades):
 
     components.html(html_code, height=150)
 
-
+def grid_habilidades(tecnologias, habilidades):
+    cols = st.columns(4)
+    for i, h in enumerate(habilidades):
+        with open(tecnologias[h]['logo'], "rb") as img_file:
+            img_base64 = base64.b64encode(img_file.read()).decode()
+        cols[i % 4].markdown(
+            f"""<div style='text-align: center; margin-bottom: 50px;'>
+                <a href="{tecnologias[h]['link_doc']}" target="_blank">
+                    <img src="data:image/png;base64,{img_base64}" alt="{h}" title="{h}" style="height:50px;"><br>
+                </a>
+            </div>""",
+            unsafe_allow_html=True
+        )
 
 st.subheader("⚒️ Habilidades")
 
@@ -149,31 +160,9 @@ habilidades = [
 
 carrossel_habilidades(tecnologias, habilidades)
 
-
-# st.subheader("⚒️ Habilidades")
-# st.write("")
-# col1, col2, col3, col4 = st.columns(4)
-
-# adicionar_habilidade(tecnologias["Python"], col1, 150)
-# adicionar_habilidade(tecnologias["Power BI"], col2, 170)
-# adicionar_habilidade(tecnologias["Excel"], col3, 150)
-# adicionar_habilidade(tecnologias["SQL"], col4, 170)
-# adicionar_habilidade(tecnologias["AWS"], col1, 120)
-# adicionar_habilidade(tecnologias["Git"], col2, 120)
-# adicionar_habilidade(tecnologias["Pandas"], col3, 150)
-# adicionar_habilidade(tecnologias["NumPy"], col4, 150)
-# adicionar_habilidade(tecnologias["Matplotlib"], col1, 150)
-# adicionar_habilidade(tecnologias["Seaborn"], col2, 150)
-# adicionar_habilidade(tecnologias["Plotly"], col3, 150)
-# adicionar_habilidade(tecnologias["Dash"], col4, 150)
-# adicionar_habilidade(tecnologias["Streamlit"], col1, 150)
-# adicionar_habilidade(tecnologias["Scikit-learn"], col2, 100)
-# adicionar_habilidade(tecnologias["Tensor Flow"], col3, 200)
-# adicionar_habilidade(tecnologias["Keras"], col4, 200)
-# adicionar_habilidade(tecnologias["Scipy"], col1, 150)
-# adicionar_habilidade(tecnologias["statsmodels"], col2, 200)
-# adicionar_habilidade(tecnologias["Selenium"], col3, 150)
-# adicionar_habilidade(tecnologias["Beautiful Soup"], col4, 150)
+expandido = st.toggle("Exibir tudo", key="ver_todas")
+if expandido:
+    grid_habilidades(tecnologias, habilidades)
 
 st.divider()
 

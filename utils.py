@@ -227,7 +227,7 @@ def adicionar_certificado(certificado, feedback, instituicao,
     """)
         
     with coluna.container(key=key):
-        titulo = f"{certificado if not nome_alt else nome_alt} - {instituicao}"
+        titulo = certificado if not nome_alt else nome_alt
         st.markdown(f'<div class="certificado-titulo">{titulo}</div>', unsafe_allow_html=True)
         
         with open(f"certificados/{certificado}.pdf", "rb") as pdf_file:

@@ -20,6 +20,18 @@ st.html("""
             
 certificados = [
     {
+        "certificado": "Multi AI Agent Systems with CrewAI",
+        "feedback": """Neste curso oferecido pela DeepLearning.AI, aprendi a construir sistemas de múltiplos agentes baseados em LLMs utilizando o framework crewAI. 
+        Desenvolvi agentes com papéis bem definidos, memória e ferramentas específicas, organizando-os em equipes capazes de colaborar entre si 
+        para resolver tarefas complexas. Também explorei aplicações práticas como atendimento automatizado, planejamento, análise de dados e geração de relatórios, 
+        fortalecendo meu entendimento sobre fluxos multiagentes, orquestração e boas práticas na criação de agentes inteligentes.""",
+        "instituicao": "CrewAI",
+        "duracao": "3h",
+        "data_inicio": "16/06/2025",
+        "data_conclusao": "18/06/2025",
+        "link": "https://learn.deeplearning.ai/accomplishments/016dd8b1-de1d-47e2-bc9a-9e0002cd177d",
+    },
+    {
         "certificado": "IBM Data Science Professional Certificate",
         "feedback": """Este foi um programa intensivo com foco em preparar profissionais para atuarem na área de ciência de dados. Ao longo de três meses, 
         mergulhei em doze cursos completos, que cobriram desde os fundamentos da área até a aplicação prática de técnicas de machine learning.

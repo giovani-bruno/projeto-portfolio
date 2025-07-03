@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_pdf_viewer import pdf_viewer
+import streamlit.components.v1 as components
 import base64
 from os import listdir
 from fitz import open as pymupdf
@@ -13,7 +14,7 @@ tecnologias = {
     },
     "Power BI": {
         "link_doc": "https://learn.microsoft.com/pt-br/power-bi/fundamentals/",
-        "logo": "imagens/logos/powerbi.png"
+        "logo": "imagens/logos/power_bi.png"
     },
     "Excel": {
         "link_doc": "https://www.microsoft.com/pt-br/microsoft-365/excel",
@@ -51,9 +52,9 @@ tecnologias = {
         "link_doc": "https://streamlit.io/",
         "logo": "imagens/logos/streamlit.png"
     },
-    "Scikit-learn": {
+    "Scikit Learn": {
         "link_doc": "https://scikit-learn.org/",
-        "logo": "imagens/logos/sklearn.png"
+        "logo": "imagens/logos/scikit_learn.png"
     },
     "Selenium": {
         "link_doc": "https://www.selenium.dev/documentation/",
@@ -89,7 +90,7 @@ tecnologias = {
     },
     "SQLAlchemy": {
         "link_doc": "https://www.sqlalchemy.org/",
-        "logo": "imagens/logos/sqlalchemy.png"
+        "logo": "imagens/logos/sql_alchemy.png"
     },
     "AWS": {
         "link_doc": "https://docs.aws.amazon.com/pt_br/",
@@ -141,7 +142,7 @@ tecnologias = {
     },
     "Tensor Flow": {
         "link_doc": "https://www.tensorflow.org/?hl=pt-br",
-        "logo": "imagens/logos/tensorflow.png"
+        "logo": "imagens/logos/tensor_flow.png"
     },
     "Keras": {
         "link_doc": "https://keras.io/",
@@ -150,7 +151,15 @@ tecnologias = {
     "Beautiful Soup": {
         "link_doc": "https://beautiful-soup-4.readthedocs.io/en/latest/",
         "logo": "imagens/logos/beautiful_soup.png"
-    }
+    },
+    "N8N": {
+        "link_doc": "https://n8n.io/",
+        "logo": "imagens/logos/n8n.png"
+    },
+    "CrewAI": {
+        "link_doc": "https://www.crewai.com/",
+        "logo": "imagens/logos/crew_ai.png"
+    },
 }
 
 livros = {
@@ -179,11 +188,105 @@ livros = {
     }
 }
 
-def adicionar_habilidade(habilidade, coluna, largura):
-    coluna.html(
-        f"""<a href="{habilidade['link_doc']}" target="_blank">
-        <img src="data:image/png;base64,{base64.b64encode(open(habilidade['logo'], "rb").read()).decode()}" width="{largura}" style="margin-bottom: 50px;">
-        </a>""")
+def carrossel_habilidades(tecnologias, habilidades):
+    def gerar_slide(h):
+        with open(tecnologias[h]['logo'], "rb") as img_file:
+            img_base64 = base64.b64encode(img_file.read()).decode()
+        return f'''
+        <div class="slide">
+            <a href="{tecnologias[h]['link_doc']}" target="_blank">
+                <img src="data:image/png;base64,{img_base64}" alt="{h}" title="{h}" />
+            </a>
+        </div>
+        '''
+
+    html_code = f"""
+    <style>
+    .slider {{
+        background: #262730;
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+        height: 100px;
+        margin: 2rem auto;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        width: 100%;
+    }}
+
+    .slider::before,
+    .slider::after {{
+        content: "";
+        height: 100px;
+        position: absolute;
+        width: 200px;
+        z-index: 2;
+    }}
+
+    .slider::after {{
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+    }}
+
+    .slider::before {{
+        left: 0;
+        top: 0;
+    }}
+
+    .slide-track {{
+        display: flex;
+        width: calc((250px + 60px) * {len(habilidades) * 2});
+        animation: scroll 80s linear infinite;
+    }}
+
+    .slider:hover .slide-track {{
+        animation-play-state: paused;
+    }}
+
+    @keyframes scroll {{
+        0% {{ transform: translateX(0); }}
+        100% {{ transform: translateX(calc(-250px * {len(habilidades)})); }}
+    }}
+
+    .slide {{
+        height: 100px;
+        min-width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 30px;
+    }}
+
+    .slide img {{
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+    }}
+    </style>
+
+    <div class="slider">
+        <div class="slide-track">
+            {''.join(gerar_slide(h) for h in habilidades)}
+            {''.join(gerar_slide(h) for h in habilidades)}
+        </div>
+    </div>
+    """
+
+    components.html(html_code, height=150)
+
+def grid_habilidades(tecnologias, habilidades):
+    cols = st.columns(4)
+    for i, h in enumerate(habilidades):
+        with open(tecnologias[h]['logo'], "rb") as img_file:
+            img_base64 = base64.b64encode(img_file.read()).decode()
+        cols[i % 4].markdown(
+            f"""<div style='text-align: center; margin-bottom: 70px;'>
+                <a href="{tecnologias[h]['link_doc']}" target="_blank">
+                    <img src="data:image/png;base64,{img_base64}" alt="{h}" title="{h}" style="height:50px;"><br>
+                </a>
+            </div>""",
+            unsafe_allow_html=True
+        )
 
 def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
     coluna.html(

@@ -1,8 +1,7 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import base64
 from main import barra_navegacao
-from utils import tecnologias, adicionar_habilidade, css_formulario
+from utils import tecnologias, carrossel_habilidades, grid_habilidades, css_formulario
 
 st.set_page_config(page_title="Sobre", layout='wide')
 barra_navegacao()
@@ -48,120 +47,20 @@ col2.write("Bacharelado, Ciência da Computação (2023 - 2026)")
 col2.write("Atualmente no 5° semestre.")
 st.divider()
 
-def carrossel_habilidades(tecnologias, habilidades):
-    def gerar_slide(h):
-        with open(tecnologias[h]['logo'], "rb") as img_file:
-            img_base64 = base64.b64encode(img_file.read()).decode()
-        return f'''
-        <div class="slide">
-            <a href="{tecnologias[h]['link_doc']}" target="_blank">
-                <img src="data:image/png;base64,{img_base64}" alt="{h}" title="{h}" />
-            </a>
-        </div>
-        '''
-
-    html_code = f"""
-    <style>
-    .slider {{
-        background: #262730;
-        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-        height: 100px;
-        margin: 2rem auto;
-        overflow: hidden;
-        border-radius: 10px;
-        position: relative;
-        width: 100%;
-    }}
-
-    .slider::before,
-    .slider::after {{
-        content: "";
-        height: 100px;
-        position: absolute;
-        width: 200px;
-        z-index: 2;
-    }}
-
-    .slider::after {{
-        right: 0;
-        top: 0;
-        transform: rotateZ(180deg);
-    }}
-
-    .slider::before {{
-        left: 0;
-        top: 0;
-    }}
-
-    .slide-track {{
-        display: flex;
-        width: calc((250px + 60px) * {len(habilidades) * 2});
-        animation: scroll 80s linear infinite;
-    }}
-
-    .slider:hover .slide-track {{
-        animation-play-state: paused;
-    }}
-
-    @keyframes scroll {{
-        0% {{ transform: translateX(0); }}
-        100% {{ transform: translateX(calc(-250px * {len(habilidades)})); }}
-    }}
-
-    .slide {{
-        height: 100px;
-        min-width: 250px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 30px;
-    }}
-
-    .slide img {{
-        height: 50px;
-        width: auto;
-        object-fit: contain;
-    }}
-    </style>
-
-    <div class="slider">
-        <div class="slide-track">
-            {''.join(gerar_slide(h) for h in habilidades)}
-            {''.join(gerar_slide(h) for h in habilidades)}
-        </div>
-    </div>
-    """
-
-    components.html(html_code, height=150)
-
-def grid_habilidades(tecnologias, habilidades):
-    cols = st.columns(4)
-    for i, h in enumerate(habilidades):
-        with open(tecnologias[h]['logo'], "rb") as img_file:
-            img_base64 = base64.b64encode(img_file.read()).decode()
-        cols[i % 4].markdown(
-            f"""<div style='text-align: center; margin-bottom: 50px;'>
-                <a href="{tecnologias[h]['link_doc']}" target="_blank">
-                    <img src="data:image/png;base64,{img_base64}" alt="{h}" title="{h}" style="height:50px;"><br>
-                </a>
-            </div>""",
-            unsafe_allow_html=True
-        )
-
 st.subheader("⚒️ Habilidades")
 
 habilidades = [
     "Python", "Power BI", "Excel", "SQL",
     "AWS", "Git", "Pandas", "NumPy",
     "Matplotlib", "Seaborn", "Plotly", "Dash",
-    "Streamlit", "Scikit-learn", "Tensor Flow", "Keras",
-    "Scipy", "statsmodels", "Selenium", "Beautiful Soup"
+    "Streamlit", "Scikit Learn", "Tensor Flow", "Keras",
+    "Scipy", "statsmodels", "Selenium", "Beautiful Soup",
+    "N8N", "CrewAI", "Hugging Face",
 ]
 
 carrossel_habilidades(tecnologias, habilidades)
 
-expandido = st.toggle("Exibir tudo", key="ver_todas")
-if expandido:
+if st.toggle("Exibir tudo"):
     grid_habilidades(tecnologias, habilidades)
 
 st.divider()

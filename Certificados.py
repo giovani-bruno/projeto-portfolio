@@ -7,18 +7,20 @@ barra_navegacao()
 
 st.title("Certificados")
 st.write("#### Nesta página você encontra todos os meus certificados conquistados até o momento.")
-st.html("""
-    <hr style='
-        width: auto;
-        max-width: 100%;
-        position: relative;
-        border: none;
-        border-top: 1px solid #3D4044;
-        margin: 1rem 0;
-    '>
-""")
+st.html("<hr style=' width: auto; max-width: 100%; position: relative; border: none; border-top: 1px solid #3D4044; margin: 1rem 0;'>")
             
 certificados = [
+    {
+        "certificado": "Neural Networks and Deep Learning",
+        "feedback": """Aprendi os fundamentos de redes neurais e deep learning, incluindo forward e backward propagation, função de custo, vetorização com NumPy, 
+        inicialização de pesos e arquitetura de redes profundas. Desenvolvi projetos práticos implementando redes neurais do zero em Python, o que fortaleceu minha 
+        base matemática e computacional para modelos de aprendizado profundo.""",
+        "instituicao": "DeepLearning.AI",
+        "duracao": "24h",
+        "data_inicio": "21/06/2025",
+        "data_conclusao": "10/07/2025",
+        "link": "https://www.coursera.org/account/accomplishments/records/61VO5YZU1H3E",
+    },
     {
         "certificado": "Multi AI Agent Systems with CrewAI",
         "feedback": """Neste curso oferecido pela DeepLearning.AI, aprendi a construir sistemas de múltiplos agentes baseados em LLMs utilizando o framework crewAI. 

@@ -53,7 +53,7 @@ habilidades = [
     "Python", "Power BI", "Excel", "SQL",
     "AWS", "Git", "Pandas", "NumPy",
     "Matplotlib", "Seaborn", "Plotly", "Dash",
-    "Streamlit", "Scikit Learn", "Tensor Flow", "Keras",
+    "Streamlit", "Scikit-learn", "Tensor Flow", "Keras",
     "Scipy", "statsmodels", "Selenium", "Beautiful Soup",
     "N8N", "CrewAI", "Hugging Face",
 ]

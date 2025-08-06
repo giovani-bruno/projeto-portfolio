@@ -52,7 +52,7 @@ tecnologias = {
         "link_doc": "https://streamlit.io/",
         "logo": "imagens/logos/streamlit.png"
     },
-    "Scikit Learn": {
+    "Scikit-learn": {
         "link_doc": "https://scikit-learn.org/",
         "logo": "imagens/logos/scikit_learn.png"
     },

@@ -354,6 +354,22 @@ def grid_habilidades(tecnologias, habilidades):
             unsafe_allow_html=True
         )
 
+def fix_iframe_carrosel():
+    st.html("""
+        <style>
+            iframe[data-testid="stIFrame"] {
+                width: fit-content !important;
+                min-width: 100% !important;
+                max-width: 100vw !important;
+            }
+            
+            .element-container:has(iframe) {
+                width: fit-content !important;
+                min-width: 100% !important;
+            }
+        </style>
+    """)
+
 def adicionar_tecnologia(tecnologia, descricao, largura_img, coluna):
     coluna.html(
         f"""<a href="{tecnologia['link_doc']}" target="_blank">

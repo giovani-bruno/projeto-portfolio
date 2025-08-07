@@ -1,7 +1,7 @@
 import streamlit as st
 import base64
 from main import barra_navegacao
-from utils import tecnologias, carrossel_habilidades, grid_habilidades, css_formulario
+from utils import tecnologias, carrossel_habilidades, grid_habilidades, fix_iframe_carrosel, css_formulario
 
 st.set_page_config(page_title="Sobre", layout='wide')
 barra_navegacao()
@@ -58,6 +58,7 @@ habilidades = [
     "N8N", "CrewAI", "Hugging Face",
 ]
 
+fix_iframe_carrosel()
 carrossel_habilidades(tecnologias, habilidades)
 
 if st.toggle("Exibir tudo"):

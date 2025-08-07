@@ -199,80 +199,146 @@ def carrossel_habilidades(tecnologias, habilidades):
             </a>
         </div>
         '''
-
+    
     html_code = f"""
-    <style>
-    .slider {{
-        background: #262730;
-        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-        height: 100px;
-        margin: 2rem auto;
-        overflow: hidden;
-        border-radius: 10px;
-        position: relative;
-        width: 100%;
-    }}
-
-    .slider::before,
-    .slider::after {{
-        content: "";
-        height: 100px;
-        position: absolute;
-        width: 200px;
-        z-index: 2;
-    }}
-
-    .slider::after {{
-        right: 0;
-        top: 0;
-        transform: rotateZ(180deg);
-    }}
-
-    .slider::before {{
-        left: 0;
-        top: 0;
-    }}
-
-    .slide-track {{
-        display: flex;
-        width: calc((250px + 60px) * {len(habilidades) * 2});
-        animation: scroll 80s linear infinite;
-    }}
-
-    .slider:hover .slide-track {{
-        animation-play-state: paused;
-    }}
-
-    @keyframes scroll {{
-        0% {{ transform: translateX(0); }}
-        100% {{ transform: translateX(calc(-250px * {len(habilidades)})); }}
-    }}
-
-    .slide {{
-        height: 100px;
-        min-width: 250px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 30px;
-    }}
-
-    .slide img {{
-        height: 50px;
-        width: auto;
-        object-fit: contain;
-    }}
-    </style>
-
-    <div class="slider">
-        <div class="slide-track">
-            {''.join(gerar_slide(h) for h in habilidades)}
-            {''.join(gerar_slide(h) for h in habilidades)}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        * {{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }}
+        
+        body {{
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: transparent;
+        }}
+        
+        .slider {{
+            background: linear-gradient(135deg, #262730 0%, #1e1e28 100%);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            height: 160px !important;
+            min-height: 150px !important;
+            width: 100% !important;
+            overflow: hidden;
+            border-radius: 15px;
+            position: relative;
+            border: 1px solid #333;
+        }}
+        
+        .slider::before,
+        .slider::after {{
+            content: "";
+            height: 100%;
+            position: absolute;
+            width: 80px;
+            z-index: 2;
+            pointer-events: none;
+        }}
+        
+        .slider::before {{
+            left: 0;
+            top: 0;
+            background: linear-gradient(to right, 
+                rgba(38, 39, 48, 1) 0%, 
+                rgba(38, 39, 48, 0.8) 50%, 
+                rgba(38, 39, 48, 0) 100%);
+        }}
+        
+        .slider::after {{
+            right: 0;
+            top: 0;
+            background: linear-gradient(to left, 
+                rgba(38, 39, 48, 1) 0%, 
+                rgba(38, 39, 48, 0.8) 50%, 
+                rgba(38, 39, 48, 0) 100%);
+        }}
+        
+        .slide-track {{
+            display: flex;
+            width: calc(250px * {len(habilidades) * 2});
+            animation: scroll {len(habilidades) * 6}s linear infinite;
+            align-items: center;
+            height: 100%;
+        }}
+        
+        .slider:hover .slide-track {{
+            animation-play-state: paused;
+        }}
+        
+        @keyframes scroll {{
+            0% {{ 
+                transform: translateX(0); 
+            }}
+            100% {{ 
+                transform: translateX(calc(-250px * {len(habilidades)})); 
+            }}
+        }}
+        
+        .slide {{
+            height: 100%;
+            min-width: 250px;
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            flex-shrink: 0;
+        }}
+        
+        .slide a {{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 140px;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }}
+        
+        .slide a:hover {{
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }}
+        
+        .slide img {{
+            height: 100px !important;
+            width: auto !important;
+            max-width: 130px !important;
+            object-fit: contain !important;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            transition: all 0.3s ease;
+            display: block !important;
+        }}
+        
+        .slide:hover img {{
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+            transform: translateY(-2px);
+        }}
+        </style>
+    </head>
+    <body>
+        <div class="slider">
+            <div class="slide-track">
+                {''.join(gerar_slide(h) for h in habilidades)}
+                {''.join(gerar_slide(h) for h in habilidades)}
+            </div>
         </div>
-    </div>
+    </body>
+    </html>
     """
-
-    components.html(html_code, height=150)
+    
+    components.html(html_code, height=160, scrolling=False)
 
 def grid_habilidades(tecnologias, habilidades):
     cols = st.columns(4)

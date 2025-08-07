@@ -272,7 +272,7 @@ def carrossel_habilidades(tecnologias, habilidades):
     </div>
     """
 
-    components.html(html_code, height=150)
+    components.html(html_code, height=250)
 
 def grid_habilidades(tecnologias, habilidades):
     cols = st.columns(4)

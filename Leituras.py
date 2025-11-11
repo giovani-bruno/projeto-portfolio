@@ -11,7 +11,12 @@ st.write("""Aqui compartilho os livros que me ajudaram a expandir meu conhecimen
 A leitura constante é uma das minhas formas favoritas de aprender e crescer profissionalmente.""")
 st.divider()
 
-adicionar_livro(livros["Hands on ML"], "Lendo! Feedback em breve...", frase="Aprendizado de máquina é a ciência (e a arte) da programação de computadores de modo que eles possam aprender com os dados.")
+adicionar_livro(livros["Hands on ML"], """Esse livro foi fundamental para consolidar meu entendimento sobre machine learning na prática. 
+                Através de exemplos bem estruturados e aplicações reais, aprofundei meus conhecimentos em pré-processamento de dados, escolha 
+                e ajuste de modelos, avaliação de desempenho e uso de redes neurais com Keras e TensorFlow. Além de fortalecer minha base teórica, 
+                o livro me ajudou a desenvolver uma visão mais prática sobre o ciclo completo de um projeto de aprendizado de máquina, desde a 
+                preparação dos dados até a implantação de modelos. Sem dúvida, foi uma leitura essencial para aprimorar minhas habilidades na área de dados.""", 
+                frase="Aprendizado de máquina é a ciência (e a arte) da programação de computadores de modo que eles possam aprender com os dados.")
 
 adicionar_livro(livros['Data Science'], """O título do livro me enganou um pouco. Pelo nome, imaginei que 
                 fosse um material introdutório para quem quer começar na área de Data Science. No entanto, 

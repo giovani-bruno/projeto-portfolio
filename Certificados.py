@@ -11,6 +11,16 @@ st.html("<hr style=' width: auto; max-width: 100%; position: relative; border: n
             
 certificados = [
     {
+        "certificado": "Automatizando Tudo com n8n",
+        "feedback": """Ao concluir essa trilha, aprofundei meu domínio do n8n desde a criação de fluxos simples até automações avançadas e integradas. 
+        Aprendi a estruturar workflows eficientes, tratar dados dentro do próprio n8n e criar rotinas robustas que reduzem esforço manual.""",
+        "instituicao": "Asimov Academy",
+        "duracao": "12h",
+        "data_inicio": "14/11/2025",
+        "data_conclusao": "16/11/2025",
+        "link": "https://hub.asimov.academy/validar-certificado/e217fd4d-56fe-4ca3-a26e-18dd0ef7be10/",
+    },
+    {
         "certificado": "Neural Networks and Deep Learning",
         "feedback": """Aprendi os fundamentos de redes neurais e deep learning, incluindo forward e backward propagation, função de custo, vetorização com NumPy, 
         inicialização de pesos e arquitetura de redes profundas. Desenvolvi projetos práticos implementando redes neurais do zero em Python, o que fortaleceu minha 

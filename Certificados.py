@@ -11,6 +11,17 @@ st.html("<hr style=' width: auto; max-width: 100%; position: relative; border: n
             
 certificados = [
     {
+        "certificado": "Engenheiro de Agentes de IA",
+        "feedback": """Ao concluir a trilha Engenheiro de Agentes de IA, desenvolvi uma base sólida em LLMs, lógica de programação e Python, 
+        além de dominar engenharia de prompts e criação de agentes inteligentes. Aprendi a estruturar, configurar e implementar agentes de IA 
+        aplicáveis para otimizar processos. O curso fortaleceu minha capacidade de transformar IA em soluções práticas, escaláveis e orientadas a problemas reais.""",
+        "instituicao": "Asimov Academy",
+        "duracao": "48h",
+        "data_inicio": "17/11/2025",
+        "data_conclusao": "17/12/2025",
+        "link": "https://hub.asimov.academy/validar-certificado/70e3c5cb-bf25-48ca-a134-f2d6e1cf4e0a/",
+    },
+    {
         "certificado": "Automatizando Tudo com n8n",
         "feedback": """Ao concluir essa trilha, aprofundei meu domínio do n8n desde a criação de fluxos simples até automações avançadas e integradas. 
         Aprendi a estruturar workflows eficientes, tratar dados dentro do próprio n8n e criar rotinas robustas que reduzem esforço manual.""",

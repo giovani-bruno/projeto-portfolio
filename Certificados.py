@@ -11,6 +11,17 @@ st.html("<hr style=' width: auto; max-width: 100%; position: relative; border: n
             
 certificados = [
     {
+        "certificado": "Fundamentos do Vibe Design",
+        "feedback": """Curso focado na aplicação de inteligência artificial no desenvolvimento de software, explorando como utilizar ferramentas de 
+        IA para acelerar a escrita, revisão e otimização de código. Ao longo do curso, foram abordadas práticas para integrar IA no fluxo de desenvolvimento, 
+        aumentando a produtividade e a eficiência na criação de soluções.""",
+        "instituicao": "Asimov Academy",
+        "duracao": "3h",
+        "data_inicio": "10/02/2026",
+        "data_conclusao": "19/02/2026",
+        "link": "https://hub.asimov.academy/validar-certificado/d6732646-2d69-467a-bd12-b73283393b38/",
+    },
+    {
         "certificado": "Engenheiro de Agentes de IA",
         "feedback": """Ao concluir a trilha Engenheiro de Agentes de IA, desenvolvi uma base sólida em LLMs, lógica de programação e Python, 
         além de dominar engenharia de prompts e criação de agentes inteligentes. Aprendi a estruturar, configurar e implementar agentes de IA 

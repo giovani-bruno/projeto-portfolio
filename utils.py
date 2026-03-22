@@ -160,6 +160,14 @@ tecnologias = {
         "link_doc": "https://www.crewai.com/",
         "logo": "imagens/logos/crew_ai.png"
     },
+    "LangChain": {
+        "link_doc": "https://www.langchain.com/",
+        "logo": "imagens/logos/langchain.png"
+    },
+    "Agno": {
+        "link_doc": "https://www.agno.com/",
+        "logo": "imagens/logos/agno.png"
+    }
 }
 
 livros = {

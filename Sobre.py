@@ -32,10 +32,16 @@ with col1:
     )
 with col2:
     st.write("""
-        Sou estudante de Ciência da Computação, atualmente no 6° semestre na Universidade da Amazônia. Tenho 20 anos e grande interesse em ciência de dados, especialmente nas áreas de machine learning, deep learning e LLMs. Concluí a Certificação Profissional em Ciência de Dados da IBM pela Coursera, e atualmente a maior parte dos meus estudos são realizados nessa plataforma, complementando com livros e outras fontes de aprendizado.
-        Minhas formas favoritas de aprender são por meio de cursos, realizando projetos, livros e, principalmente, ensinando. Cofundei a LADS (League of Artificial Intelligence and Data Science), uma liga onde reunimos entusiastas da área para crescermos juntos. Na LADS, desenvolvemos projetos em parceria com empresas e sou um dos responsáveis por ministrar aulas para os membros, trabalhando ao lado dos outros fundadores e professores parceiros da liga.
-        Atuo constantemente no fortalecimento das minhas habilidades em manipulação e visualização de dados, automação e desenvolvimento de modelos preditivos, sempre buscando aplicar esse conhecimento na prática para gerar soluções com impacto real. Meu objetivo é atuar como cientista de dados, criando valor por meio da análise e inteligência aplicada aos dados.
-            """)   
+        Sou estudante de Ciência da Computação no 7° semestre na Universidade da Amazônia, tenho 21 anos e sou estagiário no Ministério Público do Pará. 
+        Tenho grande interesse em ciência de dados, com foco em machine learning, deep learning e LLMs.
+        Concluí a Certificação Profissional em Ciência de Dados da IBM pela Coursera, onde finalizei toda a trilha de cursos, 
+        consolidando uma base sólida na área. Atualmente, sigo aprofundando meus conhecimentos por meio de projetos práticos, 
+        leitura de livros técnicos e exploração de novas ferramentas e técnicas. Acredito que a melhor forma de aprender é aplicando e ensinando. 
+        Ao longo da minha jornada, já estive envolvido na criação de iniciativas voltadas ao compartilhamento de conhecimento em dados, além de 
+        desenvolver projetos com foco em resolver problemas reais. Busco constantemente evoluir minhas habilidades em manipulação e visualização de 
+        dados, automação e desenvolvimento de modelos preditivos, sempre com o objetivo de gerar impacto prático. Meu objetivo é atuar como cientista de dados, 
+        criando valor por meio da análise e inteligência aplicada aos dados.
+        """)   
 st.divider()
 
 st.subheader("🎓 Formação")
@@ -43,7 +49,7 @@ col1, col2 = st.columns([0.2, 1])
 col1.image("imagens/logos/unama.png", width=150)
 col2.subheader("UNAMA - Universidade da Amazônia")
 col2.write("Bacharelado, Ciência da Computação (2023 - 2026)")
-col2.write("Atualmente no 6° semestre.")
+col2.write("Atualmente no 7° semestre.")
 st.divider()
 
 st.subheader("⚒️ Habilidades")
@@ -54,7 +60,8 @@ habilidades = [
     "Matplotlib", "Seaborn", "Plotly", "Dash",
     "Streamlit", "Scikit-learn", "Tensor Flow", "Keras",
     "Scipy", "statsmodels", "Selenium", "Beautiful Soup",
-    "N8N", "CrewAI", "Hugging Face",
+    "N8N", "CrewAI", "Hugging Face", "LangChain",
+    "Agno", "Llama Index"
 ]
 
 fix_iframe_carrosel()
